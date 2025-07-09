@@ -1,0 +1,5 @@
+cyan = #1BBFAF
+green_light = #3BD952
+green_dark = #39BF4D
+light = #F2F2F2
+dark = #595959

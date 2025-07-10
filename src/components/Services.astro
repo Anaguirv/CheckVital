@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content';
+
+const services = await getCollection('services');
+console.log(services);
+---
+
+<section title="Servicios" class="bg-white py-16">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-8">Nuestros Servicios</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+            services.map(service => {
+                const { slug, data } = service
+                const { title, description } = data
+
+                return(
+                    <article>
+                        <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+                            <h3 class="text-xl font-semibold mb-4">{title}</h3>
+                            <p>{description}</p>
+                            <a href={`/services/${slug}`} class="mt-4 inline-block bg-primary hover:bg-secondary-dark text-white px-4 py-2 rounded transition">Leer más</a>
+                        </div>
+                    </article>
+                )
+            
+            })
+        }
+
+      <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+        <h3 class="text-xl font-semibold mb-4">Consulta Médica</h3>
+        <p>Atención personalizada con nuestros médicos especialistas.</p>
+      </div>
+    
+      <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+        <h3 class="text-xl font-semibold mb-4">Tratamientos Estéticos</h3>
+        <p>Mejora tu apariencia con nuestros tratamientos avanzados.</p>
+      </div>
+    
+      <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+        <h3 class="text-xl font-semibold mb-4">Bienestar Integral</h3>
+        <p>Programas de bienestar para una vida saludable y equilibrada.</p>
+      </div>
+    </div>
+  </div>
+
+</section>

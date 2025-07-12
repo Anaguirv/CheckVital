@@ -5,6 +5,7 @@ import { ClientRouter, fade, slide } from 'astro:transitions';
 
 // Supports weights 100-900
 import '@fontsource-variable/onest';
+import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
@@ -21,6 +22,8 @@ import '@fontsource-variable/onest';
 		<main class="mt-20">
 			<slot />
 		</main>
+		<Footer />
+
 	</body>
 </html>
 

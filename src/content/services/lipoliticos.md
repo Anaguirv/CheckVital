@@ -1,6 +1,6 @@
 ---
 title: Lipolíticos
-precio: 95.000
+precio: 95000
 img: lipoliticos.jpg
 duration: 45
 description: Los lipolíticos son sustancias que disuelven la grasa localizada en áreas específicas del cuerpo o rostro. Son una opción no invasiva para modelar la figura y definir contornos sin recurrir a cirugía.

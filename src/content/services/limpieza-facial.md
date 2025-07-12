@@ -1,13 +1,13 @@
 ---
 title: Limpieza Facial
-precio: 65.000
+precio: 65000
 img: limpieza-facial.jpeg
 duration: 60
 description: La limpieza Facial es un procedimiento que recupera la salud y apariencia de tu rostro.  Elimina puntos negros y células muertas, a través de técnicas especializadas consiguiendo que la piel respire de nuevo y se estimule la producción natural de colágeno y elastina.
 ---
 
-## Beneficios:
-- Elimina impurezas y células muertas.
+## **Beneficios**:
+- Elimina impurezas y células **muertas**.
 - Limpia y minimiza el tamaño de los poros.
 - Permite la oxigenación y regeneración.
 - Activa la circulación sanguínea.

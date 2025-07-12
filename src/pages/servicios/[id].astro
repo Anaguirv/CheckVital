@@ -1,0 +1,48 @@
+---
+import { getCollection, render } from "astro:content"
+import Layout from "../../layouts/Layout.astro"
+
+export async function getStaticPaths() {
+  const services = await getCollection("services");
+
+  return services.map((service) => ({
+    params: { id: service.slug },
+    props: { service }
+  }))
+}
+
+const { service } = Astro.props
+const { data, slug } = service
+const { title, precio, img, duration, description } = data
+
+const { Content } = await render(service)
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={`${title}, tratamiento estético, clínica estética`}>
+  
+  <section class="max-w-5xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-10 items-center">
+    <aside>
+      <img 
+        src={`/${img}`} 
+        alt={title} 
+        class="rounded-2xl shadow-lg w-full object-cover h-auto max-h-[500px]"
+        transition:name={`img-${slug}`}
+      />
+    </aside>
+
+    <div>
+      <h1 class="text-4xl font-bold text-primary mb-4">{title}</h1>
+      <p class="text-gray-600 mb-2 text-lg"><strong>Duración:</strong> {duration} minutos</p>
+      <p class="text-gray-600 mb-2 text-lg"><strong>Precio:</strong> ${precio.toLocaleString("es-CL")}</p>
+      <p class="text-gray-700 mt-4">{description}</p>
+    </div>
+  </section>
+
+  <section class="prose lg:prose-lg max-w-4xl mx-auto px-4 py-8">
+    <Content />
+  </section>
+
+</Layout>

@@ -1,5 +1,10 @@
 ---
 import "../styles/global.css";
+import Header from '../components/Header.astro';
+import { ClientRouter, fade, slide } from 'astro:transitions'; 
+
+// Supports weights 100-900
+import '@fontsource-variable/onest';
 ---
 
 <!doctype html>
@@ -9,9 +14,13 @@ import "../styles/global.css";
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/icono.png" />
 		<title>CheckVital</title>
+		<ClientRouter />
 	</head>
 	<body>
-		<slot />
+		<Header />
+		<main class="mt-20">
+			<slot />
+		</main>
 	</body>
 </html>
 

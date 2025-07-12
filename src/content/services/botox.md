@@ -1,6 +1,6 @@
 ---
 title: Botox
-precio: 150.000
+precio: 150000
 img: botox.jpg
 duration: 30
 description: El Botox es un tratamiento estético que relaja los músculos faciales responsables de las arrugas, logrando un rostro más descansado, joven y natural. Ideal para prevenir y suavizar líneas de expresión.

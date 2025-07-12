@@ -1,10 +1,50 @@
-<header class="bg-white shadow sticky top-0 z-50">
-  <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-    <img src="/Logo_CheckVital.png" alt="Logo CheckVital" class="h-10" />
-    <nav class="space-x-6 text-sm font-medium">
-      <a href="#inicio" class="text-gray-700 hover:text-primary">Inicio</a>
-      <a href="#servicios" class="text-gray-700 hover:text-primary">Servicios</a>
-      <a href="#contacto" class="text-gray-700 hover:text-primary">Contacto</a>
-    </nav>
+<header class="fixed top-0 inset-x-0 z-50">
+  <!-- Barra principal del header -->
+  <div class="bg-white/70 backdrop-blur-md shadow transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/">
+        <img src="/Logo_CheckVital.png" alt="Logo CheckVital" class="h-12 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110" />
+      </a>
+
+      <!-- Botón menú mobile -->
+      <button 
+        id="menu-toggle"
+        class="md:hidden text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
+        aria-label="Abrir menú">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <!-- Navegación desktop -->
+      <nav class="hidden md:flex md:space-x-6 text-m font-medium md:items-center">
+        <a href="/" class="block px-6 py-3 text-gray-700 hover:text-primary">Inicio</a>
+        <a href="/servicios" class="block px-6 py-3 text-gray-700 hover:text-primary">Servicios</a>
+        <a href="/contacto" class="block px-6 py-3 text-gray-700 hover:text-primary">Contacto</a>
+      </nav>
+    </div>
   </div>
+
+  <!-- Navegación mobile - separada como hermano -->
+  <nav 
+    id="menu"
+    class="bg-white/70 backdrop-blur-md shadow hidden md:hidden flex-col w-full z-40">
+    <a href="/" class="block px-6 py-3 text-gray-700 hover:text-primary">Inicio</a>
+    <a href="/servicios" class="block px-6 py-3 text-gray-700 hover:text-primary">Servicios</a>
+    <a href="/contacto" class="block px-6 py-3 text-gray-700 hover:text-primary">Contacto</a>
+  </nav>
+
+  <script is:inline>
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('#menu-toggle')) {
+        const menu = document.getElementById('menu');
+        if (menu) {
+          menu.classList.toggle('hidden');
+          menu.classList.toggle('flex');
+        }
+      }
+    });
+  </script>
 </header>

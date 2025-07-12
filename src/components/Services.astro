@@ -6,7 +6,7 @@ const services = await getCollection('services');
 
 <section title="Servicios" class="bg-white py-16">
   <div class="container mx-auto px-4">
-  <h2 class="text-3xl font-bold mb-8 border-b-4 border-primary pb-1 mx-auto text-center w-max">
+  <h2 class="text-3xl font-bold mb-8 border-b-3 border-primary pb-1 mx-auto text-center w-max">
     Nuestros Servicios
   </h2>
     
@@ -20,7 +20,11 @@ const services = await getCollection('services');
             <article>
               <div class="flex flex-col justify-between h-full bg-gray-100 p-6 rounded-lg shadow-lg min-h-[420px] md:min-h-[480px] lg:min-h-[520px]">
                 <div>
-                  <img src={img} alt={title} class="w-full h-48 object-cover rounded-t-lg mb-4" />
+                  <img
+                  transition:name={`img-${slug}`} 
+                  src={img}
+                  alt={title} 
+                  class="w-full h-48 object-cover rounded-t-lg mb-4" />
                   <h3 class="text-xl font-semibold mb-4">{title}</h3>
                   <p>{description}</p>
                 </div>

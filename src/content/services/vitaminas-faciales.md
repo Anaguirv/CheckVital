@@ -1,6 +1,6 @@
 ---
 title: Vitaminas Faciales
-precio: 85.000
+precio: 85000
 img: vitaminas-faciales.jpg
 duration: 40
 description: Las vitaminas faciales revitalizan la piel desde el interior. Aportan nutrientes esenciales que combaten el envejecimiento, mejoran el tono, la textura y la luminosidad de tu rostro.

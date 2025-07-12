@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme{
     --color-primary: #1BBFAF;
@@ -8,3 +10,42 @@
     --color-theme-light: #F2F2F2;
     --color-theme-dark: #595959;
 }
+
+body {
+  font-family: 'Onest Variable', sans-serif;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #10b981 #f3f4f6;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #f3f4f6;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #10b981;
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #059669;
+}
+
+/* Selección global para toda la página */
+::selection {
+  background-color: #39BF4D; 
+  color: #ffffff; /* texto blanco */
+}
+
+/* Para Firefox */
+::-moz-selection {
+  background-color: #39BF4D;
+  color: #ffffff;
+}
+

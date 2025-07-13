@@ -1,64 +1,74 @@
-<section 
-    class="bg-[url('/acido-hialuronico.jpg')] bg-cover bg-center h-[90vh] flex items-center justify-center text-white text-center
-    mask-b-from-60% mask-b-to-100%"
-    style="clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 50% 100%, 0 90%);"
+
+<section
+  class="relative bg-[url('/acido-hialuronico.jpg')] bg-cover bg-center text-white text-center overflow-hidden 
+             flex items-center justify-center
+             h-[70vh] sm:h-[80vh] md:h-[90vh] 
+             mask-b-from-60% mask-b-to-100%"
+  style="clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 50% 100%, 0 90%);"
+>
+    <div class="px-4 max-w-3xl w-full mt-[-8rem] sm:mt-0">
+    <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] fade-in">
+        ChekVital
+    </h1>
+    <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] fade-in mt-2">
+        Belleza, Salud y Estética
+    </h2>
+    <p class="mt-4 text-base sm:text-lg drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)] fade-in">
+        Tu mejor versión comienza aquí
+    </p>
+    <a
+        href="https://walink.co/cd5e01"
+        target="_blank"
+        class="mt-6 inline-block text-white font-semibold px-6 py-3 rounded-full border-2 border-white 
+            bg-gradient-to-r from-primary to-secondary-light transition duration-300 ease-in-out
+            hover:-translate-y-1 hover:scale-110 hover:bg-secondary-dark metallic-effect"
     >
-  <div>
-    <h1 class="text-4xl md:text-6xl font-bold drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] fade-in">ChekVital</h1>
-    <h1 class="text-3xl md:text-5xl font-bold drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] fade-in">Belleza, Salud y Estética</h1>
-    <p class="mt-4 text-lg drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)] fade-in">Tu mejor versión comienza aquí</p>
-    <a 
-    href="https://walink.co/cd5e01" 
-    target="_blank"
-    class="border-2 border-solid mt-6 inline-block text-white font-semibold px-6 py-3 rounded-full bg-gradient-to-r from-primary to-secondary-light transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-secondary-dark metallic-effect">
-    Agenda tu cita
+        Agenda tu cita
     </a>
-  </div>
+    </div>
+
 </section>
 
 <style>
   .metallic-effect {
     position: relative;
     overflow: hidden;
-}
+  }
 
-.metallic-effect::before {
+  .metallic-effect::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     background: linear-gradient(
-        135deg,
-        transparent 0%,
-        transparent 45%,
-        rgba(255, 255, 255, 0.05) 48%,
-        rgba(255, 255, 255, 0.15) 50%,
-        rgba(255, 255, 255, 0.05) 52%,
-        transparent 55%,
-        transparent 100%
+      135deg,
+      transparent 0%,
+      transparent 45%,
+      rgba(255, 255, 255, 0.05) 48%,
+      rgba(255, 255, 255, 0.15) 50%,
+      rgba(255, 255, 255, 0.05) 52%,
+      transparent 55%,
+      transparent 100%
     );
     transform: translateX(-100%) translateY(100%);
     animation: metallicSweep 4s ease-in-out infinite;
     pointer-events: none;
-}
+  }
 
-@keyframes metallicSweep {
+  @keyframes metallicSweep {
     0% {
-        transform: translateX(-100%) translateY(100%);
+      transform: translateX(-100%) translateY(100%);
     }
     25% {
-        transform: translateX(-50%) translateY(50%);
+      transform: translateX(-50%) translateY(50%);
     }
     50% {
-        transform: translateX(100%) translateY(-100%);
+      transform: translateX(100%) translateY(-100%);
     }
     75% {
-        transform: translateX(50%) translateY(-50%);
+      transform: translateX(50%) translateY(-50%);
     }
     100% {
-        transform: translateX(-100%) translateY(100%);
+      transform: translateX(-100%) translateY(100%);
     }
-}
+  }
 </style>

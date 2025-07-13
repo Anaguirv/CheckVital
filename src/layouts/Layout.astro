@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Header from '../components/Header.astro';
 import { ClientRouter, fade, slide } from 'astro:transitions'; 
+import Analytics from '@vercel/analytics/astro'
 
 // Supports weights 100-900
 import '@fontsource-variable/onest';
@@ -16,6 +17,7 @@ import Footer from "../components/Footer.astro";
 		<link rel="icon" type="image/svg+xml" href="/icono.png" />
 		<title>CheckVital</title>
 		<ClientRouter />
+		<Analytics/>
 	</head>
 	<body>
 		<Header />

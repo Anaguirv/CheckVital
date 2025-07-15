@@ -3,7 +3,7 @@ title: Hilos Tensores
 precio: 320000
 img: hilos-tensores.webp
 duration: 60
-description: Los hilos tensores son una alternativa no quirúrgica al lifting facial. Reafirman la piel, combaten la flacidez y estimulan la producción de colágeno, brindando un efecto lifting inmediato y progresivo.
+description: Alternativa no quirúrgica al lifting facial. Reafirman la piel, combaten la flacidez y estimulan la producción de colágeno, brindando un efecto lifting inmediato y progresivo.
 ---
 
 ## Beneficios:

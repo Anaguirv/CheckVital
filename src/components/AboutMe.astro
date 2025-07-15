@@ -1,26 +1,29 @@
----
-// src/components/ClinicaZarorSection.astro
-import ImgClinica from '../assets/ImgClinica.webp'; // Reemplaza con tu imagen real
----
-
 <section class="bg-[--color-theme-light] mb-16 px-4">
   <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
     
-
     <!-- Contenido -->
-    <div class="space-y-6">
-      <h2 class="text-4xl font-bold text-primary"> Hola,<br /><span class="text-theme-dark">soy Evelin Briceño</span></h2>
+    <div class="space-y-6" data-aos="fade-right">
+      <h2 class="text-4xl font-bold text-primary">
+        Hola,<br />
+        <span class="text-theme-dark">soy Evelin Briceño</span>
+      </h2>
+
+      <!-- Imagen solo para móvil -->
+      <div class="block md:hidden">
+        <img src="/ImgClinica.webp" alt="Clínica Dra. Zaror" class="rounded-2xl shadow-lg w-full h-auto object-cover my-4" />
+      </div>
 
       <p class="text-theme-dark text-base leading-relaxed">
-        Enfermera con experiencia de 10 años en trabajo clinico, y gestión hospitalaria,  hace tres años inicie el camino de la estética donde eh aprendido un mundo nuevo lleno de magia y experiencias muy enriquecedoras, viendo cada paciente cumpliendo expectativas por sus tratamientos.</p>
+        Enfermera con experiencia de 10 años en trabajo clínico y gestión hospitalaria. Hace tres años inicié el camino de la estética, donde he descubierto un mundo lleno de magia y experiencias enriquecedoras, viendo cómo cada paciente cumple sus expectativas.
+      </p>
 
       <p class="text-theme-dark text-base leading-relaxed">
-        Checkvital  es el sello de este emprendimiento que nace para brindar atenciones de estética y enfermeria en la ciudad de la Serena, te dejo la invitación para visitarnos en alfalfares, para encontrar el cambio que andas buscando.
+        CheckVital es el sello de este emprendimiento que nace para brindar atenciones de estética y enfermería en la ciudad de La Serena. Te dejo la invitación para visitarnos en Alfalfares, y encontrar el cambio que andas buscando.
       </p>
     </div>
 
-        <!-- Imagen -->
-    <div class="w-full h-full">
+    <!-- Imagen solo para escritorio -->
+    <div class="w-full h-full hidden md:block" data-aos="fade-left">
       <img src="/ImgClinica.webp" alt="Clínica Dra. Zaror" class="rounded-2xl shadow-lg w-full h-auto object-cover" />
     </div>
 

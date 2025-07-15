@@ -8,7 +8,8 @@ const contactInfo = {
   phone: '+56 9 89827644',
   email: 'ebriceno@checkvital.cl',
   instagram: 'https://www.instagram.com/check.vital/',
-  whatsapp: 'https://walink.co/cd5e01'
+  whatsapp: 'https://walink.co/cd5e01',
+  address: 'alfalfares, La Serena, Chile'
 };
 
 // Navigation links
@@ -24,28 +25,29 @@ const infoLinks = [
 
 <footer class="bg-white border-t border-gray-100">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-
-    <!-- Main Footer Content -->
     <section class="py-12">
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 text-center md:text-left">
-        
-        <!-- Brand & Contact -->
+      
+      <!-- Wrapper general -->
+      <div class="grid gap-12 md:grid-cols-3">
+
+        <!-- Brand & Contact: ocupa una sola columna siempre -->
         <div>
           <!-- Logo + Nombre -->
           <div class="flex flex-col md:flex-row space-x-2 items-center md:items-start mb-6 space-y-2">
             <img src="/icono.png" alt="Check Vital Logo" class="w-10 h-10" />
             <h3 class="text-xl font-bold text-gray-900 mt-1">
-              Check <span class="text-primary">Vital</span>
+              Check<span class="text-primary">Vital</span>
             </h3>
           </div>
 
           <!-- Descripción -->
-          <p class="text-[#595959] mb-6 leading-relaxed">
+          <p class="text-[#595959] text-center md:text-start mb-6 leading-relaxed">
             Tratamientos profesionales de belleza con tecnología avanzada y resultados clínicamente probados.
           </p>
 
           <!-- Contacto -->
           <div class="space-y-2">
+            <!-- Teléfono -->
             <div class="flex items-center justify-center md:justify-start space-x-3">
               <svg class="w-4 h-4 text-[#1BBFAF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -54,6 +56,7 @@ const infoLinks = [
               <span class="text-[#595959] text-sm">{contactInfo.phone}</span>
             </div>
 
+            <!-- Email -->
             <div class="flex items-center justify-center md:justify-start space-x-3">
               <svg class="w-4 h-4 text-[#1BBFAF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -61,38 +64,63 @@ const infoLinks = [
               </svg>
               <span class="text-[#595959] text-sm">{contactInfo.email}</span>
             </div>
+
+            <!-- Dirección -->
+            <div class="flex items-center justify-center md:justify-start space-x-3">
+              <svg class="w-4 h-4 text-[#1BBFAF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 11.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M19.5 10.5c0 5-7.5 10.5-7.5 10.5S4.5 15.5 4.5 10.5a7.5 7.5 0 1115 0z" />
+              </svg>
+              <span class="text-[#595959] text-sm">{contactInfo.address}</span>
+            </div>
           </div>
         </div>
 
-        <!-- Tratamientos -->
-        <div>
-          <h4 class="text-gray-900 font-semibold mb-6">Tratamientos</h4>
-          <ul class="space-y-3">
-            {services.map(({ slug, data }) => (
-              <li>
-                <a href={`/servicios/${slug}`} class="text-[#595959] hover:text-primary transition-colors duration-300 text-sm">
-                  {data.title}
-                </a>
-              </li>
-            ))}
-          </ul>
+        <!-- Tratamientos + Información (solo se agrupan en mobile) -->
+        <div class="grid grid-cols-2 gap-6 col-span-1 md:col-span-2">
+
+          <!-- Tratamientos -->
+          <div class="flex items-center justify-center">
+            <div class="inline-block text-left">
+              <h4 class="text-gray-900 font-semibold mb-6">Tratamientos</h4>
+              <ul class="space-y-3">
+                {services.map(({ slug, data }) => (
+                  <li>
+                    <a href={`/servicios/${slug}`} class="text-[#595959] hover:text-primary transition-colors duration-300 text-sm">
+                      {data.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <!-- Información -->
+          <div class="flex items-center justify-center">
+            <div class="inline-block text-left">
+              <h4 class="text-gray-900 font-semibold mb-6">Información</h4>
+              <ul class="space-y-3">
+                {infoLinks.map(({ label, href }) => (
+                  <li>
+                    <a
+                      href={href}
+                      class="text-[#595959] hover:text-[#1BBFAF] transition-colors duration-300 text-sm"
+                    >
+                      {label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
         </div>
 
-        <!-- Información -->
-        <div>
-          <h4 class="text-gray-900 font-semibold mb-6">Información</h4>
-          <ul class="space-y-3">
-            {infoLinks.map(({ label, href }) => (
-              <li>
-                <a href={href} class="text-[#595959] hover:text-[#1BBFAF] transition-colors duration-300 text-sm">
-                  {label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
       </div>
     </section>
-
   </div>
 </footer>
+
+

@@ -8,6 +8,8 @@ import Analytics from '@vercel/analytics/astro'
 import '@fontsource-variable/onest';
 import Footer from "../components/Footer.astro";
 import Banner from "../components/Banner.astro";
+import BannerRRSS from "../components/BannerRRSS.astro";
+
 ---
 
 <!doctype html>
@@ -27,7 +29,18 @@ import Banner from "../components/Banner.astro";
 		</main>
 		<Banner />
 		<Footer />
+		<BannerRRSS />
+	
+	<script>
+		// animation scroll
+		import AOS from 'aos';
+		import 'aos/dist/aos.css';
 
+		AOS.init({
+		duration: 1000,
+		once: true
+		});
+	</script>
 	</body>
 </html>
 

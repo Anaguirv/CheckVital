@@ -3,6 +3,7 @@ import "../styles/global.css";
 import Header from '../components/Header.astro';
 import { ClientRouter, fade, slide } from 'astro:transitions'; 
 import Analytics from '@vercel/analytics/astro'
+import  SpeedInsights  from "@vercel/speed-insights/astro"
 
 // Supports weights 100-900
 import '@fontsource-variable/onest';
@@ -20,7 +21,8 @@ import BannerRRSS from "../components/BannerRRSS.astro";
 		<link rel="icon" type="image/svg+xml" href="/icono.png" />
 		<title>CheckVital</title>
 		<ClientRouter />
-		<Analytics/>
+		<Analytics />
+		<SpeedInsights />
 	</head>
 	<body>
 		<Header />

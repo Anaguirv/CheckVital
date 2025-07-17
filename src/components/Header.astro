@@ -2,10 +2,17 @@
   <!-- Barra principal del header -->
   <div class="bg-white/70 backdrop-blur-md shadow transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-      <!-- Logo -->
-      <a href="/">
-        <img src="/Logo_CheckVital.png" alt="Logo CheckVital" class="h-12 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110" />
+      <!-- Logo + Nombre -->
+
+      <a href="/" aria-label="Ir al inicio" class="block">
+        <div class="flex items-center space-x-2 h-12 px-3 transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+          <img src="/icono.png" alt="Logo de Check Vital" class="w-10 h-10 object-contain" />
+          <h3 class="text-xl font-bold text-gray-900 leading-none">
+            Check<span class="text-primary">Vital</span>
+          </h3>
+        </div>
       </a>
+
 
       <!-- Botón menú mobile -->
       <button 

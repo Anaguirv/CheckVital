@@ -11,6 +11,10 @@ import Footer from "../components/Footer.astro";
 import Banner from "../components/Banner.astro";
 import BannerRRSS from "../components/BannerRRSS.astro";
 
+
+const { title, description } = Astro.props;
+
+
 ---
 
 <!doctype html>
@@ -21,6 +25,7 @@ import BannerRRSS from "../components/BannerRRSS.astro";
 		<link rel="icon" type="image/svg+xml" href="/icono.png" />
 		<title>CheckVital</title>
 		<link rel="sitemap" href="/sitemap-index.xml" />
+		<meta name="google-site-verification" content="Zejn6044y6TfOFZtsX01u4Z7G5XMisEzgTmB6hwNyXo" />
 		<ClientRouter />
 		<Analytics />
 		<SpeedInsights />

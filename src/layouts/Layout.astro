@@ -12,8 +12,15 @@ import Banner from "../components/Banner.astro";
 import BannerRRSS from "../components/BannerRRSS.astro";
 
 
-const { title, description } = Astro.props;
+const { title, description, keywords } = Astro.props;
 
+const defaultTitle = "CheckVital - Belleza, Salud y Estética en La Serena";
+const defaultDescription = "Procedimientos estéticos profesionales con evaluación gratuita. CheckVital es tu clínica estética de confianza en La Serena y Coquimbo.";
+const defaultKeywords = "Estética, salud, belleza, armonización facial, armonización corporal, procedimientos estéticos, bienestar, cuidado personal";
+
+const pageTitle = title ?? defaultTitle;
+const pageDescription = description ?? defaultDescription;
+const pageKeywords = keywords ?? defaultKeywords;
 
 ---
 
@@ -21,15 +28,57 @@ const { title, description } = Astro.props;
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<link rel="icon" type="image/svg+xml" href="/icono.png" />
-		<title>CheckVital</title>
 		<link rel="sitemap" href="/sitemap-index.xml" />
+		<meta name="robots" content="index, follow" />
 		<meta name="google-site-verification" content="Zejn6044y6TfOFZtsX01u4Z7G5XMisEzgTmB6hwNyXo" />
-		<meta property="og:title" content="CheckVital - Belleza y Salud en La Serena" />
-		<meta property="og:description" content="Procedimientos estéticos profesionales en La Serena." />
+		<meta name="language" content="es" />
+		
+
+
+		<title>{pageTitle}</title>
+		<meta name="description" content={pageDescription} />
+		<meta name="keywords" content={pageKeywords} />
+		<meta name="author" content="CheckVital" />
+
+		<!-- Open Graph -->
+		<meta property="og:title" content={pageTitle} />
+		<meta property="og:description" content={pageDescription} />
 		<meta property="og:image" content="/opengraph-image.jpg" />
+		<meta property="og:url" content="https://checkvital.cl" />
+		<meta property="og:type" content="website" />
+
+		<!-- Twitter Card -->
 		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={pageTitle} />
+		<meta name="twitter:description" content={pageDescription} />
+		<meta name="twitter:image" content="/opengraph-image.jpg" />
+
+		<!-- Schema.org JSON-LD -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "MedicalBusiness",
+			"name": "CheckVital SPA",
+			"description": "Clínica estética en La Serena, especializada en armonización facial y corporal. Ofrecemos procedimientos estéticos profesionales con precios accesibles.",
+			"url": "https://checkvital.cl",
+			"image": "https://checkvital.cl/opengraph-image.jpg",
+			"telephone": "+56989827644",
+			"address": {
+			"@type": "PostalAddress",
+			"streetAddress": "Calle Central 95, parcela 36",
+			"addressLocality": "La Serena",
+			"addressRegion": "Coquimbo",
+			"addressCountry": "Chile"
+			},
+			"sameAs": [
+			"https://www.instagram.com/check.vital"
+			]
+		}
+		</script>
+
 		<ClientRouter />
 		<Analytics />
 		<SpeedInsights />

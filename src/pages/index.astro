@@ -8,12 +8,17 @@ import GoogleReview from '../components/GoogleReview.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const title = "CheckVital - Belleza, Salud y Estética en La Serena";
+const description = "Especialistas en tratamientos de armonización facial, rejuvenecimiento, botox, limpieza facial y más. ¡Agenda una evaluación gratuita con nuestros expertos en estética avanzada!";
+const keywords = "Estética, salud, belleza, armonización facial, armonización corporal, procedimientos estéticos, bienestar, cuidado personal";
+
+
 ---
 
 <Layout 
-	title="Empresa del rubro de la estética, salud y belleza, se realizan procedimientos para la armonización facial y corporal."
-	description="CheckVital es una empresa dedicada a la estética, salud y belleza, especializada en procedimientos de armonización facial y corporal. Nuestro objetivo es brindar servicios de alta calidad para mejorar la apariencia y el bienestar de nuestros clientes."
-	keywords="estética, salud, belleza, armonización facial, armonización corporal, procedimientos estéticos, bienestar, cuidado personal">
+	title={title}
+  	description={description}
+ 	keywords={keywords}>
 	
 	<Hero />
 	<GoogleReview />

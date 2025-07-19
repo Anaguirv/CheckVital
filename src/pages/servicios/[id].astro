@@ -1,6 +1,7 @@
 ---
-import { getCollection, render } from "astro:content"
-import Layout from "../../layouts/Layout.astro"
+import { getCollection, render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import CtaWhatsApp from "../../components/CtaWhatsApp.astro";
 
 export async function getStaticPaths() {
   const services = await getCollection("services");
@@ -8,14 +9,14 @@ export async function getStaticPaths() {
   return services.map((service) => ({
     params: { id: service.slug },
     props: { service }
-  }))
+  }));
 }
 
-const { service } = Astro.props
-const { data, slug } = service
-const { title, precio, img, duration, description } = data
+const { service } = Astro.props;
+const { data, slug } = service;
+const { title, precio, img, duration, description } = data;
 
-const { Content } = await render(service)
+const { Content } = await render(service);
 ---
 
 <Layout
@@ -38,11 +39,15 @@ const { Content } = await render(service)
       <p class="text-gray-600 mb-2 text-lg"><strong>Duración:</strong> {duration} minutos</p>
       <p class="text-gray-600 mb-2 text-lg"><strong>Precio:</strong> ${precio.toLocaleString("es-CL")}</p>
       <p class="text-gray-700 mt-4">{description}</p>
+
+      <!-- CTA integrado -->
+      <div class="mt-8">
+        <CtaWhatsApp servicio={title} />
+      </div>
     </div>
   </section>
 
   <section class="prose lg:prose-lg max-w-4xl mx-auto px-4 py-8">
     <Content />
   </section>
-
 </Layout>

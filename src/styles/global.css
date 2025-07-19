@@ -67,6 +67,12 @@ body {
     }
 }
 
+/* Ver cuadriculas de la pagina*/
+/* * {
+  outline: 1px solid red !important;
+} */
+
 html, body {
   overflow-x: hidden;
 }
+

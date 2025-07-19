@@ -16,7 +16,7 @@
   <a href="https://wa.me/56989827644" target="_blank"><img alt="WhatsApp" src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"></a>
 </p>
 
----
+
 
 ## 🚀 1. Características Principales
 
@@ -27,7 +27,7 @@
 - 🔒 Código optimizado, limpio y SEO-ready
 - 🎯 Enfocado en conversión y reputación local
 
----
+
 
 ## 🎯 2. Alcance del Proyecto
 
@@ -188,67 +188,7 @@ npm install
 
 # 3. Iniciar entorno de desarrollo
 npm run dev
-
-
 ```
-# Desarrollo
-
-## 🧑‍💻 Historias de Usuario
-
-### HU01 - Contacto rápido
-> Como usuario interesado en estética,  
-> quiero contactar rápidamente por WhatsApp,  
-> para agendar una evaluación sin perder tiempo.
-
-### HU02 - Visualización de servicios
-> Como usuario interesado en estética facial,  
-> quiero ver los servicios y precios fácilmente,  
-> para elegir el que mejor se adapte a mi necesidad.
-
-### HU03 - Evaluación gratuita
-> Como potencial cliente que no está seguro,  
-> quiero una opción clara para solicitar evaluación gratuita,  
-> para sentirme más seguro antes de decidir.
-
-### HU04 - Redirección a redes sociales
-> Como usuaria frecuente de Instagram,  
-> quiero enviar un mensaje directo desde la página,  
-> para preguntar rápidamente por promociones.
-
-### HU05 - Confianza y estética
-> Como visitante nuevo,  
-> quiero ver testimonios e imágenes reales del centro,  
-> para sentirme confiado y cómodo con el servicio.
-
-
-## ✅ Tareas de Programación
-
-### 🎨 UI & Diseño
-- [x] Implementar layout base con Tailwind CSS
-- [x] Crear sección hero con eslogan y CTA (Call To Action)
-- [x] Diseñar componente de listado de servicios
-- [x] Agregar testimonios y sección de promociones
-
-### 📲 Integraciones
-- [x] Botón WhatsApp con mensaje automático
-- [x] Botón Instagram con redirección
-- [x] Selector de procedimiento → trigger contacto
-
-### 🌐 Funcionalidades
-- [x] Mapa de ubicación embebido (Google Maps)
-- [x] Formulario de contacto con selección de procedimiento
-- [x] Animaciones con AOS en secciones clave
-
-### 🔧 Optimización & SEO
-- [x] Configurar meta tags para SEO local
-- [ ] Optimizar imágenes y carga diferida
-- [x] Agregar sitemap y archivo robots.txt
-
-### 🧪 QA y Pruebas
-- [x] Pruebas en dispositivos móviles (iOS / Android)
-- [x] Validación de enlaces y botones funcionales
-- [ ] Test de velocidad con Vercel Speed Insights
-
 
 ## 📜 Licencia
 Este proyecto está bajo licencia MIT — libre para usar, mejorar y compartir ✨

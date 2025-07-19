@@ -1,0 +1,9 @@
+---
+// Botón CTA para usar en servicios
+const { servicio } = Astro.props;
+const msg = encodeURIComponent(`Hola! Quiero una evaluación gratuita para el servicio de ${servicio}`);
+const url = `https://wa.me/56989827644?text=${msg}`;
+---
+<a href={url} target="_blank" class="inline-block bg-primary text-white px-4 py-2 rounded-lg shadow hover:bg-primary/80 transition">
+  Solicitar Evaluación Gratuita
+</a>

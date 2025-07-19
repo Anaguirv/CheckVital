@@ -2,16 +2,17 @@
 <header class="fixed top-0 inset-x-0 z-50" id="header">
   <!-- Barra principal del header -->
   <div class="bg-white/70 backdrop-blur-md shadow transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between overflow-hidden">
       <!-- Logo + Nombre -->
-      <a href="#inicio" aria-label="Ir al inicio" class="block">
-        <div class="flex items-center space-x-2 h-12 px-3 transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+      <a href="/#inicio" onclick="handleNavClick(event, 'inicio')" class="block">
+        <div class="flex items-center space-x-2 h-12 px-3 transition-transform duration-300 ease-in-out hover:scale-[1.05] origin-center">
           <img src="/icono.png" alt="Logo de Check Vital" class="w-10 h-10 object-contain" />
           <h3 class="text-xl font-bold text-gray-900 leading-none">
             Check<span class="text-primary">Vital</span>
           </h3>
         </div>
       </a>
+
 
       <!-- Botón menú mobile -->
       <button 
@@ -26,49 +27,35 @@
 
       <!-- Navegación desktop -->
       <nav class="hidden md:flex md:space-x-6 text-m font-medium md:items-center">
-        <a href="#inicio" onclick="handleAnchorNav(event, 'inicio')" class="block px-6 py-3 text-gray-700 hover:text-primary">Inicio</a>
-        <a href="#servicios" onclick="handleAnchorNav(event, 'tratamientos')" class="block px-6 py-3 text-gray-700 hover:text-primary">Servicios</a>
-        <a href="#contacto" onclick="handleAnchorNav(event, 'contacto')" class="block px-6 py-3 text-gray-700 hover:text-primary">Contacto</a>
+        <a href="/#inicio" onclick="handleNavClick(event, 'inicio')" class="nav-link block px-6 py-3 text-gray-700 hover:text-primary">Inicio</a>
+        <a href="/#tratamientos" onclick="handleNavClick(event, 'tratamientos')" class="nav-link block px-6 py-3 text-gray-700 hover:text-primary">Servicios</a>
+        <a href="/#contacto" onclick="handleNavClick(event, 'contacto')" class="nav-link block px-6 py-3 text-gray-700 hover:text-primary">Contacto</a>
       </nav>
     </div>
   </div>
 
-  <!-- Navegación mobile - separada como hermano -->
-  <nav 
-    id="menu"
-    class="bg-white/70 backdrop-blur-md shadow hidden md:hidden flex-col w-full z-40">
-    <a href="/#" class="block px-6 py-3 text-gray-700 hover:text-primary transition-colors duration-300 ">Inicio</a>
-    <a href="/#" class="block px-6 py-3 text-gray-700 hover:text-primary transition-colors duration-300">Servicios</a>
-    <a href="/#" class="block px-6 py-3 text-gray-700 hover:text-primary transition-colors duration-300">Contacto</a>
+  <!-- navegación mobile -->
+  <nav id="menu" class="bg-white/70 backdrop-blur-md shadow hidden md:hidden flex-col w-full z-40">
+    <a href="/#" onclick="handleNavClick(event, 'inicio')" class="block px-6 py-3 text-gray-700 hover:text-primary">Inicio</a>
+    <a href="/#" onclick="handleNavClick(event, 'tratamientos')" class="block px-6 py-3 text-gray-700 hover:text-primary">Servicios</a>
+    <a href="/#" onclick="handleNavClick(event, 'contacto')" class="block px-6 py-3 text-gray-700 hover:text-primary">Contacto</a>
   </nav>
 
-  <!-- Menu mobile oculto -->
-  <script is:inline>
-    document.addEventListener('click', function(e) {
-      if (e.target.closest('#menu-toggle')) {
-        const menu = document.getElementById('menu');
-        if (menu) {
-          menu.classList.toggle('hidden');
-          menu.classList.toggle('flex');
-        }
-      }
-    });
+</header>
 
-  </script>
 
-  <!-- links navegación -->
-  <script is:inline>
-    function handleAnchorNav(event, id) {
-      event.preventDefault();
-      const currentPath = window.location.pathname;
-      if (currentPath !== '/') {
-        window.location.href = `/#${id}`;
-      } else {
-        const el = document.getElementById(id);
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth' });
-        }
+<!-- Menu mobile oculto -->
+<script is:inline>
+  document.addEventListener('click', function(e) {
+    if (e.target.closest('#menu-toggle')) {
+      const menu = document.getElementById('menu');
+      if (menu) {
+        menu.classList.toggle('hidden');
+        menu.classList.toggle('flex');
       }
     }
-  </script>
-</header>
+  });
+</script>
+
+
+

@@ -26,6 +26,10 @@ const { title, description } = Astro.props;
 		<title>CheckVital</title>
 		<link rel="sitemap" href="/sitemap-index.xml" />
 		<meta name="google-site-verification" content="Zejn6044y6TfOFZtsX01u4Z7G5XMisEzgTmB6hwNyXo" />
+		<meta property="og:title" content="CheckVital - Belleza y Salud en La Serena" />
+		<meta property="og:description" content="Procedimientos estéticos profesionales en La Serena." />
+		<meta property="og:image" content="/opengraph-image.jpg" />
+		<meta name="twitter:card" content="summary_large_image" />
 		<ClientRouter />
 		<Analytics />
 		<SpeedInsights />
@@ -38,7 +42,12 @@ const { title, description } = Astro.props;
 		<Banner />
 		<Footer />
 		<BannerRRSS />
-	
+
+		<a href="https://wa.me/56989827644" target="_blank"
+    		class="fixed bottom-6 right-6 z-50 bg-green-500 p-3 rounded-full shadow-lg hover:bg-green-600 transition">
+      		<img src="whatsapp.svg" alt="WhatsApp" class="w-6 h-6" />
+    	</a>
+
 	<script>
 		// animation scroll
 		import AOS from 'aos';
@@ -48,14 +57,32 @@ const { title, description } = Astro.props;
 		duration: 1000,
 		once: true
 		});
+	</script>	
+
+	<script is:inline>
+		function handleNavClick(e, section) {
+			e.preventDefault();
+			const currentPath = window.location.pathname;
+			if (currentPath !== '/') {
+			sessionStorage.setItem('scrollToSection', section);
+			window.location.href = '/';
+			} else {
+			document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
+			}
+		}
+
+		// Al volver a la home
+		window.addEventListener('DOMContentLoaded', () => {
+			const section = sessionStorage.getItem('scrollToSection');
+			if (section) {
+			sessionStorage.removeItem('scrollToSection');
+			setTimeout(() => {
+				document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
+			}, 300); // esperar a que todo cargue
+			}
+		});
 	</script>
-	
 
-
-
-
-
-	
 
 	</body>
 </html>

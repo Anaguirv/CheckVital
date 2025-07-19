@@ -16,7 +16,6 @@
   <a href="https://wa.me/56989827644" target="_blank"><img alt="WhatsApp" src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"></a>
 </p>
 
----
 
 ## 🚀 Características Principales
 
@@ -27,7 +26,6 @@
 - 🔒 Código optimizado, limpio y SEO-ready
 - 🎯 Enfocado en conversión y reputación local
 
----
 
 ## 🛠️ Tecnologías Utilizadas
 
@@ -40,7 +38,6 @@
 | 💬 WhatsApp & Instagram | Integración directa con clientes            |
 | 📍 Google Maps       | Ubicación del box de atención en La Serena     |
 
----
 
 ## 🧩 Estructura del Proyecto
 
@@ -72,7 +69,6 @@ npm run dev
 
 ```
 
----
 
 ## 🧑‍💻 Historias de Usuario
 
@@ -101,7 +97,6 @@ npm run dev
 > quiero ver testimonios e imágenes reales del centro,  
 > para sentirme confiado y cómodo con el servicio.
 
----
 
 ## ✅ Tareas de Programación
 
@@ -130,10 +125,6 @@ npm run dev
 - [x] Pruebas en dispositivos móviles (iOS / Android)
 - [x] Validación de enlaces y botones funcionales
 - [ ] Test de velocidad con Vercel Speed Insights
-
----
-
-
 
 
 ## 📜 Licencia

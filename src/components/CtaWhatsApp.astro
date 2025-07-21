@@ -18,3 +18,45 @@ const encodedMsg = encodeURIComponent(mensaje);
   <img src="/whatsapp.svg" alt="WhatsApp" class="w-10 h-10" />
   <span>Solicitar Evaluación Gratuita</span>
 </button>
+
+
+<!-- boton de wsp para solicitar servicio -->
+	<script is:inline>
+		(() => {
+			const init = () => {
+			const botones = document.querySelectorAll(".cta-wsp");
+			botones.forEach((button) => {
+				if (button.dataset.bound === "true") return;
+
+				const numero = button.getAttribute("data-numero");
+				const msg = button.getAttribute("data-msg");
+
+				if (!numero || !msg) return;
+
+				button.addEventListener("click", () => {
+				const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+				const url = isMobile
+					? `https://wa.me/${numero}?text=${msg}`
+					: `https://web.whatsapp.com/send?phone=${numero}&text=${msg}`;
+
+				if (typeof gtag === "function") {
+					gtag("event", "click_whatsapp", {
+					event_category: "conversion",
+					event_label: decodeURIComponent(msg),
+					});
+				}
+
+				window.open(url, "_blank");
+				});
+
+				button.dataset.bound = "true";
+			});
+			};
+
+			// Ejecutar siempre que la página cargue o cambie dinámicamente
+			init();
+			document.addEventListener("astro:after-swap", init);
+			document.addEventListener("astro:page-load", init);
+			document.addEventListener("astro:after-render", init);
+		})();
+	</script>

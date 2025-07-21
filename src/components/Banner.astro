@@ -50,3 +50,35 @@ const contactInfo = {
     </div>
   </div>
 </section>
+
+	
+	<!-- boton banner -->
+	<script is:inline>
+		const bannerBtn = document.getElementById("banner-wsp");
+
+		if (bannerBtn && bannerBtn.dataset.bound !== "true") {
+		bannerBtn.dataset.bound = "true";
+
+		bannerBtn.addEventListener("click", (e) => {
+			e.preventDefault();
+
+			const numero = bannerBtn.getAttribute("data-numero");
+			const msg = encodeURIComponent(bannerBtn.getAttribute("data-msg") || "");
+
+			const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+			const url = isMobile
+			? `https://wa.me/${numero}?text=${msg}`
+			: `https://web.whatsapp.com/send?phone=${numero}&text=${msg}`;
+
+			if (typeof gtag === "function") {
+			gtag("event", "click_whatsapp_banner", {
+				event_category: "conversion",
+				event_label: decodeURIComponent(msg),
+			});
+			}
+
+			window.open(url, "_blank");
+		});
+		}
+
+	</script>

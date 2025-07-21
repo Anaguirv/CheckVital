@@ -1,49 +1,9 @@
 ---
-// Componente sin props, autocontenible
+// GoogleReview.astro
 ---
 
-<section class="pt-16" id="google-reviews">
-  <div class="max-w-6xl mx-auto px-4 text-center">
-    <div id="google-reviews-widget-placeholder"></div>
-  </div>
-
-  <script is:inline>
-    const widgetId = "elfsight-app-fee26278-469e-4bc6-bd96-b98cb1ab5567";
-
-    function loadGoogleReviewWidget() {
-      const placeholder = document.getElementById('google-reviews-widget-placeholder');
-      if (!placeholder || placeholder.hasChildNodes()) return;
-
-      const script = document.createElement('script');
-      script.src = "https://static.elfsight.com/platform/platform.js";
-      script.async = true;
-      placeholder.appendChild(script);
-
-      const widgetDiv = document.createElement('div');
-      widgetDiv.className = widgetId;
-      widgetDiv.setAttribute('data-elfsight-app-lazy', '');
-      placeholder.appendChild(widgetDiv);
-    }
-
-    // Observador para cargar cuando entra en vista
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          loadGoogleReviewWidget();
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.3 });
-
-    const reviewsSection = document.getElementById('google-reviews');
-    if (reviewsSection) {
-      observer.observe(reviewsSection);
-
-      // Forzar carga si se llega directo por hash
-      const hash = window.location.hash;
-      if (hash === '#google-reviews') {
-        loadGoogleReviewWidget();
-      }
-    }
-  </script>
+<section id="google-review-widget" class="my-8 w-full max-w-6xl mx-auto px-4">
+  <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+  <div class="elfsight-app-fee26278-469e-4bc6-bd96-b98cb1ab5567" data-elfsight-app-lazy></div>
 </section>
+

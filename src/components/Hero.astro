@@ -74,3 +74,33 @@
     }
   }
 </style>
+
+
+<script is:inline>
+  const heroLink = document.getElementById("hero-wsp");
+
+  if (heroLink && heroLink.dataset.bound !== "true") {
+  heroLink.dataset.bound = "true";
+
+  heroLink.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const numero = heroLink.getAttribute("data-numero");
+    const msg = encodeURIComponent(heroLink.getAttribute("data-msg") || "");
+
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const url = isMobile
+    ? `https://wa.me/${numero}?text=${msg}`
+    : `https://web.whatsapp.com/send?phone=${numero}&text=${msg}`;
+
+    if (typeof gtag === "function") {
+    gtag("event", "click_whatsapp_hero", {
+      event_category: "conversion",
+      event_label: decodeURIComponent(msg),
+    });
+    }
+
+    window.open(url, "_blank");
+  });
+  }
+</script>

@@ -35,8 +35,6 @@ const pageKeywords = keywords ?? defaultKeywords;
 		<meta name="robots" content="index, follow" />
 		<meta name="google-site-verification" content="Zejn6044y6TfOFZtsX01u4Z7G5XMisEzgTmB6hwNyXo" />
 		<meta name="language" content="es" />
-		
-
 
 		<title>{pageTitle}</title>
 		<meta name="description" content={pageDescription} />
@@ -62,7 +60,7 @@ const pageKeywords = keywords ?? defaultKeywords;
 			"@context": "https://schema.org",
 			"@type": "MedicalBusiness",
 			"name": "CheckVital SPA",
-			"description": "Clínica estética en La Serena, especializada en armonización facial y corporal. Ofrecemos procedimientos estéticos profesionales con precios accesibles.",
+			"description": "Centro de estética en La Serena, especializada en armonización facial y corporal. Ofrecemos procedimientos estéticos profesionales con precios accesibles.",
 			"url": "https://checkvital.cl",
 			"image": "https://checkvital.cl/opengraph-image.jpg",
 			"telephone": "+56989827644",
@@ -92,46 +90,6 @@ const pageKeywords = keywords ?? defaultKeywords;
 		<Footer />
 		<BannerRRSS />
 
-		<a
-		href="#"
-		id="wsp-float"
-		data-numero="56989827644"
-		data-msg="Hola! Quiero agendar una evaluación gratuita"
-		class="fixed bottom-6 right-6 z-50  bg-secondary-light p-3 rounded-full shadow-lg hover:bg-green-600 transition cursor-pointer"
-		>
-		<img src="/whatsapp.svg" alt="WhatsApp" class="w-8 h-8" />
-		</a>
-	
-		<!-- Boton flotante wsp -->
-	<script is:inline>
-		const floatWsp = document.getElementById("wsp-float");
-
-		if (floatWsp && floatWsp.dataset.bound !== "true") {
-		floatWsp.dataset.bound = "true";
-
-		floatWsp.addEventListener("click", (e) => {
-			e.preventDefault();
-
-			const numero = floatWsp.getAttribute("data-numero");
-			const msg = encodeURIComponent(floatWsp.getAttribute("data-msg") || "");
-
-			const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-			const url = isMobile
-			? `https://wa.me/${numero}?text=${msg}`
-			: `https://web.whatsapp.com/send?phone=${numero}&text=${msg}`;
-
-			if (typeof gtag === "function") {
-			gtag("event", "click_whatsapp_float", {
-				event_category: "conversion",
-				event_label: decodeURIComponent(msg),
-			});
-			}
-
-			window.open(url, "_blank");
-		});
-		}
-	</script>
-
 	<script>
 		// animation scroll
 		import AOS from 'aos';
@@ -143,130 +101,7 @@ const pageKeywords = keywords ?? defaultKeywords;
 		});
 	</script>	
 
-	<script is:inline>
-		function handleNavClick(e, section) {
-			e.preventDefault();
-			const currentPath = window.location.pathname;
-			if (currentPath !== '/') {
-			sessionStorage.setItem('scrollToSection', section);
-			window.location.href = '/';
-			} else {
-			document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
-			}
-		}
 
-		// Al volver a la home
-		window.addEventListener('DOMContentLoaded', () => {
-			const section = sessionStorage.getItem('scrollToSection');
-			if (section) {
-			sessionStorage.removeItem('scrollToSection');
-			setTimeout(() => {
-				document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
-			}, 300); // esperar a que todo cargue
-			}
-		});
-	</script>
-
-	<!-- boton de wsp para solicitar servicio -->
-	<script is:inline>
-		(() => {
-			const init = () => {
-			const botones = document.querySelectorAll(".cta-wsp");
-			botones.forEach((button) => {
-				if (button.dataset.bound === "true") return;
-
-				const numero = button.getAttribute("data-numero");
-				const msg = button.getAttribute("data-msg");
-
-				if (!numero || !msg) return;
-
-				button.addEventListener("click", () => {
-				const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-				const url = isMobile
-					? `https://wa.me/${numero}?text=${msg}`
-					: `https://web.whatsapp.com/send?phone=${numero}&text=${msg}`;
-
-				if (typeof gtag === "function") {
-					gtag("event", "click_whatsapp", {
-					event_category: "conversion",
-					event_label: decodeURIComponent(msg),
-					});
-				}
-
-				window.open(url, "_blank");
-				});
-
-				button.dataset.bound = "true";
-			});
-			};
-
-			// Ejecutar siempre que la página cargue o cambie dinámicamente
-			init();
-			document.addEventListener("astro:after-swap", init);
-			document.addEventListener("astro:page-load", init);
-			document.addEventListener("astro:after-render", init);
-		})();
-	</script>
-
-	<script is:inline>
-		const heroLink = document.getElementById("hero-wsp");
-
-		if (heroLink && heroLink.dataset.bound !== "true") {
-		heroLink.dataset.bound = "true";
-
-		heroLink.addEventListener("click", (e) => {
-			e.preventDefault();
-
-			const numero = heroLink.getAttribute("data-numero");
-			const msg = encodeURIComponent(heroLink.getAttribute("data-msg") || "");
-
-			const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-			const url = isMobile
-			? `https://wa.me/${numero}?text=${msg}`
-			: `https://web.whatsapp.com/send?phone=${numero}&text=${msg}`;
-
-			if (typeof gtag === "function") {
-			gtag("event", "click_whatsapp_hero", {
-				event_category: "conversion",
-				event_label: decodeURIComponent(msg),
-			});
-			}
-
-			window.open(url, "_blank");
-		});
-		}
-	</script>
-	
-	<!-- boton banner -->
-	<script is:inline>
-		const bannerBtn = document.getElementById("banner-wsp");
-
-		if (bannerBtn && bannerBtn.dataset.bound !== "true") {
-		bannerBtn.dataset.bound = "true";
-
-		bannerBtn.addEventListener("click", (e) => {
-			e.preventDefault();
-
-			const numero = bannerBtn.getAttribute("data-numero");
-			const msg = encodeURIComponent(bannerBtn.getAttribute("data-msg") || "");
-
-			const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-			const url = isMobile
-			? `https://wa.me/${numero}?text=${msg}`
-			: `https://web.whatsapp.com/send?phone=${numero}&text=${msg}`;
-
-			if (typeof gtag === "function") {
-			gtag("event", "click_whatsapp_banner", {
-				event_category: "conversion",
-				event_label: decodeURIComponent(msg),
-			});
-			}
-
-			window.open(url, "_blank");
-		});
-		}
-
-	</script>
 
 	</body>
 </html>

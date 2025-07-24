@@ -14,12 +14,12 @@ const contactInfo = {
 
 // Navigation links
 const infoLinks = [
-  { label: 'Sobre Nosotros', href: '#' },
-  { label: 'Nuestro Equipo', href: '#' },
-  { label: 'Tecnología', href: '# ' },
-  { label: 'Resultados', href: '#' },
-  { label: 'Contacto', href: '#' },
-  { label: 'Ubicación', href: '#' }
+  { label: 'Sobre Nosotros', target: 'about-me' },
+  // { label: 'Box de procedimientos', target: '#' },
+  // { label: 'Tecnología', target: '# ' },
+  // { label: 'Resultados', target: '#' },
+  { label: 'Contacto', target: 'contacto' },
+  { label: 'Ubicación', target: 'mapa' }
 ];
 ---
 
@@ -98,14 +98,14 @@ const infoLinks = [
           </div>
 
           <!-- Información -->
-          <div class="flex items-center justify-center">
+          <div class="flex  justify-center">
             <div class="inline-block text-left">
               <h4 class="text-gray-900 font-semibold mb-6">Información</h4>
               <ul class="space-y-3">
-                {infoLinks.map(({ label, href }) => (
+                {infoLinks.map(({ label, target }) => (
                   <li>
                     <a
-                      href={href}
+                      onclick={`navigateTo(event, '${target}')`}
                       class="text-[#595959] hover:text-[#1BBFAF] transition-colors duration-300 text-sm"
                     >
                       {label}

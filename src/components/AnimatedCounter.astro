@@ -1,0 +1,99 @@
+---
+import CheckIcon from '../assets/icons/check-circle.svg';
+import HeartIcon from '../assets/icons/heart.svg';
+import ShieldIcon from '../assets/icons/shield-check.svg';
+import StethoscopeIcon from '../assets/icons/stethoscope.svg';
+
+const {
+  from = 0,
+  to = 100,
+  duration = 2000,
+  prefix = '+',
+  suffix = ' Pacientes felices',
+} = Astro.props;
+---
+
+<section class="py-16 px-4 text-theme-secondary">
+  <div class="max-w-5xl mx-auto flex flex-col items-center text-center">
+
+    <!-- Contador principal -->
+    <div class="flex flex-col sm:flex-row sm:justify-center sm:items-baseline items-center md:items-center text-primary mb-12 text-center gap-2 sm:gap-3">
+      <!-- Prefijo + Número -->
+      <span class="text-5xl sm:text-6xl font-extrabold tracking-tight flex items-baseline font-[tabular-nums]">
+        <span>{prefix}</span>
+        <span
+          class="counter px-1"
+          style="min-width: 3ch"
+          data-from={from}
+          data-to={to}
+          data-duration={duration}
+        >
+          {from.toLocaleString()}
+        </span>
+      </span>
+
+      <!-- Sufijo -->
+      <span class="text-xl sm:text-3xl font-bold sm:ml-2">{suffix}</span>
+    </div>
+
+    <!-- Mini tarjetas con iconos -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-3xl text-left">
+      <div class="flex items-start gap-4">
+        <CheckIcon class="w-6 h-6 text-primary mt-1" />
+        <span class="text-lg font-medium">Efectos visibles desde la primera sesión</span>
+      </div>
+      <div class="flex items-start gap-4">
+        <HeartIcon class="w-6 h-6 text-primary mt-1" />
+        <span class="text-lg font-medium">Atención personalizada en La Serena</span>
+      </div>
+      <div class="flex items-start gap-4">
+        <ShieldIcon class="w-6 h-6 text-primary mt-1" />
+        <span class="text-lg font-medium">Productos certificados</span>
+      </div>
+      <div class="flex items-start gap-4">
+        <StethoscopeIcon class="w-6 h-6 text-primary mt-1" />
+        <span class="text-lg font-medium">Procedimientos ambulatorios y seguros</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Script de animación -->
+<script type="module">
+  const counters = [];
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".counter").forEach((el) => {
+      counters.push(el);
+    });
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.6 });
+
+    counters.forEach(counter => observer.observe(counter));
+  });
+
+  /** @param {HTMLElement} element */
+  function animateCounter(element) {
+    const from = parseInt(element.dataset.from || '0');
+    const to = parseInt(element.dataset.to || '0');
+    const duration = parseInt(element.dataset.duration || '2000');
+    const startTime = performance.now();
+
+    function update(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const current = Math.floor(from + (to - from) * progress);
+      element.textContent = current.toLocaleString();
+      if (progress < 1) requestAnimationFrame(update);
+    }
+
+    requestAnimationFrame(update);
+  }
+</script>

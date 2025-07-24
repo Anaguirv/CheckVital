@@ -1,0 +1,64 @@
+---
+import koru from '../assets/marcas/KORUPHARMA.png';
+import armesso from '../assets/marcas/ARMESSO.jpg';
+import neuramis from '../assets/marcas/neuramis.png';
+import aphodite from '../assets/marcas/aphodite.webp';
+import bottox from '../assets/marcas/botox.png';
+import logozena from '../assets/marcas/logozena.webp';
+import revitrane from '../assets/marcas/revitrane.png';
+
+const {
+  speed = '24s',
+  bgColor = 'bg-card',
+} = Astro.props;
+
+const logos = [
+  { src: koru.src, alt: 'Koru Pharma' },
+  { src: armesso.src, alt: 'Armesso' },
+  { src: neuramis.src, alt: 'Neuramis' },
+  { src: aphodite.src, alt: 'Aphodite' },
+  { src: bottox.src, alt: 'Bottox' },
+  { src: logozena.src, alt: 'Zena' },
+  { src: revitrane.src, alt: 'Revitrane' },
+];
+---
+
+<style>
+@keyframes scroll-left-from-right {
+  0% {
+    transform: translateX(0%);
+    left: 100%;
+  }
+  100% {
+    transform: translateX(-100%);
+    left: 0%;
+  }
+}
+</style>
+
+<section class={`w-full ${bgColor} py-6`}>
+  <!-- Título -->
+  <h2 class="text-center text-lg sm:text-xl font-semibold text-primary/70 mb-6">
+    Marcas que respaldan nuestros tratamientos
+  </h2>
+
+  <!-- Contenedor visible -->
+  <div class="relative overflow-hidden h-32">
+    <!-- Contenido animado centrado verticalmente -->
+    <div
+      class="absolute top-1/2 -translate-y-1/2 flex items-center gap-32 animate-scroll"
+      style={`animation: scroll-left-from-right ${speed} linear infinite;`}
+    >
+      {logos.map((logo) => (
+        <div class="flex items-center min-w-max">
+          <img
+            src={logo.src}
+            alt={logo.alt}
+            class="h-16 md:h-16 sm:h-12 object-contain"
+            loading="lazy"
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,34 +1,65 @@
+---
+const slides = [
+  { image: "/hero/pinkglow.webp", alt: "Tratamiento Pink Glow" },
+  { image: "/hero/amberglow.webp", alt: "Tratamiento Amber Glow" },
+  { image: "/hero/peeling.webp", alt: "Tratamiento Peeling" },
+];
+---
 
-<section
-  id="inicio"
-  class="relative bg-[url('/acido-hialuronico.jpg')] bg-cover bg-center text-white text-center overflow-hidden 
-             flex items-center justify-center
-             h-[70vh] sm:h-[80vh] md:h-[90vh] 
-             mask-b-from-60% mask-b-to-100%"
-  style="clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 50% 100%, 0 90%);"
->
-    <div class="px-4 max-w-3xl w-full mt-[-8rem] sm:mt-0">
-    <h1 class="text-4xl sm:text-4xl md:text-6xl font-bold drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] fade-in">
-        CheckVital<br/><span class="text-3xl sm:text-3xl md:text-5xl">Belleza, Salud y Estética</span>
+<section id="inicio" class="relative isolate w-screen h-[80vh] md:h-[90vh] text-white overflow-hidden flex items-center justify-center">
+  <!-- Carrusel de fondo -->
+  <div class="absolute inset-0 z-0">
+    {slides.map((slide, i) => (
+      <img
+        src={slide.image}
+        alt={slide.alt}
+        class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out  mask-b-from-90% mask-b-to-100%"
+        style={`opacity: ${i === 0 ? 1 : 0}`} 
+        data-hero-slide
+      />
+    ))}
+  </div>
+
+  <!-- Contenido centrado -->
+  <div class="relative z-10 px-4 max-w-3xl mx-auto text-center">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight drop-shadow-md">
+       <br />
+      <span class="text-3xl sm:text-4xl md:text-5xl block mt-2"></span>
     </h1>
-
-    <p class="mt-4 text-base sm:text-lg drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)] fade-in">
-        Tu mejor versión comienza aquí
+    <p class="mt-4 text-base sm:text-lg drop-shadow-sm">
+      
     </p>
-    <a
+<!--     <a
       href="#"
       id="hero-wsp"
       data-numero="56989827644"
       data-msg="Hola! Me gustaría agendar una cita en CheckVital"
       class="mt-6 inline-block text-white font-semibold px-6 py-3 rounded-full border-2 border-white 
-          bg-gradient-to-r from-primary to-secondary-light transition duration-300 ease-in-out
-          hover:-translate-y-1 hover:scale-110 hover:bg-secondary-dark metallic-effect cursor-pointer"
+        bg-gradient-to-r from-primary to-secondary-light transition-transform duration-300 ease-in-out
+        hover:-translate-y-1 hover:scale-110 hover:bg-secondary-dark metallic-effect"
     >
       Agenda tu cita
-    </a>
+    </a> -->
+  </div>
 
-    </div>
+  <!-- Flechas -->
+  <button id="prev" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/30 hover:bg-black/50 p-2 rounded-full">
+    <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M15 19l-7-7 7-7" /></svg>
+  </button>
+  <button id="next" class="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/30 hover:bg-black/50 p-2 rounded-full">
+    <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7" /></svg>
+  </button>
 
+  <!-- Dots -->
+  <div id="dots" class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+    {slides.map((_, i) => (
+      <button
+        class="w-3 h-3 rounded-full bg-white/40 hover:bg-white"
+        data-index={i}
+        aria-label={`Ir al slide ${i + 1}`}
+      ></button>
+    ))}
+  </div>
 </section>
 
 <style>
@@ -75,32 +106,67 @@
   }
 </style>
 
+<!-- Script: carrusel + CTA -->
+<script is:inline type="module">
+  const slides = document.querySelectorAll("[data-hero-slide]");
+  const dots = document.querySelectorAll("#dots button");
+  const prev = document.getElementById("prev");
+  const next = document.getElementById("next");
+  let current = 0;
+  let interval;
 
-<script is:inline>
+  const updateSlide = (index) => {
+    slides.forEach((el, i) => {
+      el.style.opacity = i === index ? "1" : "0";
+    });
+    dots.forEach((dot, i) => {
+      dot.classList.toggle("bg-white", i === index);
+      dot.classList.toggle("bg-white/40", i !== index);
+    });
+    current = index;
+  };
+
+  const nextSlide = () => updateSlide((current + 1) % slides.length);
+  const prevSlide = () => updateSlide((current - 1 + slides.length) % slides.length);
+  const restart = () => {
+    clearInterval(interval);
+    interval = setInterval(nextSlide, 8000);
+  };
+
+  next?.addEventListener("click", () => (nextSlide(), restart()));
+  prev?.addEventListener("click", () => (prevSlide(), restart()));
+  dots.forEach((dot, i) => dot.addEventListener("click", () => (updateSlide(i), restart())));
+
+  // Swipe en mobile
+  let startX = 0;
+  const container = document.querySelector("#inicio");
+  container?.addEventListener("touchstart", (e) => (startX = e.touches[0].clientX));
+  container?.addEventListener("touchend", (e) => {
+    const deltaX = e.changedTouches[0].clientX - startX;
+    if (deltaX < -50) nextSlide();
+    else if (deltaX > 50) prevSlide();
+    restart();
+  });
+
+  updateSlide(0);
+  interval = setInterval(nextSlide, 4000);
+
+  // WhatsApp CTA
   const heroLink = document.getElementById("hero-wsp");
-
-  if (heroLink && heroLink.dataset.bound !== "true") {
-  heroLink.dataset.bound = "true";
-
-  heroLink.addEventListener("click", (e) => {
+  heroLink?.addEventListener("click", (e) => {
     e.preventDefault();
-
-    const numero = heroLink.getAttribute("data-numero");
-    const msg = encodeURIComponent(heroLink.getAttribute("data-msg") || "");
-
+    const numero = heroLink.dataset.numero;
+    const msg = encodeURIComponent(heroLink.dataset.msg ?? "");
     const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
     const url = isMobile
-    ? `https://wa.me/${numero}?text=${msg}`
-    : `https://web.whatsapp.com/send?phone=${numero}&text=${msg}`;
-
+      ? `https://wa.me/${numero}?text=${msg}`
+      : `https://web.whatsapp.com/send?phone=${numero}&text=${msg}`;
     if (typeof gtag === "function") {
-    gtag("event", "click_whatsapp_hero", {
-      event_category: "conversion",
-      event_label: decodeURIComponent(msg),
-    });
+      gtag("event", "click_whatsapp_hero", {
+        event_category: "conversion",
+        event_label: decodeURIComponent(msg),
+      });
     }
-
     window.open(url, "_blank");
   });
-  }
 </script>

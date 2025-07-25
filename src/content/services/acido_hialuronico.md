@@ -4,6 +4,7 @@ precio: 180000
 img: acido-hialuronico.webp
 duration: 45
 description: Tratamiento no invasivo que permite rellenar arrugas, surcos y dar volumen a zonas específicas del rostro. Su efecto es inmediato y natural, devolviendo juventud y frescura a la piel.
+category: rejuvenecimiento
 ---
 
 ## Beneficios:

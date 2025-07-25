@@ -9,7 +9,7 @@ import revitrane from '../assets/marcas/revitrane.svg';
 
 const {
   speed = '24s',
-  bgColor = 'bg-card',
+  bgColor = 'bg-secondary-light/10',
 } = Astro.props;
 
 const logos = [
@@ -36,7 +36,7 @@ const logos = [
 }
 </style>
 
-<section class={`w-full ${bgColor}`}>
+<section class={`w-full ${bgColor} py-8`}>
   <!-- Título -->
   <h2 class="text-center text-lg sm:text-xl font-semibold text-primary/70 mb-6">
     Marcas que respaldan nuestros tratamientos
@@ -54,7 +54,7 @@ const logos = [
           <img
             src={logo.src}
             alt={logo.alt}
-            class="h-16 md:h-16 sm:h-12 object-contain"
+            class="h-24 md:h-28 sm:h-12 object-contain"
             loading="lazy"
           />
         </div>

@@ -4,6 +4,7 @@ precio: 65000
 img: limpieza-facial.jpeg
 duration: 60
 description: Procedimiento que recupera la salud y apariencia de tu rostro.  Elimina puntos negros y células muertas, a través de técnicas especializadas consiguiendo que la piel respire de nuevo y se estimule la producción natural de colágeno y elastina.
+category: cuidado-piel
 ---
 
 ## **Beneficios**:

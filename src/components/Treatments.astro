@@ -1,0 +1,99 @@
+---
+import { getCollection } from 'astro:content';
+
+const treatments = await getCollection("services");
+
+const categories = [
+  {
+    title: "Todos",
+    key: "all"
+  },
+  {
+    title: "Rejuvenecimiento Facial y Anti-Edad",
+    key: "rejuvenecimiento"
+  },
+  {
+    title: "Cuidado y Limpieza de la Piel",
+    key: "cuidado-piel"
+  },
+  {
+    title: "Modelación Corporal",
+    key: "modelacion"
+  }
+];
+---
+
+<section id="tratamientos" class="max-w-7xl mx-auto px-4 py-20">
+  <h2 class="text-4xl font-bold text-center text-primary mb-12">
+    Lista de Tratamientos
+  </h2>
+
+  <!-- Filtro de categorías -->
+  <div class="flex flex-wrap justify-center gap-2 mb-10">
+    {categories.map((cat, index) => (
+      <button
+        type="button"
+        data-category-btn={cat.key}
+        class="px-4 py-2 rounded-full text-sm font-medium text-gray-600 bg-gray-100 hover:bg-primary hover:text-white transition focus:outline-none focus:ring-2 focus:ring-primary"
+        class:list={{
+          'bg-primary/10': index === 0,
+          'text-primary': index === 0,
+          'ring-2': index === 0,
+          'ring-primary': index === 0
+        }}
+        onclick={`filterTreatments('${cat.key}')`}
+      >
+        {cat.title}
+      </button>
+    ))}
+  </div>
+
+  <!-- Grid de tratamientos -->
+  <div
+    id="treatment-grid"
+    class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 auto-rows-[280px]"
+  >
+    {treatments.map((t) => (
+      <a
+        href={`/servicios/${t.slug}`}
+        class="group relative flex flex-col p-4 rounded-2xl bg-white border border-gray-200 shadow hover:shadow-xl transition overflow-hidden hover:-translate-y-1"
+        data-category={t.data.category}
+      >
+        <img
+          src={`/${t.data.img}`}
+          alt={t.data.title}
+          class="h-36 w-full object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500"
+        />
+        <h4 class="text-lg font-bold text-gray-900 mb-1">{t.data.title}</h4>
+        <p class="text-sm text-gray-600 line-clamp-3">{t.data.description}</p>
+        <span
+          class="absolute bottom-4 right-4 text-primary font-medium text-sm opacity-0 group-hover:opacity-100 transition-opacity"
+        >
+          Ver más →
+        </span>
+      </a>
+    ))}
+  </div>
+</section>
+
+<!-- Script de filtrado -->
+<script is:inline>
+  function filterTreatments(key) {
+    const cards = document.querySelectorAll('#treatment-grid > a');
+    const buttons = document.querySelectorAll('[data-category-btn]');
+
+    cards.forEach(card => {
+      const cardCategory = card.getAttribute('data-category');
+      const show = key === 'all' || cardCategory === key;
+      card.classList.toggle('hidden', !show);
+    });
+
+    buttons.forEach(btn => {
+      const active = btn.getAttribute('data-category-btn') === key;
+      btn.classList.toggle('bg-primary/10', active);
+      btn.classList.toggle('text-primary', active);
+      btn.classList.toggle('ring-2', active);
+      btn.classList.toggle('ring-primary', active);
+    });
+  }
+</script>

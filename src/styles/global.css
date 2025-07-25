@@ -4,6 +4,8 @@
 
 @theme{
     --color-primary: #1BBFAF;
+    --color-primary-light: #cef9f1;
+    --color-primary-dark: #119086;
     --color-secondary-light: #3BD952;
     --color-secondary-dark: #39BF4D;
     --color-card: rgba(27, 191, 175, 0.05);

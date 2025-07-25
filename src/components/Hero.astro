@@ -6,14 +6,14 @@ const slides = [
 ];
 ---
 
-<section id="inicio" class="relative isolate w-screen h-[80vh] md:h-[90vh] text-white overflow-hidden flex items-center justify-center">
+<section id="inicio" class="relative isolate  h-[80vh] md:h-[90vh] text-white overflow-hidden flex items-center justify-center">
   <!-- Carrusel de fondo -->
   <div class="absolute inset-0 z-0">
     {slides.map((slide, i) => (
       <img
         src={slide.image}
         alt={slide.alt}
-        class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out  mask-b-from-90% mask-b-to-100%"
+        class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out"
         style={`opacity: ${i === 0 ? 1 : 0}`} 
         data-hero-slide
       />

@@ -4,22 +4,10 @@ import { getCollection } from 'astro:content';
 const treatments = await getCollection("services");
 
 const categories = [
-  {
-    title: "Todos",
-    key: "all"
-  },
-  {
-    title: "Rejuvenecimiento Facial y Anti-Edad",
-    key: "rejuvenecimiento"
-  },
-  {
-    title: "Cuidado y Limpieza de la Piel",
-    key: "cuidado-piel"
-  },
-  {
-    title: "Modelación Corporal",
-    key: "modelacion"
-  }
+  { title: "Todos", key: "all" },
+  { title: "Rejuvenecimiento Facial y Anti-Edad", key: "rejuvenecimiento" },
+  { title: "Cuidado y Limpieza de la Piel", key: "cuidado-piel" },
+  { title: "Modelación Corporal", key: "modelacion" }
 ];
 ---
 
@@ -51,7 +39,7 @@ const categories = [
   <!-- Grid de tratamientos -->
   <div
     id="treatment-grid"
-    class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 auto-rows-[280px]"
+    class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 auto-rows-[360px]"
   >
     {treatments.map((t) => (
       <a
@@ -65,7 +53,9 @@ const categories = [
           class="h-36 w-full object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500"
         />
         <h4 class="text-lg font-bold text-gray-900 mb-1">{t.data.title}</h4>
-        <p class="text-sm text-gray-600 line-clamp-3">{t.data.description}</p>
+        <p class="text-sm text-gray-600 line-clamp-5 mb-6">
+          {t.data.description}
+        </p>
         <span
           class="absolute bottom-4 right-4 text-primary font-medium text-sm opacity-0 group-hover:opacity-100 transition-opacity"
         >

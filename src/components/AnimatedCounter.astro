@@ -8,21 +8,22 @@ const {
   from = 0,
   to = 100,
   duration = 2000,
-  prefix = '+',
+  prefix = ' Más de ',
   suffix = ' Pacientes felices',
 } = Astro.props;
 ---
 
-<section class="px-4 text-theme-secondary py-16 my-16 ">
+<section class="px-4 text-theme-secondary my-16 " 
+    data-aos="fade-up"
+    data-aos-delay="250">
   <div class="max-w-5xl mx-auto flex flex-col items-center text-center">
-
     <!-- Contador principal -->
-    <div class="flex flex-col sm:flex-row sm:justify-center sm:items-baseline items-center md:items-center text-primary mb-12 text-center gap-2 sm:gap-3">
+    <div class="flex flex-col sm:flex-row sm:justify-center sm:items-baseline items-center md:items-center mb-12 text-center gap-2 sm:gap-3">
       <!-- Prefijo + Número -->
+      <span class="text-xl sm:text-5xl font-bold sm:ml-2">{prefix}</span>
       <span class="text-5xl sm:text-6xl font-extrabold tracking-tight flex items-baseline font-[tabular-nums]">
-        <span>{prefix}</span>
         <span
-          class="counter px-1"
+          class="counter px-1 text-primary"
           style="min-width: 3ch"
           data-from={from}
           data-to={to}
@@ -33,11 +34,11 @@ const {
       </span>
 
       <!-- Sufijo -->
-      <span class="text-xl sm:text-3xl font-bold sm:ml-2">{suffix}</span>
+      <span class="text-xl sm:text-5xl font-bold sm:ml-2">{suffix}</span>
     </div>
 
     <!-- Mini tarjetas con iconos -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-3xl text-left">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-3xl text-left text-gray-700">
       <div class="flex items-start gap-4">
         <CheckIcon class="w-6 h-6 text-primary mt-1" />
         <span class="text-lg font-medium">Efectos visibles desde la primera sesión</span>

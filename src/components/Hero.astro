@@ -6,8 +6,12 @@ const slides = [
 ];
 ---
 
-<section id="inicio" class="relative isolate  h-[80vh] md:h-[90vh] text-white overflow-hidden flex items-end justify-center">
-  <!-- Carrusel de fondo -->
+<section id="inicio" 
+class="relative isolate h-[70vh] md:h-[85vh] text-white overflow-hidden flex items-end justify-center"
+style="clip-path: polygon(0 0, 100% 0, 100% 82%, 50% 100%, 50% 100%, 0 82%);">
+
+  <div class="absolute inset-0 bg-black/50"></div>
+<!-- Carrusel de fondo -->
   <div class="absolute inset-0 z-0">
     {slides.map((slide, i) => (
       <img
@@ -22,13 +26,6 @@ const slides = [
 
   <!-- Contenido centrado -->
   <div class="relative z-10 px-4 max-w-3xl mx-auto text-center">
-    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight drop-shadow-md">
-       <br />
-      <span class="text-3xl sm:text-4xl md:text-5xl block mt-2"></span>
-    </h1>
-    <p class="mt-4 text-base sm:text-lg drop-shadow-sm">
-      
-    </p>
      <a
       href="#"
       id="hero-wsp"

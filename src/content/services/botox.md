@@ -1,28 +1,119 @@
 ---
-title: Botox
-precio: 150000
-img: botox.jpg
+title: Botox | Tratamiento para arrugas de expresión y rejuvenecimiento facial
+precio: 160000
+img: botox.webp
 duration: 30
-description: Tratamiento estético que relaja los músculos faciales responsables de las arrugas, logrando un rostro más descansado, joven y natural. Ideal para prevenir y suavizar líneas de expresión.
+description: Botox es un tratamiento estético que relaja los músculos del rostro para suavizar arrugas de expresión en la frente, entrecejo, patas de gallo y contorno de labios. Resultados visibles y naturales.
 category: rejuvenecimiento
+keywords: [botox La Serena, arrugas de expresión, rejuvenecimiento facial sin cirugía, código de barra labios, expresión natural sin arrugas, clínica estética CheckVital]
+slug: botox
 ---
 
-## Beneficios:
-- Suaviza arrugas en frente, entrecejo y patas de gallo.
-- Previene la formación de nuevas líneas de expresión.
-- Efecto lifting sin cirugía.
-- Procedimiento rápido y ambulatorio.
-- Resultados visibles en pocos días.
-- Mejora la simetría del rostro.
+## ¿Qué es el tratamiento con Botox?
 
-## En qué consiste
-Se inyectan pequeñas dosis de toxina botulínica tipo A en músculos específicos del rostro para limitar su contracción. Esto suaviza las arrugas dinámicas, brindando un aspecto rejuvenecido sin alterar la expresión natural.
+<div class="flex flex-col md:flex-row gap-8 items-start my-8">
 
-## Pasos:
+  <!-- Texto -->
+  <div class="w-full md:w-1/2 text-base text-gray-800 space-y-4">
+    <p>
+      <strong>Botox</strong> es un procedimiento estético no quirúrgico que permite <strong>rejuvenecer el rostro</strong> al suavizar las arrugas de expresión más comunes. Es uno de los tratamientos más seguros, rápidos y efectivos para prevenir el envejecimiento facial.
+    </p>
+    <p>
+      Al relajar los músculos responsables de la gesticulación, se logra una piel más lisa y una expresión más descansada, <strong>sin perder naturalidad</strong>.
+    </p>
+  </div>
 
-1. Evaluación del rostro y zonas a tratar.
-2. Limpieza de la piel.
-3. Marcado de puntos de aplicación.
-4. Inyección de la toxina botulínica.
-5. Aplicación de compresas frías.
-6. Indicaciones post tratamiento (no masajear, no acostarse por 4h, etc.).
+  <!-- Imagen -->
+  <div class="w-full md:w-1/2">
+    <img 
+      src="/zonasbotox.webp" 
+      alt="Aplicación del tratamiento con Botox en CheckVital" 
+      class="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg"
+    />
+  </div>
+
+</div>
+
+---
+
+## ¿Cómo actúa?
+
+El producto se aplica mediante **microinyecciones precisas** en zonas clave del rostro. Esto **reduce la contracción muscular** que genera las arrugas dinámicas, logrando una apariencia rejuvenecida desde los primeros días.
+
+> **Es un procedimiento rápido, con molestias mínimas y sin necesidad de reposo.**
+
+Además, en **CheckVital incluimos un retoque gratuito a los 15 días**, si el profesional lo considera necesario.
+
+---
+
+## Zonas más comunes de aplicación
+
+<div class="flex flex-col md:flex-row gap-8 items-start my-8">
+
+  <!-- Lista de zonas -->
+  <div class="w-full md:w-1/2 text-base text-gray-800 space-y-2">
+    <ul class="list-disc pl-5 space-y-2">
+      <li>Frente (arrugas horizontales)</li>
+      <li>Entrecejo (líneas verticales)</li>
+      <li>Patas de gallo (alrededor de los ojos)</li>
+      <li>Contorno de labios ("código de barra")</li>
+      <li>Nariz y cuello (en casos específicos)</li>
+    </ul>
+  </div>
+
+  <!-- Imagen -->
+  <div class="w-full md:w-1/2">
+    <img 
+      src="/botoxasd.webp" 
+      alt="Zonas comunes de aplicación de Botox" 
+      class="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg"
+    />
+  </div>
+</div>
+
+---
+
+## Beneficios del tratamiento con Botox
+
+<div class="flex flex-col md:flex-row gap-8 items-start my-8">
+
+  <!-- Texto -->
+  <div class="w-full md:w-1/2 text-base text-gray-800">
+    <ul class="list-disc pl-5 space-y-2">
+      <li>Suaviza arrugas y líneas de expresión marcadas.</li>
+      <li>Previene el envejecimiento prematuro.</li>
+      <li>Relaja la musculatura facial sin rigidez.</li>
+      <li>Resultados naturales y expresivos.</li>
+      <li>Procedimiento ambulatorio, sin recuperación.</li>
+      <li>Retoque gratuito a los 15 días si es necesario.</li>
+    </ul>
+  </div>
+
+  <!-- Imagen -->
+  <div class="w-full md:w-1/2">
+    <img 
+      src="/botoxayd.webp" 
+      alt="Resultado del tratamiento con Botox en rostro" 
+      class="w-full aspect-[4/3] object-cover rounded-xl shadow-lg"
+    />
+  </div>
+
+</div>
+
+---
+
+## Pasos del tratamiento
+
+1. Evaluación médica personalizada del rostro.
+2. Marcación de las zonas según expresión.
+3. Limpieza y desinfección.
+4. Aplicación del Botox con microinyecciones.
+5. Control y programación de seguimiento.
+6. Recomendaciones de cuidado post procedimiento.
+
+---
+
+## ¿Por qué hacerlo en CheckVital?
+
+En **CheckVital Clínica Estética (La Serena)** trabajamos con **Botox original** (proveedor Medic Dent), aplicado por profesionales altamente capacitados. Nuestro objetivo es lograr resultados sutiles, simétricos y duraderos, sin alterar tu expresión natural.
+

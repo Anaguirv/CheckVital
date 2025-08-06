@@ -8,9 +8,13 @@
         <span class="text-theme-dark">soy Evelyn Briceño</span>
       </h2>
 
-      <!-- Imagen solo para móvil -->
-      <div class="block md:hidden">
-        <img src="/ImgClinica.webp" alt="Enfermera de centro estético" class="rounded-2xl shadow-lg w-full h-auto object-cover my-4" />
+      <!-- Carrusel para móvil -->
+      <div class="block md:hidden relative overflow-hidden rounded-2xl shadow-lg my-4">
+        <div id="carousel-mobile" class="flex transition-transform duration-700 ease-in-out w-full">
+          <img src="/evelyn1.webp" class="w-full object-cover flex-shrink-0" alt="Evelyn Briceño 1" />
+          <img src="/evelyn2.webp" class="w-full object-cover flex-shrink-0" alt="Evelyn Briceño 2" />
+          <img src="/evelyn3.webp" class="w-full object-cover flex-shrink-0" alt="Evelyn Briceño 3" />
+        </div>
       </div>
 
       <p class="text-theme-dark text-base leading-relaxed">
@@ -22,10 +26,33 @@
       </p>
     </div>
 
-    <!-- Imagen solo para escritorio -->
-    <div class="w-full h-full hidden md:block" data-aos="fade-left">
-      <img src="/ImgClinica.webp" alt="Enfermera de centro estético" class="rounded-2xl shadow-lg w-full h-auto object-cover" />
+    <!-- Carrusel para escritorio -->
+    <div class="w-full h-full hidden md:block relative overflow-hidden rounded-2xl shadow-lg" data-aos="fade-left">
+      <div id="carousel-desktop" class="flex transition-transform duration-700 ease-in-out w-full">
+        <img src="/evelyn1.webp" class="w-full object-cover flex-shrink-0" alt="Evelyn Briceño 1" />
+        <img src="/evelyn2.webp" class="w-full object-cover flex-shrink-0" alt="Evelyn Briceño 2" />
+        <img src="/evelyn3.webp" class="w-full object-cover flex-shrink-0" alt="Evelyn Briceño 3" />
+      </div>
     </div>
 
   </div>
 </section>
+
+<!-- Script carrusel -->
+<script is:inline>
+  const initCarousel = (id) => {
+    const container = document.getElementById(id);
+    if (!container) return;
+
+    const totalSlides = container.children.length;
+    let index = 0;
+
+    setInterval(() => {
+      index = (index + 1) % totalSlides;
+      container.style.transform = `translateX(-${index * 100}%)`;
+    }, 4000); // cada 4 segundos
+  };
+
+  initCarousel('carousel-desktop');
+  initCarousel('carousel-mobile');
+</script>

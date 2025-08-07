@@ -143,7 +143,7 @@ Diseño y desarrollo de una landing page persuasiva, responsiva y optimizada par
 ### 🧪 QA y Pruebas
 - [x] Pruebas en dispositivos móviles (iOS / Android)
 - [x] Validación de enlaces, botones y formularios
-- [ ] Test de velocidad con Vercel Speed Insights
+- [X] Test de velocidad con Vercel Speed Insights
 
 
 

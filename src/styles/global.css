@@ -74,6 +74,8 @@ body {
   outline: 1px solid red !important;
 } 
 */
+
+/* Evitar scroll horizontal */
 html, body {
   overflow-x: hidden;
 } 

@@ -3,62 +3,152 @@ import koru from '../assets/marcas/KORUPHARMA.png';
 import armesso from '../assets/marcas/ARMESSO.jpg';
 import neuramis from '../assets/marcas/neuramis.svg';
 import aphodite from '../assets/marcas/aphodite.webp';
-import bottox from '../assets/marcas/BOTOX.svg';
+import botox from '../assets/marcas/BOTOX.svg';
 import logozena from '../assets/marcas/logozena.webp';
 import revitrane from '../assets/marcas/revitrane.svg';
 
-const {
-  speed = '28s',
-  bgColor = 'bg-secondary-light/10',
-} = Astro.props;
+type Props = {
+  speed?: number;
+  bgColor?: string;
+  pauseOnHover?: boolean;
 
-const logos = [
-  { src: koru.src, alt: 'Koru Pharma' },
-  { src: armesso.src, alt: 'Armesso' },
-  { src: neuramis.src, alt: 'Neuramis' },
-  { src: aphodite.src, alt: 'Aphodite' },
-  { src: bottox.src, alt: 'Bottox' },
-  { src: logozena.src, alt: 'Zena' },
-  { src: revitrane.src, alt: 'Revitrane' },
+  /** GAP horizontal por breakpoint */
+  gapX?: string;     // mobile
+  gapXSm?: string;   // ≥640px
+  gapXMd?: string;   // ≥768px
+
+  /** Ancho de celda por breakpoint */
+  cellW?: string;    // mobile
+  cellWSm?: string;  // ≥640px
+  cellWMd?: string;  // ≥768px
+
+  /** Ancho del defuminado en extremos (px, rem o %) */
+  fadeX?: string;
+};
+
+const {
+  speed = 12,
+  bgColor = 'bg-secondary-light/10',
+  pauseOnHover = true,
+
+  gapX   = '0.5rem',
+  gapXSm = '0.75rem',
+  gapXMd = '2rem',
+
+  cellW   = '6rem',
+  cellWSm = '7rem',
+  cellWMd = '8rem',
+
+  fadeX = '10%', // defuminado
+} = Astro.props as Props;
+
+// Normaliza raster/SVG
+const toSrc  = (a: any) => (typeof a === 'string' ? a : a.src);
+const toSize = (a: any) => (typeof a === 'string' ? {} : { width: a.width, height: a.height });
+
+const baseLogos = [
+  { asset: koru,      alt: 'Koru Pharma' },
+  { asset: armesso,   alt: 'Armesso' },
+  { asset: neuramis,  alt: 'Neuramis' },
+  { asset: aphodite,  alt: 'Aphrodite' },
+  { asset: botox,     alt: 'BOTOX' },
+  { asset: logozena,  alt: 'Zena' },
+  { asset: revitrane, alt: 'Revitrane' },
 ];
+
+const logos = baseLogos.map(({ asset, alt }) => ({ src: toSrc(asset), size: toSize(asset), alt }));
 ---
 
 <style>
-@keyframes scroll-left-from-right {
-  0% {
-    transform: translateX(0%);
-    left: 100%;
-  }
-  100% {
-    transform: translateX(-100%);
-    left: 0%;
-  }
+/* Marquee continuo con transform (GPU) */
+@keyframes marquee-left { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .marquee-animate { animation: none !important; } }
+
+/* Row con gap controlado por variables */
+.logo-row { display: flex; align-items: center; column-gap: var(--gap-x); }
+@media (min-width: 640px) { .logo-row { column-gap: var(--gap-x-sm); } }
+@media (min-width: 768px) { .logo-row { column-gap: var(--gap-x-md); } }
+
+/* Celdas de ancho fijo para ver varias marcas a la vez */
+.logo-item { flex: none; width: var(--cell-w); display: flex; align-items: center; justify-content: center; }
+@media (min-width: 640px) { .logo-item { width: var(--cell-w-sm); } }
+@media (min-width: 768px) { .logo-item { width: var(--cell-w-md); } }
+
+/* Defuminado en extremos con mask (independiente del color de fondo) */
+.fade-x-mask {
+  /* Lado izq → centro → der */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 var(--fade-x),
+    #000 calc(100% - var(--fade-x)),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 var(--fade-x),
+    #000 calc(100% - var(--fade-x)),
+    transparent 100%
+  );
 }
 </style>
 
-<section class={`w-full ${bgColor} py-8`}>
-  <!-- Título -->
-  <h2 class="text-center text-lg sm:text-xl font-semibold text-primary/70 mb-6">
+<section class={`w-full ${bgColor} py-6`} aria-labelledby="brands-title">
+  <h2 id="brands-title" class="text-center text-lg sm:text-xl font-semibold text-primary/70 mb-4">
     Marcas que respaldan nuestros tratamientos
   </h2>
 
-  <!-- Contenedor visible -->
-  <div class="relative overflow-hidden h-32">
-    <!-- Contenido animado centrado verticalmente -->
+  <!-- Variables de layout (gap, celdas y fade) -->
+  <div
+    class="group relative overflow-hidden h-16 sm:h-20 md:h-24 fade-x-mask"
+    style={`--gap-x:${gapX}; --gap-x-sm:${gapXSm}; --gap-x-md:${gapXMd};
+            --cell-w:${cellW}; --cell-w-sm:${cellWSm}; --cell-w-md:${cellWMd};
+            --fade-x:${fadeX};`}
+  >
+    <!-- Track animado (duplicado para loop sin saltos) -->
     <div
-      class="absolute top-1/2 -translate-y-1/2 flex items-center gap-32 animate-scroll"
-      style={`animation: scroll-left-from-right ${speed} linear infinite;`}
+      class="marquee-animate absolute inset-y-0 left-0 flex items-center will-change-transform"
+      style={`animation: marquee-left ${speed}s linear infinite; width: max-content; transform: translate3d(0,0,0);`}
+      aria-hidden="true"
     >
-      {logos.map((logo) => (
-        <div class="flex items-center min-w-max">
-          <img
-            src={logo.src}
-            alt={logo.alt}
-            class="h-24 md:h-28 sm:h-12 object-contain"
-            loading="lazy"
-          />
-        </div>
-      ))}
+      <!-- Copia A -->
+      <div class="logo-row">
+        {logos.map(({ src, size, alt }, i) => (
+          <div class="logo-item">
+            <img
+              src={src}
+              alt={alt}
+              class="h-10 sm:h-12 md:h-16 w-auto max-w-full object-contain"
+              loading={i === 0 ? 'eager' : 'lazy'}
+              decoding="async"
+              {...size}
+            />
+          </div>
+        ))}
+      </div>
+
+      <!-- Copia B (oculta a lectores) -->
+      <div class="logo-row" aria-hidden="true">
+        {logos.map(({ src, size }) => (
+          <div class="logo-item">
+            <img
+              src={src}
+              alt=""
+              class="h-10 sm:h-12 md:h-16 w-auto max-w-full object-contain"
+              loading="lazy"
+              decoding="async"
+              {...size}
+            />
+          </div>
+        ))}
+      </div>
     </div>
+
+    {pauseOnHover && (
+      <style is:global>
+        .group:hover .marquee-animate { animation-play-state: paused; }
+      </style>
+    )}
   </div>
 </section>

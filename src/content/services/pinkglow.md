@@ -3,6 +3,7 @@ title: Pink Glow | Tratamiento facial rejuvenecedor con Dermapen
 precio: 130000
 img: pink-glow.webp
 duration: 45
+sesiones: 3
 description: Pink Glow es un tratamiento facial no invasivo que combina 55 activos aplicados con Dermapen. Ilumina, hidrata, aclara manchas y mejora la firmeza y textura de la piel sin dolor. Ideal para todo tipo de piel.
 category: rejuvenecimiento
 keywords: [pink glow, tratamiento con dermapen, rejuvenecimiento facial, vitaminas faciales, tratamiento anti manchas, ácido hialurónico La Serena, estética checkvital]
@@ -47,6 +48,8 @@ Se aplica mediante la técnica de **Dermapen**, un dispositivo moderno de microa
 
 > **La aplicación con Dermapen es indolora, segura, precisa y no requiere tiempo de recuperación.**
 
+Previo al procedimiento, se aplica **anestesia tópica** para garantizar comodidad total del paciente durante toda la sesión.
+
 Gracias a su precisión, permite que los ingredientes trabajen desde el interior, estimulando la producción natural de colágeno y mejorando la calidad cutánea desde la primera sesión.
 
 ---
@@ -90,6 +93,7 @@ Gracias a su precisión, permite que los ingredientes trabajen desde el interior
     <ol class="list-decimal pl-5 space-y-2">
       <li>Evaluación médica profesional para determinar necesidades de la piel.</li>
       <li>Limpieza facial profunda.</li>
+      <li>Aplicación de anestesia tópica para confort del paciente.</li>
       <li>Aplicación del producto con Dermapen.</li>
       <li>Masaje técnico para favorecer absorción.</li>
       <li>Aplicación de mascarilla calmante y protector solar.</li>
@@ -111,6 +115,12 @@ Gracias a su precisión, permite que los ingredientes trabajen desde el interior
 
 ## ¿Por qué elegir CheckVital?
 
-En **CheckVital Clínica Estética en La Serena**, combinamos productos de alta calidad con técnicas profesionales como el **Dermapen**, ofreciendo resultados visibles, seguros y duraderos. Agenda tu evaluación gratuita y descubre cómo recuperar la luminosidad de tu rostro.
+En **CheckVital Clínica Estética en La Serena**, combinamos productos de alta calidad con técnicas profesionales como el **Dermapen**, ofreciendo resultados visibles, seguros y duraderos.
 
----
+**Incluye en el tratamiento:**
+- ✅ Protocolo completo de **3 sesiones**
+- ✅ Producto de marca profesional
+- ✅ Aplicación con Dermapen y anestesia tópica
+- ✅ Evaluación gratuita personalizada
+
+Agenda tu hora y comienza tu proceso de rejuvenecimiento hoy mismo.

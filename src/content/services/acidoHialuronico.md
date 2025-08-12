@@ -24,7 +24,10 @@ En **CheckVital** utilizamos ácido hialurónico de la marca **Neuramis** (prove
   <!-- Texto -->
   <div class="flex-1 space-y-4">
     <p>
-      Se aplica mediante <strong>microinyecciones precisas</strong> en las zonas que se desean tratar. Dependiendo de la necesidad del paciente, se utiliza un ácido con distinta <strong>reticulación y viscosidad</strong>:
+      Se aplica mediante <strong>microinyecciones precisas</strong> en las zonas que se desean tratar. Antes del procedimiento, se aplica <strong>anestesia local tópica</strong> para garantizar la comodidad del paciente y minimizar cualquier molestia.
+    </p>
+    <p>
+      Dependiendo de la necesidad, se utiliza un ácido con distinta <strong>reticulación y viscosidad</strong>:
     </p>
     <ul class="list-disc pl-5">
       <li><strong>Alta reticulación:</strong> ideal para rinomodelación, mentón y mandíbula.</li>
@@ -46,7 +49,6 @@ En **CheckVital** utilizamos ácido hialurónico de la marca **Neuramis** (prove
 
 </div>
 
-
 ---
 
 ## Beneficios del Ácido Hialurónico
@@ -62,7 +64,7 @@ En **CheckVital** utilizamos ácido hialurónico de la marca **Neuramis** (prove
       <li>Corrige surcos, líneas y asimetrías.</li>
       <li>Resultados inmediatos, naturales y reversibles.</li>
       <li>Estimula hidratación y colágeno en la piel.</li>
-      <li>Técnica personalizada y con anestesia local.</li>
+      <li>Procedimiento indoloro gracias a anestesia local.</li>
     </ul>
   </div>
 
@@ -76,8 +78,6 @@ En **CheckVital** utilizamos ácido hialurónico de la marca **Neuramis** (prove
   </div>
 
 </div>
-
-
 
 ---
 
@@ -114,10 +114,11 @@ En **CheckVital** utilizamos ácido hialurónico de la marca **Neuramis** (prove
 
 1. Evaluación médica personalizada.
 2. Limpieza profunda y desinfección del rostro.
-3. Selección del tipo de ácido hialurónico adecuado.
-4. Aplicación mediante microinyecciones localizadas.
-5. Moldeo manual para distribuir correctamente el producto.
-6. Revisión estética y recomendaciones post tratamiento.
+3. Aplicación de anestesia tópica local.
+4. Selección del tipo de ácido hialurónico adecuado.
+5. Infiltración mediante microinyecciones localizadas.
+6. Moldeo manual para distribuir correctamente el producto.
+7. Revisión estética y recomendaciones post tratamiento.
 
 ---
 
@@ -129,6 +130,4 @@ El tratamiento se realiza **con 1 jeringa de ácido hialurónico (160 mil pesos)
 
 ## ¿Por qué hacerlo en CheckVital?
 
-Nuestro equipo profesional en La Serena está altamente capacitado para realizar armonización facial de forma segura, estética y sin excesos. Utilizamos productos de calidad certificados como **Neuramis**, y técnicas modernas que garantizan resultados naturales, con mínima molestia y sin cirugía.
-
----
+Nuestro equipo profesional en La Serena está altamente capacitado para realizar armonización facial de forma segura, estética y sin excesos. Utilizamos productos de calidad certificados como **Neuramis**, y técnicas modernas que garantizan resultados naturales, con mínima molestia, anestesia local y sin cirugía.

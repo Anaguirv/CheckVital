@@ -1,5 +1,4 @@
 import { defineCollection, z } from 'astro:content';
-// z is a schema validation library used by Astro to define the structure of your content.
 
 const services = defineCollection({
   schema: z.object({
@@ -9,7 +8,8 @@ const services = defineCollection({
     duration: z.number(),
     description: z.string(),
     category: z.string(),
-    }),
+    sesiones: z.number().optional(), // 👈 nuevo campo agregado (opcional por si no todos los tratamientos lo tienen)
+  }),
 });
 
-export const collections = { services }
+export const collections = { services };

@@ -48,6 +48,9 @@ slug: hilos-tensores
     <p>
       Los hilos se insertan bajo la piel mediante una técnica mínimamente invasiva, sin incisiones ni puntos. Forman una estructura de soporte interno que estimula el colágeno natural, reafirmando progresivamente la zona tratada.
     </p>
+    <p>
+      Antes del procedimiento, se aplica <strong>anestesia tópica</strong> para garantizar una experiencia cómoda y sin dolor.
+    </p>
     <blockquote class="text-sm text-gray-600 italic border-l-4 border-primary pl-4">
       Los resultados comienzan a notarse a partir de las primeras semanas y se estabilizan a los 2 meses, con una duración promedio de <strong>1 año o más</strong>.
     </blockquote>
@@ -125,9 +128,10 @@ slug: hilos-tensores
 1. Evaluación facial personalizada.
 2. Limpieza profunda y desinfección del área.
 3. Marcación de las zonas estratégicas.
-4. Inserción de los hilos tensores de forma ambulatoria.
-5. Moldeo manual para asegurar simetría.
-6. Recomendaciones para cuidados post tratamiento.
+4. Aplicación de <strong>anestesia tópica</strong>.
+5. Inserción de los hilos tensores de forma ambulatoria.
+6. Moldeo manual para asegurar simetría.
+7. Recomendaciones para cuidados post tratamiento.
 
 ---
 
@@ -136,5 +140,3 @@ slug: hilos-tensores
 En **CheckVital Clínica Estética (La Serena)** aplicamos técnicas profesionales con hilos revitalizantes de alta calidad, garantizando **resultados naturales y seguros**. Nuestro equipo evalúa cada caso de forma personalizada para definir la cantidad y ubicación exacta de los hilos.
 
 💸 Valor del tratamiento: **8 hilos por $80.000** (puede variar según evaluación).
-
----

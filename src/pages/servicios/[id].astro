@@ -14,7 +14,7 @@ export async function getStaticPaths() {
 
 const { service } = Astro.props;
 const { data, slug } = service;
-const { title, precio, img, duration, description } = data;
+const { title, precio, img, duration, description, sesiones } = data;
 
 const { Content } = await render(service);
 ---
@@ -57,6 +57,11 @@ const { Content } = await render(service);
       <p class="text-gray-600 mb-2 text-lg">
         <strong>Precio:</strong> ${precio.toLocaleString("es-CL")}
       </p>
+      {typeof sesiones !== "undefined" && (
+        <p class="text-gray-600 mb-2 text-lg">
+          <strong>Sesiones:</strong> {sesiones}
+        </p>
+      )}
 
       <!-- CTA -->
       <div class="flex mt-8 justify-center md:justify-start">

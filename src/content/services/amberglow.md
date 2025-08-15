@@ -1,110 +1,130 @@
 ---
-title: Amber Glow | Tratamiento antiaging con Dermapen para pieles mixtas a grasas
+title: Amber Glow La Serena | Tratamiento facial revitalizante con Dermapen
 precio: 130000
 img: amber-glow.webp
 duration: 45
-description: Tratamiento facial que combate signos de envejecimiento como arrugas, poros dilatados y tono desigual. Se aplica con Dermapen, es indoloro y especialmente indicado para pieles mixtas a grasas.
-category: rejuvenecimiento, cuidado-piel
-keywords: [amber glow dermapen, tratamiento antiaging piel grasa, control seborregulador facial, rejuvenecimiento facial La Serena, ácido succínico centella asiática, clínica estética CheckVital]
-slug: amber-glow
+sesiones: 3
+description: Amber Glow en La Serena es un tratamiento facial no invasivo que combina activos aplicados con Dermapen. Revitaliza, hidrata y mejora la textura de la piel sin dolor. Incluye 3 sesiones por $130.000. Ideal para todo tipo de piel.
+category: rejuvenecimiento
+keywords: [amber glow la serena, tratamiento facial la serena, dermapen la serena, revitalización facial la serena, vitaminas faciales la serena, tratamiento anti edad la serena, ácido hialurónico la serena, estética la serena, clínica estética la serena, checkvital la serena]
+slug: amberglow
 ---
 
-## ¿Qué es Amber Glow?
+## Amber Glow en La Serena: ¿Qué es y para qué sirve?
 
-<div class="flex flex-col md:flex-row gap-8 items-start my-8">
+<div class="flex flex-col md:flex-row items-start gap-8 my-8">
 
-  <!-- Texto original corregido -->
-  <div class="w-full md:w-1/2 text-base text-gray-800 space-y-4">
+  <!-- Texto -->
+  <div class="flex-1 text-base text-gray-800 space-y-4">
     <p>
-      <strong>Amber Glow</strong> es una solución estética avanzada diseñada para <strong>rejuvenecer y equilibrar</strong> pieles mixtas a grasas. Su fórmula combina:
+      <strong>Duración de cada sesión:</strong> 45 minutos<br>
+      <strong>Precio total:</strong> $130.000<br>
+      <strong>Cantidad de sesiones:</strong> 3
     </p>
-      <ul class="list-disc pl-5 space-y-1">
-        <li>Ácido succínico</li>
-        <li>Centella asiática</li>
-        <li>Ácido hialurónico</li>
-        <li>Micronutrientes activos</li>
-      </ul>
     <p>
-      Está indicado para personas que presentan <strong>líneas de expresión, arrugas finas, poros dilatados, pérdida de firmeza</strong> y exceso de oleosidad.
+      <strong>Amber Glow La Serena</strong> es un tratamiento facial avanzado para revitalización, hidratación y mejora de la textura de la piel. Combina activos bioestimulantes aplicados con <strong>Dermapen</strong>, tecnología líder en estética facial.
+    </p>
+    <p>
+      Este tratamiento está indicado para <strong>todo tipo de piel</strong>, incluso las más sensibles. Es ideal para quienes buscan resultados visibles en <strong>La Serena</strong> y alrededores.
     </p>
   </div>
 
-  <!-- Imagen al costado -->
-  <div class="w-full md:w-1/2">
+  <!-- Imagen -->
+  <div class="flex-1">
     <img 
       src="/amber2.webp" 
-      alt="Aplicación del tratamiento Amber Glow" 
-      class="w-full aspect-[4/3] object-cover rounded-xl shadow-lg"
+      alt="Aplicación de Amber Glow en La Serena" 
+      class="w-full max-w-md rounded-xl shadow-lg object-cover mx-auto"
     />
   </div>
 </div>
 
 ---
 
-## ¿Cómo se aplica?
+## ¿Cómo se aplica Amber Glow en La Serena?
 
-Amber Glow se aplica mediante tecnología **Dermapen**, un dispositivo de microagujas controladas que permite introducir los activos en las capas profundas de la piel.
+El tratamiento Amber Glow se realiza en <strong>CheckVital Clínica Estética La Serena</strong> mediante la técnica de <strong>Dermapen</strong>, dispositivo de microagujas que introduce los activos en las capas profundas de la piel <strong>sin dolor</strong> y <strong>sin tiempo de recuperación</strong>.
 
-Antes del procedimiento se aplica **anestesia local tópica** para asegurar la comodidad del paciente y evitar molestias durante la sesión.
+> **La aplicación con Dermapen es indolora, segura, precisa y no requiere tiempo de inactividad.**
 
-> **La técnica con Dermapen es indolora, precisa y segura**, sin generar hematomas ni necesidad de tiempo de recuperación.
-
-Esta microestimulación mejora la absorción de los activos, activa la renovación celular y potencia la formación de colágeno desde el interior.
+Antes del procedimiento, se aplica <strong>anestesia tópica</strong> para máxima comodidad. Los ingredientes trabajan desde el interior, estimulando la producción natural de colágeno y mejorando la calidad cutánea desde la primera sesión.
 
 ---
 
-## Beneficios del tratamiento Amber Glow
+## Beneficios de Amber Glow en La Serena
 
-<div class="flex flex-col md:flex-row gap-8 items-start my-8">
+<div class="flex flex-col md:flex-row items-start gap-8 my-8">
 
-  <!-- Lista de beneficios -->
-  <div class="w-full md:w-1/2 text-base text-gray-800">
-    <ul class="list-disc pl-5 space-y-2">
-      <li>Reduce arrugas finas y signos de envejecimiento.</li>
-      <li>Controla la oleosidad (efecto seborregulador).</li>
-      <li>Mejora firmeza y textura general de la piel.</li>
-      <li>Unifica el tono y reduce poros dilatados.</li>
-      <li>Estimula la producción natural de colágeno.</li>
-      <li>Técnica con Dermapen: no invasiva e indolora.</li>
-      <li>Se aplica con anestesia local para mayor confort.</li>
-      <li>Ideal para pieles mixtas a grasas.</li>
+  <!-- Lista -->
+  <div class="flex-1">
+    <ul class="list-disc pl-5 space-y-2 text-base text-gray-700">
+      <li>Revitaliza y mejora la textura de la piel.</li>
+      <li>Hidrata y nutre profundamente.</li>
+      <li>Unifica el tono facial.</li>
+      <li>Reduce líneas finas y signos de envejecimiento.</li>
+      <li>Estimula la producción de colágeno.</li>
+      <li>Tratamiento <strong>indoloro y sin tiempo de inactividad</strong>.</li>
+      <li>Resultados visibles desde la primera sesión en La Serena.</li>
+      <li>Incluye <strong>3 sesiones</strong> por $130.000 en CheckVital La Serena.</li>
     </ul>
   </div>
 
   <!-- Imagen -->
-  <div class="w-full md:w-1/2">
+  <div class="flex-1">
     <img 
-      src="/amber.webp" 
-      alt="Resultados del tratamiento Amber Glow" 
-      class="w-full aspect-[4/3] object-cover rounded-xl shadow-lg"
+      src="/amber3.webp" 
+      alt="Resultados del tratamiento Amber Glow en La Serena" 
+      class="w-full max-w-md rounded-xl shadow-lg object-cover mx-auto"
     />
   </div>
 </div>
 
 ---
 
-## Zonas ideales de aplicación
+## Pasos del tratamiento Amber Glow en La Serena
 
-- Rostro completo  
-- Zonas con poros dilatados  
-- Mejillas, frente y mentón  
-- Cuello y escote (opcional)  
+<div class="flex flex-col md:flex-row items-start gap-8 my-8">
+
+  <!-- Lista de pasos -->
+  <div class="flex-1 text-base text-gray-800 space-y-3">
+    <ol class="list-decimal pl-5 space-y-2">
+      <li>Evaluación médica profesional en CheckVital La Serena.</li>
+      <li>Limpieza facial profunda.</li>
+      <li>Aplicación de anestesia tópica para confort total.</li>
+      <li>Aplicación de Amber Glow con Dermapen.</li>
+      <li>Masaje técnico para favorecer absorción.</li>
+      <li>Aplicación de mascarilla calmante y protector solar.</li>
+      <li>Entrega de recomendaciones personalizadas post tratamiento.</li>
+    </ol>
+  </div>
+
+  <!-- Imagen estandarizada -->
+  <div class="flex-1">
+    <img 
+      src="/amber.webp" 
+      alt="Pasos del tratamiento Amber Glow con Dermapen en La Serena" 
+      class="w-full max-w-md aspect-[4/3] object-cover rounded-xl shadow-lg mx-auto"
+    />
+  </div>
+</div>
 
 ---
 
-## Pasos del tratamiento
+## ¿Por qué elegir Amber Glow en CheckVital Clínica Estética La Serena?
 
-1. Evaluación médica personalizada del tipo de piel.  
-2. Limpieza profunda para eliminar impurezas y preparar la piel.  
-3. Aplicación de anestesia local tópica para confort del paciente.  
-4. Aplicación del tratamiento con Dermapen.  
-5. Masaje calmante posterior y aplicación de mascarilla regeneradora.  
-6. Recomendaciones de cuidado post procedimiento.  
+En <strong>CheckVital Clínica Estética La Serena</strong> combinamos productos de alta calidad y técnicas profesionales como el <strong>Dermapen</strong>, garantizando resultados visibles, seguros y duraderos.
+
+**El tratamiento Amber Glow incluye:**
+- ✅ Protocolo completo de <strong>3 sesiones</strong> por solo <strong>$130.000</strong>
+- ✅ Producto de marca profesional
+- ✅ Aplicación con Dermapen y anestesia tópica
+- ✅ Evaluación gratuita personalizada en La Serena
+
+Agenda tu hora en <strong>CheckVital La Serena</strong> y comienza tu proceso de revitalización facial con Amber Glow. ¡Resultados visibles y atención profesional en la ciudad!
 
 ---
 
-## ¿Por qué hacerlo en CheckVital?
+### Preguntas frecuentes sobre Amber Glow en La Serena
 
-En **CheckVital** usamos la fórmula **Amber Glow de Koru Pharma** (proveedor Trademedical), combinada con la técnica **Dermapen profesional**, para lograr resultados efectivos, sin dolor y con una recuperación rápida.
-
-Nuestros especialistas están capacitados para adaptar el tratamiento según el tipo de piel y necesidades específicas. Además, todos los procedimientos se realizan con **anestesia local incluida**, garantizando una experiencia segura y sin molestias.
+**¿Cuántas sesiones incluye el tratamiento Amber Glow?**  
+El tratamiento incluye <strong>3 sesiones</strong> por $130.000, realizadas en CheckVital La Serena.

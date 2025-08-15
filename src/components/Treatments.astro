@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 
 const treatments = await getCollection("services");
+const { services } = Astro.props;
 
 const categories = [
   { title: "Todos", key: "all" },

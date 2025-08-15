@@ -1,12 +1,13 @@
 ---
-title: Aplicación de Ácido Hialurónico | Relleno y armonización facial sin cirugía
-precio: 160000
+title: Ácido Hialurónico La Serena | Hidratación y relleno facial
+precio: 180000
 img: acido-hialuronico.webp
 duration: 45
-description: Tratamiento no invasivo que permite perfilar, rellenar y dar volumen a zonas del rostro como labios, pómulos, mentón y nariz. Resultados inmediatos y naturales.
-category: rejuvenecimiento
-keywords: [ácido hialurónico neuramis, armonización facial sin cirugía, rinomodelación La Serena, perfilado de labios, aumento de pómulos, relleno de ojeras, clínica estética CheckVital]
-slug: acido-hialuronico
+sesiones: 1
+description: Ácido hialurónico en La Serena para hidratar y rellenar arrugas. Resultados inmediatos y naturales en CheckVital Clínica Estética.
+category: hidratación
+keywords: [ácido hialurónico la serena, tratamiento facial la serena, hidratación facial la serena, relleno facial la serena, estética la serena, clínica estética la serena, checkvital la serena]
+slug: acidoHialuronico
 ---
 
 ## ¿Qué es la aplicación de Ácido Hialurónico?
@@ -124,7 +125,7 @@ En **CheckVital** utilizamos ácido hialurónico de la marca **Neuramis** (prove
 
 ## ¿Cuántas jeringas se utilizan?
 
-El tratamiento se realiza **con 1 jeringa de ácido hialurónico (160 mil pesos)**, aunque según el diagnóstico y las zonas a trabajar, pueden requerirse **más de una jeringa**. Esto se define en la evaluación gratuita.
+El tratamiento se realiza **con 1 jeringa de ácido hialurónico (180 mil pesos)**, aunque según el diagnóstico y las zonas a trabajar, pueden requerirse **más de una jeringa**. Esto se define en la evaluación gratuita.
 
 ---
 

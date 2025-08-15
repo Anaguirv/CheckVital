@@ -1,12 +1,13 @@
 ---
-title: Hilos Tensores | Reafirmación facial sin cirugía
-precio: 80000
+title: Hilos Tensores La Serena | Lifting facial sin cirugía
+precio: 250000
 img: hilos-tensores.webp
 duration: 60
-description: Tratamiento no quirúrgico que reafirma y tensa la piel mediante hilos revitalizantes. Resultados progresivos y naturales con duración de hasta un año. Ideal para zonas como ojeras, papada y contorno de ojos.
+sesiones: 1
+description: Hilos tensores en La Serena para lifting facial sin cirugía. Mejora la firmeza y redefine el óvalo facial en CheckVital Clínica Estética.
 category: rejuvenecimiento
-keywords: [hilos tensores La Serena, lifting sin cirugía, reafirmar papada y ojeras, estética con colágeno, tratamiento facial sin bisturí, clínica estética CheckVital]
-slug: hilos-tensores
+keywords: [hilos tensores la serena, lifting facial la serena, tratamiento facial la serena, estética la serena, clínica estética la serena, checkvital la serena]
+slug: hilosTensores
 ---
 
 ## ¿Qué son los Hilos Tensores?

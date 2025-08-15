@@ -3,10 +3,11 @@ title: Tratamiento Contorno de Ojos | BCN Oculare para ojeras, bolsas y arrugas
 precio: 120000
 img: bcn-oculare.webp
 duration: 30
-description: Tratamiento específico para el contorno ocular que reduce ojeras, bolsas y arrugas finas. Mejora microcirculación, firmeza y revitaliza la mirada. Incluye 3 sesiones. Ideal para hombres y mujeres con signos de fatiga.
+description: Tratamiento específico para el contorno ocular que reduce ojeras, bolsas y arrugas finas. Mejora microcirculación, firmeza y revitaliza la mirada. Ideal para hombres y mujeres con signos de fatiga.
 category: rejuvenecimiento
 keywords: [tratamiento contorno de ojos, bcn oculare, ojeras y bolsas La Serena, mirada rejuvenecida, arrugas contorno ocular, péptidos mirada descansada, estética CheckVital]
 slug: bcn-oculare
+sesiones: 1
 ---
 
 ## ¿Qué es el tratamiento para el contorno de ojos BCN Oculare?
@@ -124,6 +125,3 @@ slug: bcn-oculare
   Nuestro enfoque es lograr resultados naturales, sin alterar tu expresión ni comprometer tu rutina diaria.
 </p>
 
-<p class="text-base text-gray-800 mt-4">
-  <strong>Incluye 3 sesiones por el precio publicado</strong>, para asegurar resultados visibles, duraderos y progresivos.
-</p>

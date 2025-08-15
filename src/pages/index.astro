@@ -10,30 +10,39 @@ import ScrollingBanner from '../components/ScrollingBanner.astro';
 import Treatments from '../components/Treatments.astro';
 import Herotext from '../components/HeroText.astro';
 import TreatmentsStar from '../components/TreatmentsStar.astro';
+import { getCollection } from "astro:content";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
-const title = "CheckVital - Belleza, Salud y Estética en La Serena";
-const description = "Centro de estética avanzada en La Serena, enfocado en armonización facial, rejuvenecimiento, botox, limpieza facial y cuidado personalizado. Atención profesional a cargo de enfermera especialista con formación en medicina estética. Agenda tu evaluación gratuita y descubre resultados comprobados y seguros.";
-const keywords = "Estética, salud, belleza, armonización facial, armonización corporal, procedimientos estéticos, bienestar, cuidado personal";
+const title = "CheckVital Clínica Estética La Serena | Tratamientos Estéticos Faciales y Corporales";
+const description = "Centro de estética avanzada en La Serena. Descubre Pink Glow, Amber Glow, Botox, Hilos Tensores, Mesoterapia, Peeling de Algas, Ácido Hialurónico y más. Resultados visibles y atención profesional.";
+const keywords = "tratamientos estéticos la serena, clínica estética la serena, pink glow la serena, amber glow la serena, botox la serena, hilos tensores la serena, mesoterapia la serena, peeling la serena, ácido hialurónico la serena, rejuvenecimiento facial la serena, estética facial la serena, estética corporal la serena, checkvital la serena";
 
-
+const services = await getCollection("services");
 ---
 
 <Layout 
-	title={title}
-  	description={description}
- 	keywords={keywords}>
-	
-	<Hero />
-	<Herotext />
-	<AnimatedCounter  />
-	<ScrollingBanner />
-	<TreatmentsStar />
-	<Treatments />
-	<!-- <GoogleReview /> -->
-	<AboutMe />
-	<Mapa />
-	<BtnFloating />
+    title={title}
+    description={description}
+    keywords={keywords}>
+    
+    <Hero />
+    <Herotext />
+    <AnimatedCounter  />
+    <ScrollingBanner />
+    <TreatmentsStar />
+    <Treatments services={services} />
+    <!-- <GoogleReview /> -->
+    <AboutMe />
+    <Mapa />
+    <BtnFloating />
 
 </Layout>
+
+<!-- SEO visible: texto optimizado con palabras clave y tratamientos -->
+<section class="max-w-4xl mx-auto px-4 py-8 text-center text-gray-700">
+  <p>
+    En <strong>CheckVital Clínica Estética La Serena</strong> ofrecemos tratamientos estéticos como Pink Glow, Amber Glow, Botox, Hilos Tensores, Mesoterapia, Peeling de Algas y Ácido Hialurónico. Todos nuestros tratamientos están realizados por profesionales certificados y con resultados comprobados en La Serena.
+  </p>
+  <p class="mt-4">
+    ¿Buscas rejuvenecimiento facial, armonización, limpieza facial, revitalización o procedimientos anti edad en La Serena? Agenda tu evaluación gratuita y accede a los mejores tratamientos estéticos en la región.
+  </p>
+</section>

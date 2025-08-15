@@ -1,11 +1,12 @@
 ---
-title: Botox | Tratamiento para arrugas de expresión y rejuvenecimiento facial
-precio: 160000
+title: Botox La Serena | Reducción de arrugas y líneas de expresión
+precio: 150000
 img: botox.webp
 duration: 30
-description: Botox es un tratamiento estético que relaja los músculos del rostro para suavizar arrugas de expresión en la frente, entrecejo, patas de gallo y contorno de labios. Resultados visibles y naturales.
+sesiones: 1
+description: Botox en La Serena para eliminar arrugas y líneas de expresión. Resultados naturales y seguros en CheckVital Clínica Estética.
 category: rejuvenecimiento
-keywords: [botox La Serena, arrugas de expresión, rejuvenecimiento facial sin cirugía, código de barra labios, expresión natural sin arrugas, clínica estética CheckVital]
+keywords: [botox la serena, tratamiento facial la serena, reducción de arrugas la serena, estética la serena, clínica estética la serena, checkvital la serena]
 slug: botox
 ---
 

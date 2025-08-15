@@ -7,6 +7,7 @@ description: El Peeling de Algas es un tratamiento exfoliante 100% natural que m
 category: cuidado-piel
 keywords: [peeling de algas, exfoliación natural, tratamiento manchas piel, peeling verano La Serena, estética sin químicos, peeling Zena, clínica estética CheckVital]
 slug: peeling-algas
+sesiones: 1
 ---
 
 ## ¿Qué es el Peeling de Algas?

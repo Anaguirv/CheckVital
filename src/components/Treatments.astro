@@ -67,25 +67,6 @@ const categories = [
   </div>
 </section>
 
-<section class="max-w-7xl mx-auto px-4 my-16">
-  <h2 class="text-2xl font-bold text-primary mb-4">Nuestros tratamientos estéticos en La Serena</h2>
-  <ul class="grid md:grid-cols-2 gap-6">
-    {services.map(service => (
-      <li>
-        <a href={`/servicios/${service.slug}`} class="text-primary font-semibold hover:underline">
-          {service.title}
-        </a>
-        <p class="text-gray-700 text-sm">{service.description}</p>
-        <p class="text-gray-600 text-xs">
-          <strong>Duración:</strong> {service.duration ?? '-'} min | 
-          <strong>Sesiones:</strong> {service.sesiones ?? '-'} | 
-          <strong>Precio:</strong> {service.precio ? `$${service.precio.toLocaleString("es-CL")}` : 'Consultar'}
-        </p>
-      </li>
-    ))}
-  </ul>
-</section>
-
 <!-- Script de filtrado -->
 <script is:inline>
   function filterTreatments(key) {

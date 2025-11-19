@@ -14,7 +14,6 @@ sesiones: 1
 
 <div class="flex flex-col md:flex-row gap-8 items-start my-8">
 
-  <!-- Texto -->
   <div class="w-full md:w-1/2 text-base text-gray-800 space-y-4">
     <p>
       El <strong>Peeling de Algas ZENA</strong> es un tratamiento exfoliante 100% natural con <strong>microespeculas de algas y corales</strong>, sin químicos agresivos ni componentes que alteren el microbioma de la piel.
@@ -29,7 +28,6 @@ sesiones: 1
     </ul>
   </div>
 
-  <!-- Imagen -->
   <div class="w-full md:w-1/2">
     <img 
       src="/pa2.webp" 
@@ -61,7 +59,6 @@ sesiones: 1
 
 <div class="flex flex-col md:flex-row gap-8 items-start my-8">
 
-  <!-- Lista -->
   <div class="w-full md:w-1/2 text-base text-gray-800">
     <ul class="list-disc pl-5 space-y-2">
       <li>Exfoliación profunda sin dañar la piel.</li>
@@ -75,7 +72,6 @@ sesiones: 1
     </ul>
   </div>
 
-  <!-- Imágenes -->
   <div class="w-full md:w-1/2 grid grid-cols-2 gap-4">
     <img 
       src="/peelingayd1.webp" 
@@ -102,6 +98,26 @@ sesiones: 1
   <li>Aplicación de sérum calmante y protección solar.</li>
   <li>Instrucciones de cuidados post tratamiento.</li>
 </ol>
+
+---
+
+## Imágenes adicionales del Peeling de Algas
+
+<div class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+
+  <img 
+    src="/peelingextra1.webp" 
+    alt="Peeling de algas proceso" 
+    class="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg"
+  />
+
+  <img 
+    src="/peelingextra2.webp" 
+    alt="Resultados del peeling de algas" 
+    class="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg"
+  />
+
+</div>
 
 ---
 

@@ -98,12 +98,22 @@ Antes del procedimiento, se aplica <strong>anestesia tópica</strong> para máxi
     </ol>
   </div>
 
-  <!-- Imagen estandarizada -->
-  <div class="flex-1">
+  <!-- Galería de 3 imágenes (nueva) -->
+  <div class="flex-1 grid grid-cols-2 gap-4">
     <img 
       src="/amber.webp" 
-      alt="Pasos del tratamiento Amber Glow con Dermapen en La Serena" 
-      class="w-full max-w-md aspect-[4/3] object-cover rounded-xl shadow-lg mx-auto"
+      alt="Aplicación con Dermapen - Amber Glow" 
+      class="w-full aspect-[4/3] object-cover rounded-xl shadow-lg"
+    />
+    <img 
+      src="/amber-extra1.webp" 
+      alt="Amber Glow procedimiento adicional" 
+      class="w-full aspect-[4/3] object-cover rounded-xl shadow-lg"
+    />
+    <img 
+      src="/amber-extra2.webp" 
+      alt="Amber Glow resultados adicionales" 
+      class="w-full aspect-[4/3] object-cover rounded-xl shadow-lg col-span-2"
     />
   </div>
 </div>
@@ -120,11 +130,11 @@ En <strong>CheckVital Clínica Estética La Serena</strong> combinamos productos
 - ✅ Aplicación con Dermapen y anestesia tópica
 - ✅ Evaluación gratuita personalizada en La Serena
 
-Agenda tu hora en <strong>CheckVital La Serena</strong> y comienza tu proceso de revitalización facial con Amber Glow. ¡Resultados visibles y atención profesional en la ciudad!
+Agenda tu hora en <strong>CheckVital La Serena</strong> y comienza tu proceso de revitalización facial con Amber Glow.
 
 ---
 
 ### Preguntas frecuentes sobre Amber Glow en La Serena
 
 **¿Cuántas sesiones incluye el tratamiento Amber Glow?**  
-El tratamiento incluye <strong>3 sesiones</strong> por $130.000, realizadas en CheckVital La Serena.
+Incluye <strong>3 sesiones</strong> por $130.000, realizadas en CheckVital La Serena.

@@ -3,14 +3,21 @@ title: Peeling de Algas | Exfoliación natural y profunda sin químicos
 precio: 60000
 img: peeling-algas.webp
 duration: 45
-description: El Peeling de Algas es un tratamiento exfoliante 100% natural que mejora textura, manchas, poros y cicatrices. Sin químicos agresivos, apto para verano y pieles sensibles. Disponible en CheckVital, La Serena.
+description: El Peeling de Algas es un tratamiento despigmentante facial 100% natural que mejora textura, manchas, poros y cicatrices. Incluye limpieza facial profunda como parte del procedimiento. Sin químicos agresivos, apto para verano y pieles sensibles. Disponible en CheckVital, La Serena.
 category: cuidado-piel
-keywords: [peeling de algas, exfoliación natural, tratamiento manchas piel, peeling verano La Serena, estética sin químicos, peeling Zena, clínica estética CheckVital]
+keywords: [peeling de algas la serena, tratamiento despigmentante facial natural la serena, exfoliación natural la serena, tratamiento manchas piel la serena, peeling verano la serena, estética sin químicos la serena, peeling Zena la serena, clínica estética CheckVital]
 slug: peeling-algas
 sesiones: 1
 ---
 
-## ¿Qué es el Peeling de Algas?
+<div class="bg-primary/10 border border-primary/30 rounded-xl px-6 py-4 my-6 flex items-start gap-3">
+  <span class="text-primary text-xl mt-0.5">✦</span>
+  <p class="text-gray-800 font-medium">
+    <strong>PLUS INCLUIDO:</strong> Limpieza Facial Profunda como parte integral del procedimiento — preparación esencial que garantiza que los activos naturales penetren con máxima efectividad.
+  </p>
+</div>
+
+## ¿Qué es el Peeling de Algas? El tratamiento despigmentante facial natural
 
 <div class="flex flex-col md:flex-row gap-8 items-start my-8">
 
@@ -92,7 +99,7 @@ sesiones: 1
 
 <ol class="list-decimal pl-5 space-y-2 text-base text-gray-800">
   <li>Evaluación del tipo y estado de la piel.</li>
-  <li>Limpieza profunda facial.</li>
+  <li><strong>Limpieza facial profunda</strong> (incluida en el procedimiento).</li>
   <li>Aplicación del peeling con masaje técnico.</li>
   <li>Remoción y neutralización de residuos.</li>
   <li>Aplicación de sérum calmante y protección solar.</li>

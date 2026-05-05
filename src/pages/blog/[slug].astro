@@ -1,0 +1,87 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { data, slug } = post;
+const { title, description, date, img, keywords, author } = data;
+
+const { Content } = await render(post);
+
+const pageKeywords = keywords?.join(', ') || `${title}, checkvital la serena, tratamientos estéticos la serena`;
+
+const formattedDate = new Date(date).toLocaleDateString('es-CL', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "datePublished": date,
+  "author": {
+    "@type": "Person",
+    "name": author ?? "CheckVital"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CheckVital La Serena",
+    "url": "https://checkvital.cl"
+  },
+  "image": `https://checkvital.cl/${img}`,
+  "url": `https://checkvital.cl/blog/${slug}`
+};
+---
+
+<Layout title={title} description={description} keywords={pageKeywords}>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <article class="max-w-3xl mx-auto px-4 py-14">
+    <!-- Header del artículo -->
+    <div class="mb-8">
+      <a href="/blog" class="text-sm text-primary hover:underline font-medium">← Volver al blog</a>
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mt-4 mb-3 leading-tight">{title}</h1>
+      <p class="text-gray-400 text-sm">
+        {formattedDate}
+        {author && <span class="ml-2">· {author}</span>}
+      </p>
+    </div>
+
+    <!-- Imagen destacada -->
+    <img
+      src={`/${img}`}
+      alt={title}
+      class="w-full rounded-2xl shadow-md object-cover max-h-[420px] mb-10"
+    />
+
+    <!-- Contenido -->
+    <div class="prose lg:prose-lg max-w-none">
+      <Content />
+    </div>
+
+    <!-- CTA final -->
+    <div class="mt-14 bg-primary/5 border border-primary/20 rounded-2xl p-8 text-center">
+      <p class="text-gray-700 font-medium text-lg mb-2">¿Lista para agendar tu evaluación gratuita?</p>
+      <p class="text-gray-500 text-sm mb-5">Evelyn revisa tu piel y te recomienda el tratamiento ideal para tus objetivos.</p>
+      <a
+        href="https://wa.me/56989827644?text=Hola%2C%20quiero%20agendar%20una%20evaluaci%C3%B3n%20gratuita%20en%20CheckVital"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block bg-primary text-white font-semibold px-6 py-3 rounded-xl hover:bg-primary-dark transition-colors"
+      >
+        Agendar por WhatsApp
+      </a>
+    </div>
+  </article>
+</Layout>

@@ -1,7 +1,7 @@
 ---
 import "../styles/global.css";
 import Header from '../components/Header.astro';
-import { ClientRouter, fade, slide } from 'astro:transitions'; 
+import { ClientRouter, fade, slide } from 'astro:transitions';
 import Analytics from '@vercel/analytics/astro'
 import  SpeedInsights  from "@vercel/speed-insights/astro"
 
@@ -11,12 +11,15 @@ import '@fontsource-variable/onest';
 import Footer from "../components/Footer.astro";
 import Banner from "../components/Banner.astro";
 import BannerRRSS from "../components/BannerRRSS.astro";
+import FAQ from "../components/FAQ.astro";
 
 const { title, description, keywords } = Astro.props;
 
-const defaultTitle = "CheckVital - Belleza, Salud y Estética en La Serena";
-const defaultDescription = "Procedimientos estéticos profesionales con evaluación gratuita. CheckVital es tu clínica estética de confianza en La Serena y Coquimbo.";
-const defaultKeywords = "Estética, salud, belleza, armonización facial, armonización corporal, procedimientos estéticos, bienestar, cuidado personal";
+const canonicalURL = new URL(Astro.url.pathname, 'https://checkvital.cl').href;
+
+const defaultTitle = "CheckVital La Serena | Procedimientos Estéticos con Respaldo Clínico";
+const defaultDescription = "CheckVital La Serena — Procedimientos estéticos con respaldo clínico. Limpieza facial, peeling, botox, bioestimulador y más. Evelyn Briceño, 10 años de experiencia. Evaluación gratuita.";
+const defaultKeywords = "procedimientos estéticos la serena, clínica estética la serena, limpieza facial la serena, peeling la serena, botox la serena, respaldo clínico estética, CheckVital";
 
 const pageTitle = title ?? defaultTitle;
 const pageDescription = description ?? defaultDescription;
@@ -33,6 +36,7 @@ const pageKeywords = keywords ?? defaultKeywords;
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<link rel="icon" type="image/svg+xml" href="/icono.png" />
 		<link rel="sitemap" href="/sitemap-index.xml" />
+		<link rel="canonical" href={canonicalURL} />
 		<meta name="robots" content="index, follow" />
 		<meta name="google-site-verification" content="Zejn6044y6TfOFZtsX01u4Z7G5XMisEzgTmB6hwNyXo" />
 		<meta name="language" content="es" />
@@ -46,7 +50,7 @@ const pageKeywords = keywords ?? defaultKeywords;
 		<meta property="og:title" content={pageTitle} />
 		<meta property="og:description" content={pageDescription} />
 		<meta property="og:image" content="/opengraph-image.jpg" />
-		<meta property="og:url" content="https://checkvital.cl" />
+		<meta property="og:url" content={canonicalURL} />
 		<meta property="og:type" content="website" />
 
 		<!-- Twitter Card -->
@@ -59,23 +63,101 @@ const pageKeywords = keywords ?? defaultKeywords;
 		<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",
-			"@type": "MedicalBusiness",
-			"name": "CheckVital SPA",
-			"description": "Centro de estética en La Serena, especializada en armonización facial y corporal. Ofrecemos procedimientos estéticos profesionales con precios accesibles.",
+			"@type": "BeautySalon",
+			"name": "CheckVital - Salud Estética y Belleza La Serena",
+			"description": "Procedimientos estéticos con respaldo clínico en La Serena. Pink Glow, Peeling Químico, Alta Frecuencia, Bioestimulador, Limpieza Facial Profunda, Botox, Ácido Hialurónico y más. Evaluación gratuita.",
 			"url": "https://checkvital.cl",
 			"image": "https://checkvital.cl/opengraph-image.jpg",
 			"telephone": "+56989827644",
-			"address": {
-			"@type": "PostalAddress",
-			"streetAddress": "Calle Central 95, parcela 36",
-			"addressLocality": "La Serena",
-			"addressRegion": "Coquimbo",
-			"addressCountry": "Chile"
+			"email": "ebriceno@checkvital.cl",
+			"priceRange": "$$",
+			"currenciesAccepted": "CLP",
+			"paymentAccepted": "Efectivo, Transferencia",
+			"areaServed": {
+				"@type": "GeoCircle",
+				"geoMidpoint": {
+					"@type": "GeoCoordinates",
+					"latitude": -29.9133,
+					"longitude": -71.2528
+				},
+				"geoRadius": "30000"
 			},
+			"address": {
+				"@type": "PostalAddress",
+				"streetAddress": "Calle Central 95, Parcela 36, Alfalfares",
+				"addressLocality": "La Serena",
+				"addressRegion": "Región de Coquimbo",
+				"postalCode": "1710000",
+				"addressCountry": "CL"
+			},
+			"geo": {
+				"@type": "GeoCoordinates",
+				"latitude": -29.9133,
+				"longitude": -71.2528
+			},
+			"hasMap": "https://www.google.com/maps/place/CheckVital/@-29.9133,-71.2528,15z",
 			"sameAs": [
-			"https://www.instagram.com/check.vital"
+				"https://www.instagram.com/check.vital",
+				"https://www.google.com/maps/place/CheckVital+-+Salud+Est%C3%A9tica+y+Belleza+La+Serena"
+			],
+			"founder": {
+				"@type": "Person",
+				"name": "Evelyn Briceño",
+				"jobTitle": "Especialista en Estética Clínica",
+				"description": "10 años de experiencia clínica. Fundadora de CheckVital, centro de procedimientos estéticos con respaldo clínico en La Serena."
+			},
+			"makesOffer": [
+				{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Limpieza Facial Profunda", "url": "https://checkvital.cl/servicios/limpiezafacial" } },
+				{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pink Glow", "url": "https://checkvital.cl/servicios/pinkglow" } },
+				{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Amber Glow", "url": "https://checkvital.cl/servicios/amberglow" } },
+				{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Peeling de Algas", "url": "https://checkvital.cl/servicios/peeling-algas" } },
+				{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Peeling Químico", "url": "https://checkvital.cl/servicios/peelingquimico" } },
+				{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Alta Frecuencia", "url": "https://checkvital.cl/servicios/altafrecuencia" } },
+				{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bioestimulador", "url": "https://checkvital.cl/servicios/bioestimulador" } },
+				{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Botox", "url": "https://checkvital.cl/servicios/botox" } },
+				{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ácido Hialurónico", "url": "https://checkvital.cl/servicios/acidoHialuronico" } },
+				{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mesoterapia", "url": "https://checkvital.cl/servicios/mesoterapia-silicio-organico" } },
+				{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hilos Tensores", "url": "https://checkvital.cl/servicios/hilosTensores" } }
 			]
 		}
+		</script>
+
+		<!-- Google Analytics 4 -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-W85245GGVT"></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-W85245GGVT');
+		</script>
+
+		<!-- Tracker centralizado CheckVital: deduplicación + parámetros estándar GA4 -->
+		<script is:inline>
+		(function () {
+			var _fired = {};
+
+			window.cvTrack = function (eventName, params) {
+				var now = Date.now();
+				var key = eventName + '|' + (params && params.button_location ? params.button_location : '');
+
+				// Bloquea refire del mismo botón dentro de 2 segundos
+				// (previene doble-click, modal+click, o rebind en navegación SPA)
+				if (_fired[key] && now - _fired[key] < 2000) return;
+				_fired[key] = now;
+
+				if (typeof gtag !== 'function') return;
+
+				gtag('event', eventName, Object.assign({
+					event_category: 'conversion',
+					page_path: window.location.pathname
+				}, params || {}));
+			};
+
+			// Limpiar caché de disparos en cada cambio de página (SPA con ClientRouter)
+			document.addEventListener('astro:after-swap', function () {
+				_fired = {};
+			});
+		})();
 		</script>
 
 		<ClientRouter />
@@ -89,6 +171,7 @@ const pageKeywords = keywords ?? defaultKeywords;
 		</main>
 		<Banner />
 		<Footer />
+		<FAQ />
 		<BannerRRSS />
 
 	<script>

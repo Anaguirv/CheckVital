@@ -40,7 +40,7 @@ const contactInfo = {
           href="#"
           id="banner-wsp"
           data-numero="56989827644"
-          data-msg="Hola! Quiero agendar una consulta con CheckVital"
+          data-msg="Hola vi tu pagina web y me gustaria conocer sobre los tratamientos"
           class="cursor-pointer px-6 py-3 bg-white text-[#1BBFAF] font-medium rounded-lg hover:bg-white/90 hover:shadow-lg transition-all duration-300"
           aria-label="Agendar consulta por WhatsApp"
         >
@@ -70,12 +70,10 @@ const contactInfo = {
 			? `https://wa.me/${numero}?text=${msg}`
 			: `https://web.whatsapp.com/send?phone=${numero}&text=${msg}`;
 
-			if (typeof gtag === "function") {
-			gtag("event", "click_whatsapp_banner", {
-				event_category: "conversion",
-				event_label: decodeURIComponent(msg),
+			window.cvTrack && window.cvTrack("whatsapp_cta", {
+				button_location: "banner",
+				engagement_type: "direct_click"
 			});
-			}
 
 			window.open(url, "_blank");
 		});

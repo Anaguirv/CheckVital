@@ -6,7 +6,7 @@ duration: 30
 sesiones: 1
 description: Botox en La Serena para reducir arrugas y líneas de expresión con resultados naturales y seguros. Incluye anestesia y retoque opcional.
 category: rejuvenecimiento
-keywords: [botox la serena, tratamiento facial la serena, reducción de arrugas la serena, estética la serena, clínica estética la serena, checkvital la serena]
+keywords: [botox la serena, tratamiento facial la serena, reducción de arrugas la serena, rejuvenecimiento facial la serena, donde realizarme un rejuvenecimiento facial en la serena, estética la serena, clínica estética la serena, checkvital la serena]
 slug: botox
 ---
 

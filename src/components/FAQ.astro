@@ -1,0 +1,171 @@
+---
+const faqs = [
+  // Limpieza facial
+  {
+    q: "¿Realizan limpieza facial profunda en CheckVital?",
+    a: "Sí. La limpieza facial profunda es uno de nuestros servicios principales. La realiza Evelyn Briceño, enfermera titulada, con técnica clínica profesional: extracción de puntos negros, mascarilla y sérum. Está disponible como servicio independiente y también como parte incluida en los tratamientos de Peeling de Algas y Peeling Químico."
+  },
+  {
+    q: "¿Los tratamientos de peeling incluyen limpieza facial?",
+    a: "Sí. Tanto el Peeling de Algas como el Peeling Químico incluyen limpieza facial profunda como parte integral del procedimiento, sin costo adicional. Es el primer paso del protocolo y determina en gran medida la efectividad del resultado final."
+  },
+  // Problemas específicos
+  {
+    q: "¿Dónde puedo realizarme un rejuvenecimiento facial en La Serena?",
+    a: "En CheckVital La Serena realizamos los principales tratamientos de rejuvenecimiento facial con respaldo clínico: Pink Glow y Amber Glow (Dermapen con vitaminas y ácido hialurónico), Bioestimulador con Celosome Aqua (colágeno propio + hidratación profunda), Botox (arrugas de expresión), Hilos Tensores (lifting sin cirugía) y Ácido Hialurónico (volumen y definición). Cada caso es distinto — te evaluamos gratuitamente y te recomendamos el protocolo más adecuado para tu tipo de piel, edad y objetivos."
+  },
+  {
+    q: "¿Qué tratamiento recomiendan para las manchas de la cara?",
+    a: "Para manchas solares, melasma y pigmentación irregular, el tratamiento despigmentante facial más efectivo es el Peeling Químico, que actúa en las capas profundas donde se concentra la pigmentación. Para casos más leves o pieles sensibles, el Peeling de Algas ofrece un efecto despigmentante facial natural sin químicos agresivos. En CheckVital evaluamos tu caso gratuitamente para recomendarte el protocolo correcto."
+  },
+  {
+    q: "¿Tienen tratamiento para el acné activo?",
+    a: "Sí. La Alta Frecuencia es nuestro tratamiento específico para acné activo: genera ozono con acción bactericida natural, reduce la inflamación y desinfecta la piel sin tiempo de recuperación. También la Limpieza Facial Profunda ayuda a controlar el exceso de sebo que favorece los brotes. Evelyn evalúa el grado de acné para definir el protocolo correcto."
+  },
+  {
+    q: "¿Pueden tratar los poros dilatados?",
+    a: "Sí. El Peeling de Algas y el Peeling Químico son muy efectivos para cerrar poros dilatados, al igual que la Limpieza Facial Profunda con extracción profesional. La Alta Frecuencia también contribuye a reducir el aspecto de los poros con su acción astringente."
+  },
+  {
+    q: "¿Qué tratamiento es mejor para la flacidez facial?",
+    a: "Para flacidez facial recomendamos los Hilos Tensores (efecto lifting sin cirugía), el Bioestimulador (estimula colágeno propio de forma progresiva) y el Pink Glow o Amber Glow (mejoran firmeza y calidad de la piel). La elección depende del grado de flacidez, la edad y los objetivos — lo evaluamos en la consulta gratuita."
+  },
+  {
+    q: "¿Pueden tratar las manchas de embarazo (melasma)?",
+    a: "Sí, el melasma es una de las condiciones más frecuentes que tratamos. El Peeling Químico con protocolos despigmentantes es el más efectivo para melasma, siempre acompañado de protector solar diario. El tratamiento debe planificarse fuera de períodos de embarazo y lactancia. Evelyn te orienta según tu situación específica."
+  },
+  {
+    q: "¿Pueden hacer algo para las ojeras?",
+    a: "Sí. El BCN Oculare es nuestro tratamiento específico para el contorno de ojos, indicado para ojeras, bolsas y líneas finas. El Ácido Hialurónico también se puede aplicar en esa zona para recuperar volumen perdido. En la evaluación gratuita definimos qué es lo más adecuado para tu caso."
+  },
+  // Verano
+  {
+    q: "¿Qué tratamientos son seguros de hacer en verano?",
+    a: "En verano son completamente seguros: la Limpieza Facial Profunda, el Peeling de Algas (100% natural, sin ácidos) y la Alta Frecuencia. El Peeling Químico, Pink Glow y Amber Glow requieren evitar exposición solar y se recomiendan en otoño-invierno. Revisa nuestra guía completa de tratamientos para el verano en checkvital.cl/verano-la-serena."
+  },
+  {
+    q: "¿Es seguro hacerse un peeling antes de ir a la playa?",
+    a: "Depende del tipo de peeling. El Peeling de Algas sí es seguro antes de la playa — es 100% natural y no sensibiliza la piel al sol. El Peeling Químico no: al usar ácidos, requiere evitar exposición solar directa durante la recuperación para no generar manchas o irritación."
+  },
+  // Profesional / confianza
+  {
+    q: "¿Por qué importa que sea una enfermera quien realice los tratamientos?",
+    a: "La formación en enfermería garantiza conocimiento anatómico, técnica de extracción e inyección clínica, manejo de productos y protocolos de seguridad que no forman parte de la formación cosmetológica estándar. En CheckVital cada procedimiento lo realiza Evelyn Briceño con el mismo rigor que se aplica en una consulta clínica."
+  },
+  {
+    q: "¿Atienden también a hombres?",
+    a: "Sí. Todos nuestros tratamientos están disponibles para hombres. Botox para arrugas de expresión, Peeling Químico para manchas y poros, Limpieza Facial y Mesoterapia son algunos de los más solicitados por pacientes masculinos. La evaluación es gratuita para todos."
+  },
+  // Peeling, bioestimulador, general
+  {
+    q: "¿En qué se diferencia el Peeling Químico del Peeling de Algas?",
+    a: "El Peeling Químico usa ácidos (AHA, BHA o TCA) y actúa en capas más profundas — ideal para manchas, cicatrices de acné y daño solar pronunciado. El Peeling de Algas es 100% natural con microespeculas vegetales, sin ácidos — ideal para pieles sensibles y uso en verano. Ambos incluyen limpieza facial profunda en el procedimiento."
+  },
+  {
+    q: "¿Qué es un Bioestimulador y cuándo se recomienda?",
+    a: "El Bioestimulador es un inyectable que activa la producción natural de colágeno y elastina de tu organismo. Se recomienda para flacidez, pérdida de volumen y envejecimiento progresivo. Los resultados son graduales y naturales, y duran hasta 18-24 meses. Es distinto al relleno con ácido hialurónico: no agrega volumen de inmediato, sino que mejora la calidad de la piel desde adentro."
+  },
+  // Evaluación / precios
+  {
+    q: "¿La evaluación gratuita tiene algún compromiso?",
+    a: "No. La evaluación gratuita en CheckVital es exactamente eso — gratuita y sin compromiso. Evelyn revisa tu piel, escucha tus objetivos y te recomienda el tratamiento más adecuado. Puedes decidir comenzar o no sin ninguna presión."
+  },
+  // Ubicación / contacto
+  {
+    q: "¿Ofrecen evaluación gratuita?",
+    a: "Sí. En CheckVital ofrecemos evaluación gratuita para todos los tratamientos. Evaluamos tu tipo de piel, condición actual y objetivos estéticos. Puedes agendar por WhatsApp al +56 9 89827644 o por Instagram @check.vital."
+  },
+  {
+    q: "¿Los procedimientos en CheckVital son seguros?",
+    a: "Todos los procedimientos los realiza Evelyn Briceño, enfermera titulada con más de 10 años de experiencia clínica. Usamos productos certificados de marcas profesionales de respaldo internacional: ZENA, Koru Pharma, Neuramis, Revitrane y otras. La seguridad clínica es nuestra diferencia principal."
+  },
+  {
+    q: "¿Dónde están ubicados en La Serena?",
+    a: "En Calle Central 95, Parcela 36, Alfalfares, La Serena. Un espacio íntimo y acogedor, diseñado para que tu experiencia sea personalizada desde el primer momento. Puedes ver la ubicación exacta en el mapa al final de esta página."
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(({ q, a }) => ({
+    "@type": "Question",
+    "name": q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": a
+    }
+  }))
+};
+---
+
+<section id="faq" class="bg-gray-50 py-16 px-4">
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-4">
+      Preguntas Frecuentes
+    </h2>
+    <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+      Todo lo que necesitas saber antes de tu primera visita a CheckVital.
+    </p>
+
+    <div class="space-y-3" id="faq-list">
+      {faqs.map((faq, i) => (
+        <div class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+          <button
+            type="button"
+            class="faq-btn w-full flex items-center justify-between px-6 py-4 text-left font-semibold text-gray-900 hover:text-primary transition-colors duration-200"
+            aria-expanded="false"
+            data-index={i}
+          >
+            <span>{faq.q}</span>
+            <svg
+              class="faq-icon w-5 h-5 flex-shrink-0 ml-4 text-primary transition-transform duration-300"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-answer hidden px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+            {faq.a}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  (function () {
+    const init = () => {
+      document.querySelectorAll('.faq-btn').forEach(btn => {
+        if (btn.dataset.bound === 'true') return;
+        btn.dataset.bound = 'true';
+
+        btn.addEventListener('click', () => {
+          const answer = btn.nextElementSibling;
+          const icon = btn.querySelector('.faq-icon');
+          const isOpen = !answer.classList.contains('hidden');
+
+          document.querySelectorAll('.faq-answer').forEach(a => a.classList.add('hidden'));
+          document.querySelectorAll('.faq-icon').forEach(ic => ic.classList.remove('rotate-180'));
+          document.querySelectorAll('.faq-btn').forEach(b => b.setAttribute('aria-expanded', 'false'));
+
+          if (!isOpen) {
+            answer.classList.remove('hidden');
+            icon.classList.add('rotate-180');
+            btn.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+    };
+
+    init();
+    document.addEventListener('astro:after-swap', init);
+    document.addEventListener('astro:page-load', init);
+  })();
+</script>

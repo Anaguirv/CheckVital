@@ -2,7 +2,7 @@
 		href="#"
 		id="wsp-float"
 		data-numero="56989827644"
-		data-msg="Hola! Quiero agendar una evaluación gratuita"
+		data-msg="Hola vi tu pagina web y me gustaria conocer sobre los tratamientos"
 		class="fixed border-1 border-solid border-white bottom-6 right-6 z-50  bg-secondary-light p-2 rounded-full shadow-lg hover:bg-green-600 transition cursor-pointer"
 		>
 		<img src="/whatsapp.svg" alt="WhatsApp" class="w-8 h-8" />
@@ -26,12 +26,10 @@
 			? `https://wa.me/${numero}?text=${msg}`
 			: `https://web.whatsapp.com/send?phone=${numero}&text=${msg}`;
 
-			if (typeof gtag === "function") {
-			gtag("event", "click_whatsapp_float", {
-				event_category: "conversion",
-				event_label: decodeURIComponent(msg),
+			window.cvTrack && window.cvTrack("whatsapp_cta", {
+				button_location: "floating_button",
+				engagement_type: "direct_click"
 			});
-			}
 
 			window.open(url, "_blank");
 		});

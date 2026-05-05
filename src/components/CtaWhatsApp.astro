@@ -5,7 +5,7 @@ export interface Props {
 
 const { servicio } = Astro.props;
 const numero = "56989827644";
-const mensaje = `Hola! Quiero una evaluación gratuita para el servicio de ${servicio}`;
+const mensaje = `Hola vi tu pagina web, me interesa el servicio de ${servicio}`;
 const encodedMsg = encodeURIComponent(mensaje);
 ---
 
@@ -39,12 +39,11 @@ const encodedMsg = encodeURIComponent(mensaje);
 					? `https://wa.me/${numero}?text=${msg}`
 					: `https://web.whatsapp.com/send?phone=${numero}&text=${msg}`;
 
-				if (typeof gtag === "function") {
-					gtag("event", "click_whatsapp", {
-					event_category: "conversion",
-					event_label: decodeURIComponent(msg),
-					});
-				}
+				window.cvTrack && window.cvTrack("whatsapp_cta", {
+					button_location: "service_page",
+					service_name: decodeURIComponent(msg).split("servicio de ")[1] || "",
+					engagement_type: "direct_click"
+				});
 
 				window.open(url, "_blank");
 				});

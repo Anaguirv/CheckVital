@@ -1,57 +1,113 @@
 ---
 const slides = [
-  { image: "/hero/pinkglow.webp", alt: "Tratamiento Pink Glow" },
-  { image: "/hero/amberglow.webp", alt: "Tratamiento Amber Glow" },
-  { image: "/hero/peeling.webp", alt: "Tratamiento Peeling" },
+  { image: "/hero/pinkglow.webp",  alt: "Tratamiento Pink Glow CheckVital La Serena",  label: "Pink Glow" },
+  { image: "/hero/amberglow.webp", alt: "Tratamiento Amber Glow CheckVital La Serena", label: "Amber Glow" },
+  { image: "/hero/glow3.webp",     alt: "Revitalización Facial CheckVital La Serena",  label: "Revitalización Facial" },
+  { image: "/hero/peeling.webp",   alt: "Peeling Profesional CheckVital La Serena",    label: "Peeling Profesional" },
 ];
 ---
 
-<section id="inicio" 
-class="relative isolate h-[75vh] md:h-[85vh] text-white overflow-hidden flex items-end justify-center"
-style="clip-path: polygon(0 0, 100% 0, 100% 82%, 50% 100%, 50% 100%, 0 82%);">
+<section
+  id="inicio"
+  class="relative isolate h-[82vh] md:h-[90vh] text-white overflow-hidden flex items-center justify-center"
+  style="clip-path: polygon(0 0, 100% 0, 100% 82%, 50% 100%, 50% 100%, 0 82%);"
+>
+  <!-- Gradient overlay -->
+  <div class="absolute inset-0 z-[1] pointer-events-none"
+    style="background: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 45%, rgba(0,0,0,0.60) 100%);">
+  </div>
 
-  <div class="absolute inset-0 bg-black/50"></div>
-<!-- Carrusel de fondo -->
+  <!-- Dot grid decorativo (top right) -->
+  <div class="absolute top-0 right-0 w-48 h-48 z-[2] opacity-[0.12] pointer-events-none"
+    style="background-image: radial-gradient(circle, white 1px, transparent 1px); background-size: 16px 16px;">
+  </div>
+  <!-- Dot grid decorativo (bottom left) -->
+  <div class="absolute bottom-[20%] left-0 w-36 h-36 z-[2] opacity-[0.08] pointer-events-none"
+    style="background-image: radial-gradient(circle, white 1px, transparent 1px); background-size: 16px 16px;">
+  </div>
+
+  <!-- Slideshow de fondo -->
   <div class="absolute inset-0 z-0">
     {slides.map((slide, i) => (
       <img
         src={slide.image}
         alt={slide.alt}
         class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out"
-        style={`opacity: ${i === 0 ? 1 : 0}`} 
+        style={`opacity: ${i === 0 ? 1 : 0}`}
         data-hero-slide
+        data-label={slide.label}
+        loading={i === 0 ? "eager" : "lazy"}
       />
     ))}
   </div>
 
-  <!-- Contenido centrado -->
-  <div class="relative z-10 px-4 max-w-3xl mx-auto text-center">
-     <a
+  <!-- Contenido principal -->
+  <div class="relative z-10 w-full px-6 text-center flex flex-col items-center gap-4 pb-16">
+
+    <!-- Badge -->
+    <span class="hero-badge inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.22em] uppercase text-white/80 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5">
+      ✦ La Serena · Coquimbo
+    </span>
+
+    <!-- Nombre de marca -->
+    <h1
+      class="hero-title font-bold text-white leading-none tracking-tight"
+      style="font-size: clamp(3rem, 10vw, 6.5rem); text-shadow: 0 4px 32px rgba(0,0,0,0.45);"
+    >
+      CheckVital
+    </h1>
+
+    <!-- Subtítulo -->
+    <p class="hero-subtitle text-sm sm:text-base md:text-lg text-white/82 font-light tracking-[0.18em] uppercase">
+      Centro de Estética y Belleza en La Serena
+    </p>
+
+    <!-- Línea decorativa -->
+    <div class="hero-line w-20 h-px" style="background: linear-gradient(to right, transparent, rgba(255,255,255,0.5), transparent);"></div>
+
+    <!-- CTA -->
+    <a
       href="#"
       id="hero-wsp"
       data-numero="56989827644"
-      data-msg="Hola! Me gustaría agendar una cita en CheckVital"
-      class="mb-24 inline-block text-white font-semibold px-6 py-3 rounded-full border-2 border-white 
-        bg-gradient-to-r from-primary to-secondary-light transition-transform duration-300 ease-in-out
-        hover:-translate-y-1 hover:scale-110 hover:bg-secondary-dark metallic-effect"
+      data-msg="Hola vi tu pagina web y me gustaria conocer sobre los tratamientos"
+      class="hero-cta mt-1 inline-block text-white font-semibold px-7 py-3.5 rounded-full border-2 border-white/70
+        bg-gradient-to-r from-primary to-secondary-light transition-all duration-300 ease-in-out
+        hover:-translate-y-1 hover:scale-105 hover:shadow-2xl metallic-effect"
     >
       Agenda tu Evaluación Gratuita
     </a>
   </div>
 
-  <!-- Flechas -->
-  <button id="prev" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/30 hover:bg-black/50 p-2 rounded-full">
-    <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M15 19l-7-7 7-7" /></svg>
-  </button>
-  <button id="next" class="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/30 hover:bg-black/50 p-2 rounded-full">
-    <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7" /></svg>
+  <!-- Flecha izquierda -->
+  <button id="prev" aria-label="Slide anterior"
+    class="absolute left-3 md:left-5 top-1/2 -translate-y-1/2 z-20 bg-black/20 hover:bg-black/50 backdrop-blur-sm p-2.5 rounded-full border border-white/10 transition-all duration-200">
+    <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+    </svg>
   </button>
 
-  <!-- Dots -->
-  <div id="dots" class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+  <!-- Flecha derecha -->
+  <button id="next" aria-label="Siguiente slide"
+    class="absolute right-3 md:right-5 top-1/2 -translate-y-1/2 z-20 bg-black/20 hover:bg-black/50 backdrop-blur-sm p-2.5 rounded-full border border-white/10 transition-all duration-200">
+    <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+    </svg>
+  </button>
+
+  <!-- Label del slide actual -->
+  <div id="slide-label"
+    class="absolute right-5 z-20 text-[10px] font-medium text-white/70 tracking-[0.18em] uppercase bg-black/20 backdrop-blur-sm px-3 py-1 rounded-full border border-white/10 transition-all duration-500"
+    style="bottom: calc(12% + 28px);">
+    Pink Glow
+  </div>
+
+  <!-- Dots / indicadores -->
+  <div id="dots" class="absolute left-1/2 -translate-x-1/2 z-20 flex items-center gap-1.5" style="bottom: 12%;">
     {slides.map((_, i) => (
       <button
-        class="w-3 h-3 rounded-full bg-white/40 hover:bg-white"
+        class="dot h-1.5 rounded-full transition-all duration-400 hover:opacity-80"
+        style={`width: ${i === 0 ? '22px' : '7px'}; background-color: ${i === 0 ? 'rgba(255,255,255,0.95)' : 'rgba(255,255,255,0.35)'};`}
         data-index={i}
         aria-label={`Ir al slide ${i + 1}`}
       ></button>
@@ -60,110 +116,134 @@ style="clip-path: polygon(0 0, 100% 0, 100% 82%, 50% 100%, 50% 100%, 0 82%);">
 </section>
 
 <style>
-  .metallic-effect {
-    position: relative;
-    overflow: hidden;
+  /* Ken Burns en el slide activo */
+  @keyframes kenBurns {
+    from { transform: scale(1) translate(0, 0); }
+    to   { transform: scale(1.07) translate(-0.6%, -0.4%); }
+  }
+  [data-hero-slide].kb-active {
+    animation: kenBurns 7s ease-out forwards;
   }
 
+  /* Animaciones de entrada del texto */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  .hero-badge    { animation: fadeIn    0.7s ease-out 0.2s both; }
+  .hero-title    { animation: fadeInUp  0.85s ease-out 0.45s both; }
+  .hero-subtitle { animation: fadeInUp  0.75s ease-out 0.70s both; }
+  .hero-line     { animation: fadeIn    0.7s ease-out 0.90s both; }
+  .hero-cta      { animation: fadeInUp  0.75s ease-out 1.05s both; }
+
+  /* Metallic sweep en el CTA */
+  .metallic-effect { position: relative; overflow: hidden; }
   .metallic-effect::before {
     content: '';
     position: absolute;
     inset: 0;
     background: linear-gradient(
       135deg,
-      transparent 0%,
-      transparent 45%,
-      rgba(255, 255, 255, 0.05) 48%,
-      rgba(255, 255, 255, 0.15) 50%,
-      rgba(255, 255, 255, 0.05) 52%,
-      transparent 55%,
-      transparent 100%
+      transparent 0%, transparent 45%,
+      rgba(255,255,255,0.05) 48%,
+      rgba(255,255,255,0.18) 50%,
+      rgba(255,255,255,0.05) 52%,
+      transparent 55%, transparent 100%
     );
     transform: translateX(-100%) translateY(100%);
     animation: metallicSweep 4s ease-in-out infinite;
     pointer-events: none;
   }
-
   @keyframes metallicSweep {
-    0% {
-      transform: translateX(-100%) translateY(100%);
-    }
-    25% {
-      transform: translateX(-50%) translateY(50%);
-    }
-    50% {
-      transform: translateX(100%) translateY(-100%);
-    }
-    75% {
-      transform: translateX(50%) translateY(-50%);
-    }
-    100% {
-      transform: translateX(-100%) translateY(100%);
-    }
+    0%   { transform: translateX(-100%) translateY(100%); }
+    50%  { transform: translateX(100%) translateY(-100%); }
+    100% { transform: translateX(-100%) translateY(100%); }
   }
 </style>
 
-<!-- Script: carrusel + CTA -->
 <script is:inline type="module">
-  const slides = document.querySelectorAll("[data-hero-slide]");
-  const dots = document.querySelectorAll("#dots button");
-  const prev = document.getElementById("prev");
-  const next = document.getElementById("next");
-  let current = 0;
-  let interval;
+  (function () {
+    const slideEls  = [...document.querySelectorAll("[data-hero-slide]")];
+    const dotEls    = [...document.querySelectorAll("#dots .dot")];
+    const labelEl   = document.getElementById("slide-label");
+    const prevBtn   = document.getElementById("prev");
+    const nextBtn   = document.getElementById("next");
+    let current     = 0;
+    let autoInterval;
+    const INTERVAL  = 5000;
 
-  const updateSlide = (index) => {
-    slides.forEach((el, i) => {
-      el.style.opacity = i === index ? "1" : "0";
-    });
-    dots.forEach((dot, i) => {
-      dot.classList.toggle("bg-white", i === index);
-      dot.classList.toggle("bg-white/40", i !== index);
-    });
-    current = index;
-  };
+    const activateKenBurns = (el) => {
+      el.classList.remove("kb-active");
+      void el.offsetWidth; // reflow forzado
+      el.classList.add("kb-active");
+    };
 
-  const nextSlide = () => updateSlide((current + 1) % slides.length);
-  const prevSlide = () => updateSlide((current - 1 + slides.length) % slides.length);
-  const restart = () => {
-    clearInterval(interval);
-    interval = setInterval(nextSlide, 8000);
-  };
-
-  next?.addEventListener("click", () => (nextSlide(), restart()));
-  prev?.addEventListener("click", () => (prevSlide(), restart()));
-  dots.forEach((dot, i) => dot.addEventListener("click", () => (updateSlide(i), restart())));
-
-  // Swipe en mobile
-  let startX = 0;
-  const container = document.querySelector("#inicio");
-  container?.addEventListener("touchstart", (e) => (startX = e.touches[0].clientX));
-  container?.addEventListener("touchend", (e) => {
-    const deltaX = e.changedTouches[0].clientX - startX;
-    if (deltaX < -50) nextSlide();
-    else if (deltaX > 50) prevSlide();
-    restart();
-  });
-
-  updateSlide(0);
-  interval = setInterval(nextSlide, 4000);
-
-  // WhatsApp CTA
-  const heroLink = document.getElementById("hero-wsp");
-  heroLink?.addEventListener("click", (e) => {
-    e.preventDefault();
-    const numero = heroLink.dataset.numero;
-    const msg = encodeURIComponent(heroLink.dataset.msg ?? "");
-    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-    const url = isMobile
-      ? `https://wa.me/${numero}?text=${msg}`
-      : `https://web.whatsapp.com/send?phone=${numero}&text=${msg}`;
-    if (typeof gtag === "function") {
-      gtag("event", "click_whatsapp_hero", {
-        event_category: "conversion",
-        event_label: decodeURIComponent(msg),
+    const updateSlide = (index) => {
+      slideEls.forEach((el, i) => {
+        el.style.opacity = i === index ? "1" : "0";
+        if (i === index) activateKenBurns(el);
       });
-    }
-    window.open(url, "_blank");
-  });
+
+      dotEls.forEach((dot, i) => {
+        dot.style.width = i === index ? "22px" : "7px";
+        dot.style.backgroundColor = i === index ? "rgba(255,255,255,0.95)" : "rgba(255,255,255,0.35)";
+      });
+
+      if (labelEl) {
+        labelEl.style.opacity = "0";
+        setTimeout(() => {
+          labelEl.textContent = slideEls[index].dataset.label ?? "";
+          labelEl.style.opacity = "1";
+        }, 350);
+      }
+
+      current = index;
+    };
+
+    const nextSlide = () => updateSlide((current + 1) % slideEls.length);
+    const prevSlide = () => updateSlide((current - 1 + slideEls.length) % slideEls.length);
+
+    const restart = () => {
+      clearInterval(autoInterval);
+      autoInterval = setInterval(nextSlide, INTERVAL);
+    };
+
+    nextBtn?.addEventListener("click", () => { nextSlide(); restart(); });
+    prevBtn?.addEventListener("click", () => { prevSlide(); restart(); });
+    dotEls.forEach((dot, i) => dot.addEventListener("click", () => { updateSlide(i); restart(); }));
+
+    // Swipe táctil
+    let startX = 0;
+    const section = document.querySelector("#inicio");
+    section?.addEventListener("touchstart", (e) => { startX = e.touches[0].clientX; });
+    section?.addEventListener("touchend", (e) => {
+      const dx = e.changedTouches[0].clientX - startX;
+      if (dx < -50) nextSlide();
+      else if (dx > 50) prevSlide();
+      restart();
+    });
+
+    // Inicializar
+    activateKenBurns(slideEls[0]);
+    autoInterval = setInterval(nextSlide, INTERVAL);
+
+    // WhatsApp CTA
+    const heroLink = document.getElementById("hero-wsp");
+    heroLink?.addEventListener("click", (e) => {
+      e.preventDefault();
+      const numero = heroLink.dataset.numero;
+      const msg    = encodeURIComponent(heroLink.dataset.msg ?? "");
+      const isMob  = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+      const url    = isMob
+        ? `https://wa.me/${numero}?text=${msg}`
+        : `https://web.whatsapp.com/send?phone=${numero}&text=${msg}`;
+      window.cvTrack?.("whatsapp_cta", { button_location: "hero", engagement_type: "direct_click" });
+      window.open(url, "_blank");
+    });
+  })();
 </script>

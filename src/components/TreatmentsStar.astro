@@ -1,64 +1,114 @@
-<section id="tratamientos-estrella" title="Servicios" class="bg-white py-16 my-16">
-  <div class="container mx-auto px-4">
+---
+const row1 = [
+  { src: "/box1.webp",            alt: "Box clínico CheckVital La Serena" },
+  { src: "/ayd_11.webp",          alt: "Resultado real CheckVital" },
+  { src: "/me_line_ayd.webp",     alt: "Antes y después Peeling ME LINE" },
+  { src: "/peelingayd1.webp",     alt: "Resultado Peeling de Algas CheckVital" },
+  { src: "/botoxayd.webp",        alt: "Antes y después Botox CheckVital" },
+  { src: "/ayd-peeling1.jpg",     alt: "Resultado Peeling Facial La Serena" },
+  { src: "/aydacidohialu2.webp",  alt: "Resultado Ácido Hialurónico CheckVital" },
+  { src: "/pinkglowayd.webp",     alt: "Antes y después Pink Glow" },
+];
+
+const row2 = [
+  { src: "/botoxasd.webp",        alt: "Resultado Botox zona ojos CheckVital" },
+  { src: "/me_line_ayd2.webp",    alt: "Peeling Despigmentante ME LINE antes y después" },
+  { src: "/me_line_ayd3.webp",    alt: "Tratamiento manchas faciales La Serena" },
+  { src: "/peelingayd2.webp",     alt: "Antes y después Peeling Natural" },
+  { src: "/ayd-peeling2.webp",    alt: "Resultado Peeling Facial CheckVital" },
+  { src: "/ayd-peeling3.jpg",     alt: "Tratamiento Peeling Antes y Después" },
+  { src: "/ayd-peeling4.jpg",     alt: "Manchas solares tratadas La Serena" },
+  { src: "/pinkpink.webp",        alt: "Ambiente box estético CheckVital" },
+];
+---
+
+<section id="tratamientos-estrella" class="bg-white py-16 overflow-hidden">
+  <div class="container mx-auto px-4 mb-10">
     <h2 class="text-2xl md:text-4xl font-bold mb-4 text-primary text-center">
       Resultados Reales y Nuestro Box Clínico
     </h2>
-    <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+    <p class="text-center text-gray-600 max-w-2xl mx-auto">
       Mira algunos de los resultados obtenidos y conoce cómo es nuestro box clínico en CheckVital.
     </p>
+  </div>
 
-    <!-- Galería visual armoniosa -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+  <!-- Fila 1: desplazamiento hacia la izquierda -->
+  <div class="marquee-wrapper mb-4" aria-hidden="true">
+    <div class="marquee-track marquee-left">
+      {[...row1, ...row1].map((img) => (
+        <div class="marquee-card">
+          <img src={img.src} alt={img.alt} loading="lazy" class="w-full h-full object-cover" />
+        </div>
+      ))}
+    </div>
+  </div>
 
-      <!-- Imagen -->
-      <div class="overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition aspect-[4/3]">
-        <img 
-          src="/box1.webp" 
-          alt="Box clínico CheckVital" 
-          class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
-        />
-      </div>
-
-      <div class="overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition aspect-[4/3]">
-        <img 
-          src="/aydacidohialu2.webp" 
-          alt="Box estético en La Serena" 
-          class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
-        />
-      </div>
-
-      <div class="overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition aspect-[4/3]">
-        <img 
-          src="/botoxayd.webp" 
-          alt="Antes y después Pink Glow" 
-          class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
-        />
-      </div>
-
-      <div class="overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition aspect-[4/3]">
-        <img 
-          src="/botoxasd.webp" 
-          alt="Resultado Botox zona ojos" 
-          class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
-        />
-      </div>
-
-      <div class="overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition aspect-[4/3]">
-        <img 
-          src="/pinkglowayd.webp" 
-          alt="Mejora labios con ácido hialurónico" 
-          class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
-        />
-      </div>
-
-      <div class="overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition aspect-[4/3]">
-        <img 
-          src="/pinkpink.webp" 
-          alt="Ambiente cálido en clínica" 
-          class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
-        />
-      </div>
-
+  <!-- Fila 2: desplazamiento hacia la derecha -->
+  <div class="marquee-wrapper" aria-hidden="true">
+    <div class="marquee-track marquee-right">
+      {[...row2, ...row2].map((img) => (
+        <div class="marquee-card">
+          <img src={img.src} alt={img.alt} loading="lazy" class="w-full h-full object-cover" />
+        </div>
+      ))}
     </div>
   </div>
 </section>
+
+<style>
+  .marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 12px;
+    width: max-content;
+    will-change: transform;
+  }
+
+  .marquee-card {
+    flex-shrink: 0;
+    width: 280px;
+    height: 200px;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.10);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  @media (min-width: 768px) {
+    .marquee-card {
+      width: 340px;
+      height: 240px;
+    }
+  }
+
+  .marquee-card:hover {
+    transform: scale(1.04);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+    z-index: 2;
+  }
+
+  /* Animaciones */
+  @keyframes scrollLeft {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  @keyframes scrollRight {
+    from { transform: translateX(-50%); }
+    to   { transform: translateX(0); }
+  }
+
+  .marquee-left  { animation: scrollLeft  32s linear infinite; }
+  .marquee-right { animation: scrollRight 28s linear infinite; }
+
+  /* Pausar al hover */
+  .marquee-wrapper:hover .marquee-track {
+    animation-play-state: paused;
+  }
+</style>

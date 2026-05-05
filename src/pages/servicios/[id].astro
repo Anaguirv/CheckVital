@@ -14,16 +14,29 @@ export async function getStaticPaths() {
 
 const { service } = Astro.props;
 const { data, slug } = service;
-const { title, precio, img, duration, description, sesiones } = data;
+const { title, precio, img, duration, description, sesiones, keywords } = data;
 
 const { Content } = await render(service);
+
+const pageKeywords = keywords?.join(', ') || `${title}, tratamiento estético La Serena, clínica estética La Serena, CheckVital`;
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://checkvital.cl" },
+    { "@type": "ListItem", "position": 2, "name": "Tratamientos", "item": "https://checkvital.cl/#tratamientos" },
+    { "@type": "ListItem", "position": 3, "name": title, "item": `https://checkvital.cl/servicios/${slug}` }
+  ]
+};
 ---
 
 <Layout
   title={title}
   description={description}
-  keywords={`${title}, tratamiento estético, La Serena, Coquimbo`}
+  keywords={pageKeywords}
 >
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <section class="max-w-5xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-10 items-start">
     
     <!-- Columna izquierda: Botón y imagen -->
@@ -54,9 +67,15 @@ const { Content } = await render(service);
       <p class="text-gray-600 mb-2 text-lg">
         <strong>Duración:</strong> {duration} minutos
       </p>
-      <p class="text-gray-600 mb-2 text-lg">
-        <strong>Precio:</strong> ${precio.toLocaleString("es-CL")}
-      </p>
+      {precio && precio > 0 ? (
+        <p class="text-gray-600 mb-2 text-lg">
+          <strong>Precio:</strong> ${precio.toLocaleString("es-CL")}
+        </p>
+      ) : (
+        <p class="text-gray-600 mb-2 text-lg">
+          <strong>Precio:</strong> <span class="text-primary font-medium">Consultar — agenda tu evaluación gratuita</span>
+        </p>
+      )}
       {typeof sesiones !== "undefined" && (
         <p class="text-gray-600 mb-2 text-lg">
           <strong>Sesiones:</strong> {sesiones}

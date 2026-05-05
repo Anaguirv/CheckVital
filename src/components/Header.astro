@@ -9,7 +9,7 @@ const links = [
 <header class="fixed top-0 inset-x-0 z-50 transition-transform duration-300 ease-in-out md:translate-y-0" id="header">
   <div class="bg-white/70 backdrop-blur-md shadow transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between overflow-hidden">
-      
+
       <!-- Logo -->
       <a href="/" onclick={`navigateTo(event, 'inicio')`} class="block">
         <div class="flex items-center space-x-2 h-12 px-3 transition-transform duration-300 ease-in-out hover:scale-[1.05] origin-center">
@@ -21,7 +21,7 @@ const links = [
       </a>
 
       <!-- Botón menú mobile -->
-      <button 
+      <button
         id="menu-toggle"
         class="md:hidden text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
         aria-label="Abrir menú">
@@ -34,14 +34,15 @@ const links = [
       <!-- Navegación desktop -->
       <nav class="hidden md:flex md:space-x-6 text-m font-medium md:items-center">
         {links.map(({ label, target }) => (
-          <a 
-            href="/" 
-            onclick={`navigateTo(event, '${target}')`} 
+          <a
+            href="/"
+            onclick={`navigateTo(event, '${target}')`}
             class="nav-link block px-6 py-3 text-gray-700 hover:text-primary"
           >
             {label}
           </a>
         ))}
+        <a href="/blog" class="nav-link block px-6 py-3 text-gray-700 hover:text-primary">Blog</a>
       </nav>
     </div>
   </div>
@@ -49,14 +50,15 @@ const links = [
   <!-- Navegación mobile -->
   <nav id="menu" class="bg-white/70 backdrop-blur-md shadow hidden md:hidden flex-col w-full z-40">
     {links.map(({ label, target }) => (
-      <a 
-        href="/" 
-        onclick={`navigateTo(event, '${target}')`} 
+      <a
+        href="/"
+        onclick={`navigateTo(event, '${target}')`}
         class="block px-6 py-3 text-gray-700 hover:text-primary"
       >
         {label}
       </a>
     ))}
+    <a href="/blog" class="block px-6 py-3 text-gray-700 hover:text-primary">Blog</a>
   </nav>
 </header>
 

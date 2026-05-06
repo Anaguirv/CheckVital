@@ -1,6 +1,6 @@
 ---
 title: Peeling de Algas | Exfoliación natural y profunda sin químicos
-precio: 60000
+precio: 70000
 img: peeling-algas.webp
 duration: 45
 description: El Peeling de Algas es un tratamiento despigmentante facial 100% natural que mejora textura, manchas, poros y cicatrices. Incluye limpieza facial profunda como parte del procedimiento. Sin químicos agresivos, apto para verano y pieles sensibles. Disponible en CheckVital, La Serena.
@@ -105,6 +105,23 @@ sesiones: 1
   <li>Aplicación de sérum calmante y protección solar.</li>
   <li>Instrucciones de cuidados post tratamiento.</li>
 </ol>
+
+---
+
+## Resultados antes y después
+
+<div class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+  <img 
+    src="/peeling-algas-ayd1.webp" 
+    alt="Resultado Peeling de Algas antes y después CheckVital La Serena" 
+    class="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg"
+  />
+  <img 
+    src="/peeling-algas-ayd2.webp" 
+    alt="Antes y después Peeling de Algas La Serena CheckVital" 
+    class="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg"
+  />
+</div>
 
 ---
 

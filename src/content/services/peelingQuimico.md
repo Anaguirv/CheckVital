@@ -123,25 +123,7 @@ sesiones: 3
 
 ## Resultados antes y después
 
-<div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
-  <img
-    src="/me_line_ayd.webp"
-    alt="Resultado tratamiento despigmentante ME LINE antes y después CheckVital La Serena"
-    class="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg"
-  />
-  <img
-    src="/me_line_ayd2.webp"
-    alt="Antes y después peeling despigmentante ME LINE La Serena"
-    class="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg"
-  />
-  <img
-    src="/me_line_ayd3.webp"
-    alt="Resultados peeling químico manchas CheckVital La Serena"
-    class="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg"
-  />
-</div>
-
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4 my-4">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 my-8">
   <img
     src="/ayd-peeling1.jpg"
     alt="Peeling despigmentante antes y después La Serena"

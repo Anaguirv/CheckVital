@@ -153,6 +153,18 @@ sesiones: 2
 
 ---
 
+## Resultados antes y después
+
+<div class="grid grid-cols-1 md:grid-cols-1 gap-6 my-8">
+  <img
+    src="/skinbooster-ayd1.webp"
+    alt="Resultado Skinbooster Celosome Aqua antes y después CheckVital La Serena"
+    class="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg"
+  />
+</div>
+
+---
+
 ## Imágenes del producto
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">

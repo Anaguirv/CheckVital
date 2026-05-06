@@ -101,6 +101,23 @@ sesiones: 1
 
 ---
 
+## Resultados antes y después
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+  <img
+    src="/richesse-pla-ayd1.webp"
+    alt="Resultado Bioestimulador Richesse PLA antes y después CheckVital La Serena"
+    class="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg"
+  />
+  <img
+    src="/richesse-pla-ayd2.webp"
+    alt="Antes y después Bioestimulador Ácido Poliláctico La Serena CheckVital"
+    class="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg"
+  />
+</div>
+
+---
+
 ## Imágenes del producto
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">

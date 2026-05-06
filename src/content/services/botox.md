@@ -1,6 +1,6 @@
 ---
 title: Botox La Serena | Reducción de arrugas y líneas de expresión
-precio: 150000
+precio: 160000
 img: botox.webp
 duration: 30
 sesiones: 1
@@ -82,17 +82,11 @@ slug: botox
     </ul>
   </div>
 
-  <!-- Doble foto -->
-  <div class="w-full md:w-1/2 flex gap-4">
-    <img 
-      src="/botoxmujer1.webp" 
-      alt="Resultado del Botox" 
-      class="w-1/2 aspect-[4/3] object-cover rounded-xl shadow-lg"
-    />
+  <div class="w-full md:w-1/2">
     <img 
       src="/botoxhombre1.webp" 
       alt="Aplicación de Botox" 
-      class="w-1/2 aspect-[4/3] object-cover rounded-xl shadow-lg"
+      class="w-full aspect-[4/3] object-cover rounded-xl shadow-lg"
     />
   </div>
 
@@ -141,13 +135,6 @@ slug: botox
     </ol>
   </div>
 
-  <div class="w-full md:w-1/2">
-    <img 
-      src="/botoxmujer2.webp" 
-      alt="Pasos del tratamiento con Botox" 
-      class="w-full aspect-[4/3] object-cover rounded-xl shadow-lg"
-    />
-  </div>
 
 </div>
 

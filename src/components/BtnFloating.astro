@@ -1,37 +1,61 @@
-		<a
-		href="#"
-		id="wsp-float"
-		data-numero="56989827644"
-		data-msg="Hola vi tu pagina web y me gustaria conocer sobre los tratamientos"
-		class="fixed border-1 border-solid border-white bottom-6 right-6 z-50  bg-secondary-light p-2 rounded-full shadow-lg hover:bg-green-600 transition cursor-pointer"
-		>
-		<img src="/whatsapp.svg" alt="WhatsApp" class="w-8 h-8" />
-		</a>
-	
-		<!-- Boton flotante wsp -->
-	<script is:inline>
-		const floatWsp = document.getElementById("wsp-float");
+<!-- Botón flotante WhatsApp -->
+<a
+  href="#"
+  id="wsp-float"
+  data-numero="56989827644"
+  data-msg="Hola vi tu pagina web y me gustaria conocer sobre los tratamientos"
+  class="fixed border-1 border-solid border-white bottom-6 right-6 z-50 bg-secondary-light p-2 rounded-full shadow-lg hover:bg-green-600 transition cursor-pointer"
+>
+  <img src="/whatsapp.svg" alt="WhatsApp" class="w-8 h-8" />
+</a>
 
-		if (floatWsp && floatWsp.dataset.bound !== "true") {
-		floatWsp.dataset.bound = "true";
+<!-- Botón flotante Llamar (solo mobile) -->
+<a
+  href="tel:+56989827644"
+  id="call-float"
+  class="fixed md:hidden bottom-6 right-[4.5rem] z-50 bg-primary p-2 rounded-full shadow-lg hover:bg-primary/80 transition cursor-pointer border border-white"
+  aria-label="Llamar a CheckVital"
+>
+  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+  </svg>
+</a>
 
-		floatWsp.addEventListener("click", (e) => {
-			e.preventDefault();
+<script is:inline>
+  const floatWsp = document.getElementById("wsp-float");
 
-			const numero = floatWsp.getAttribute("data-numero");
-			const msg = encodeURIComponent(floatWsp.getAttribute("data-msg") || "");
+  if (floatWsp && floatWsp.dataset.bound !== "true") {
+    floatWsp.dataset.bound = "true";
 
-			const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-			const url = isMobile
-			? `https://wa.me/${numero}?text=${msg}`
-			: `https://web.whatsapp.com/send?phone=${numero}&text=${msg}`;
+    floatWsp.addEventListener("click", (e) => {
+      e.preventDefault();
 
-			window.cvTrack && window.cvTrack("whatsapp_cta", {
-				button_location: "floating_button",
-				engagement_type: "direct_click"
-			});
+      const numero = floatWsp.getAttribute("data-numero");
+      const msg = encodeURIComponent(floatWsp.getAttribute("data-msg") || "");
 
-			window.open(url, "_blank");
-		});
-		}
-	</script>
+      const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+      const url = isMobile
+        ? `https://wa.me/${numero}?text=${msg}`
+        : `https://web.whatsapp.com/send?phone=${numero}&text=${msg}`;
+
+      window.cvTrack && window.cvTrack("whatsapp_cta", {
+        button_location: "floating_button",
+        engagement_type: "direct_click"
+      });
+
+      window.open(url, "_blank");
+    });
+  }
+
+  const callFloat = document.getElementById("call-float");
+  if (callFloat && callFloat.dataset.bound !== "true") {
+    callFloat.dataset.bound = "true";
+    callFloat.addEventListener("click", () => {
+      window.cvTrack && window.cvTrack("phone_click", {
+        button_location: "floating_button",
+        engagement_type: "tel_link"
+      });
+    });
+  }
+</script>

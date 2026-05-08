@@ -1,6 +1,6 @@
 ---
 title: Alta Frecuencia La Serena | Tratamiento bactericida, antiinflamatorio y capilar
-img: alta-frecuencia.webp
+img: alta-frecuencia-2.webp
 duration: 45
 description: La Alta Frecuencia en CheckVital La Serena es un tratamiento con acción bactericida y estimulante. Se aplica después de limpiezas faciales profundas, peelings y administración de vitaminas. Indicado para acné activo, estimulación capilar, cicatrización y colágeno. Valor $35.000 incluido con limpieza facial.
 category: cuidado-piel
@@ -34,8 +34,8 @@ sesiones: 1
 
   <div class="w-full md:w-1/2">
     <img
-      src="/alta-frecuencia.webp"
-      alt="Alta Frecuencia en CheckVital La Serena"
+      src="/alta-frecuencia-implementos.webp"
+      alt="Equipo de Alta Frecuencia en CheckVital La Serena"
       class="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg"
     />
   </div>
@@ -78,8 +78,8 @@ sesiones: 1
 
   <div class="w-full md:w-1/2">
     <img
-      src="/alta-frecuencia.webp"
-      alt="Beneficios Alta Frecuencia CheckVital"
+      src="/alta-frecuencia-real.webp"
+      alt="Evelyn Briceño aplicando Alta Frecuencia en CheckVital La Serena"
       class="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg"
     />
   </div>

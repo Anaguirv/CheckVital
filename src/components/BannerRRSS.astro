@@ -22,10 +22,10 @@ const contactInfo = {
 
         <!-- Social Media -->
         <div class="flex flex-col items-center justify-center">
-          <a 
+          <a
             href={contactInfo.instagram}
             target="_blank"
-            class="w-10 h-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center transition-colors duration-300 group"
+            class="banner-instagram-link w-10 h-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center transition-colors duration-300 group"
             aria-label="Síguenos en Instagram"
           >
             <svg 
@@ -44,3 +44,25 @@ const contactInfo = {
         </div>
   </div>
 </section>
+
+<script is:inline>
+  (function () {
+    const init = () => {
+      const igLinks = document.querySelectorAll('.banner-instagram-link');
+      igLinks.forEach((link) => {
+        if (link.dataset.bound === 'true') return;
+        link.dataset.bound = 'true';
+        link.addEventListener('click', () => {
+          window.cvTrack && window.cvTrack('social_click', {
+            button_location: 'banner_rrss',
+            platform: 'instagram',
+            engagement_type: 'direct_click'
+          });
+        });
+      });
+    };
+    init();
+    document.addEventListener('astro:after-swap', init);
+    document.addEventListener('astro:page-load', init);
+  })();
+</script>

@@ -12,6 +12,7 @@ import Footer from "../components/Footer.astro";
 import Banner from "../components/Banner.astro";
 import BannerRRSS from "../components/BannerRRSS.astro";
 import FAQ from "../components/FAQ.astro";
+import BtnFloating from "../components/BtnFloating.astro";
 
 const { title, description, keywords } = Astro.props;
 
@@ -173,6 +174,7 @@ const pageKeywords = keywords ?? defaultKeywords;
 		<Footer />
 		<FAQ />
 		<BannerRRSS />
+		<BtnFloating />
 
 	<script>
 		// animation scroll

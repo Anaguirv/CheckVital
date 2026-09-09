@@ -14,7 +14,7 @@ import BannerRRSS from "../components/BannerRRSS.astro";
 import FAQ from "../components/FAQ.astro";
 import BtnFloating from "../components/BtnFloating.astro";
 
-const { title, description, keywords } = Astro.props;
+const { title, description, keywords, faqSchema = true, image, ogType = 'website' } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, 'https://checkvital.cl').href;
 
@@ -25,6 +25,12 @@ const defaultKeywords = "procedimientos estéticos la serena, clínica estética
 const pageTitle = title ?? defaultTitle;
 const pageDescription = description ?? defaultDescription;
 const pageKeywords = keywords ?? defaultKeywords;
+
+// og:image debe ser absoluta o las redes no la resuelven.
+// WhatsApp y Facebook no renderizan WebP de forma confiable: solo se acepta jpg/png,
+// en cualquier otro caso se usa la tarjeta de marca por defecto.
+const isShareable = typeof image === 'string' && /\.(jpe?g|png)$/i.test(image);
+const ogImage = new URL(isShareable ? image : '/opengraph-image.jpg', 'https://checkvital.cl').href;
 
 ---
 
@@ -38,7 +44,7 @@ const pageKeywords = keywords ?? defaultKeywords;
 		<link rel="icon" type="image/svg+xml" href="/icono.png" />
 		<link rel="sitemap" href="/sitemap-index.xml" />
 		<link rel="canonical" href={canonicalURL} />
-		<meta name="robots" content="index, follow" />
+		<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 		<meta name="google-site-verification" content="Zejn6044y6TfOFZtsX01u4Z7G5XMisEzgTmB6hwNyXo" />
 		<meta name="language" content="es" />
 
@@ -48,17 +54,28 @@ const pageKeywords = keywords ?? defaultKeywords;
 		<meta name="author" content="CheckVital" />
 
 		<!-- Open Graph -->
+		<meta property="og:site_name" content="CheckVital La Serena" />
+		<meta property="og:locale" content="es_CL" />
 		<meta property="og:title" content={pageTitle} />
 		<meta property="og:description" content={pageDescription} />
-		<meta property="og:image" content="/opengraph-image.jpg" />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content={pageTitle} />
 		<meta property="og:url" content={canonicalURL} />
-		<meta property="og:type" content="website" />
+		<meta property="og:type" content={ogType} />
 
 		<!-- Twitter Card -->
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content={pageTitle} />
 		<meta name="twitter:description" content={pageDescription} />
-		<meta name="twitter:image" content="/opengraph-image.jpg" />
+		<meta name="twitter:image" content={ogImage} />
+
+		<!-- Cobertura geográfica (SEO local) -->
+		<meta name="geo.region" content="CL-CO" />
+		<meta name="geo.placename" content="La Serena, Región de Coquimbo" />
+		<meta name="geo.position" content="-29.9133;-71.2528" />
+		<meta name="ICBM" content="-29.9133, -71.2528" />
 
 		<!-- Schema.org JSON-LD -->
 		<script type="application/ld+json">
@@ -117,7 +134,7 @@ const pageKeywords = keywords ?? defaultKeywords;
 				{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bioestimulador", "url": "https://checkvital.cl/servicios/bioestimulador" } },
 				{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Botox", "url": "https://checkvital.cl/servicios/botox" } },
 				{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ácido Hialurónico", "url": "https://checkvital.cl/servicios/acidoHialuronico" } },
-				{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mesoterapia", "url": "https://checkvital.cl/servicios/mesoterapia-silicio-organico" } },
+				{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ADN de Salmón (Polinucleótidos)", "url": "https://checkvital.cl/servicios/adn-salmon" } },
 				{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hilos Tensores", "url": "https://checkvital.cl/servicios/hilosTensores" } }
 			]
 		}
@@ -137,6 +154,40 @@ const pageKeywords = keywords ?? defaultKeywords;
 		(function () {
 			var _fired = {};
 
+			// --- Atribución SEM: guarda la campaña de origen durante toda la sesión ---
+			// Permite saber en GA4 / Google Ads qué anuncio o campaña originó cada lead,
+			// aunque el usuario navegue varias páginas antes de escribir por WhatsApp.
+			var CAMPAIGN_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'gbraid', 'wbraid', 'fbclid', 'msclkid'];
+
+			function captureCampaign() {
+				try {
+					var qs = new URLSearchParams(window.location.search);
+					var found = false;
+					var data = {};
+					CAMPAIGN_KEYS.forEach(function (k) {
+						var v = qs.get(k);
+						if (v) { data[k] = v; found = true; }
+					});
+					if (found) {
+						data.landing_page = window.location.pathname;
+						data.captured_at = new Date().toISOString();
+						sessionStorage.setItem('cv_campaign', JSON.stringify(data));
+					}
+				} catch (e) { /* sessionStorage bloqueado: la atribución se omite */ }
+			}
+
+			function getCampaign() {
+				try {
+					var raw = sessionStorage.getItem('cv_campaign');
+					return raw ? JSON.parse(raw) : {};
+				} catch (e) { return {}; }
+			}
+
+			captureCampaign();
+			document.addEventListener('astro:page-load', captureCampaign);
+
+			window.cvCampaign = getCampaign;
+
 			window.cvTrack = function (eventName, params) {
 				var now = Date.now();
 				var key = eventName + '|' + (params && params.button_location ? params.button_location : '');
@@ -148,10 +199,21 @@ const pageKeywords = keywords ?? defaultKeywords;
 
 				if (typeof gtag !== 'function') return;
 
-				gtag('event', eventName, Object.assign({
+				var payload = Object.assign({
 					event_category: 'conversion',
 					page_path: window.location.pathname
-				}, params || {}));
+				}, getCampaign(), params || {});
+
+				gtag('event', eventName, payload);
+
+				// Evento estándar de GA4: importable como conversión en Google Ads
+				if (eventName === 'whatsapp_cta' || eventName === 'phone_click') {
+					gtag('event', 'generate_lead', Object.assign({
+						currency: 'CLP',
+						value: 1,
+						lead_source: eventName === 'whatsapp_cta' ? 'whatsapp' : 'telefono'
+					}, payload));
+				}
 			};
 
 			// Limpiar caché de disparos en cada cambio de página (SPA con ClientRouter)
@@ -172,7 +234,7 @@ const pageKeywords = keywords ?? defaultKeywords;
 		</main>
 		<Banner />
 		<Footer />
-		<FAQ />
+		<FAQ emitSchema={faqSchema} />
 		<BannerRRSS />
 		<BtnFloating />
 

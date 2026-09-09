@@ -4,10 +4,16 @@ import { getCollection } from 'astro:content';
 const treatments = await getCollection("services");
 const { services } = Astro.props;
 
+// Los tratamientos nuevos se muestran primero para que no queden perdidos en la grilla
+const sortedTreatments = [...treatments].sort(
+  (a, b) => Number(b.data.nuevo ?? false) - Number(a.data.nuevo ?? false)
+);
+
 const categories = [
   { title: "Todos", key: "all" },
   { title: "Rejuvenecimiento Facial y Anti-Edad", key: "rejuvenecimiento" },
   { title: "Cuidado y Limpieza de la Piel", key: "cuidado-piel" },
+  { title: "Hidratación y Labios", key: "hidratación" },
   { title: "Modelación Corporal", key: "modelacion" }
 ];
 ---
@@ -42,12 +48,18 @@ const categories = [
     id="treatment-grid"
     class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 auto-rows-[360px]"
   >
-    {treatments.map((t) => (
+    {sortedTreatments.map((t) => (
       <a
         href={`/servicios/${t.slug}`}
         class="group relative flex flex-col p-4 rounded-2xl bg-white border border-gray-200 shadow hover:shadow-xl transition overflow-hidden hover:-translate-y-1"
+        class:list={{ 'ring-2': t.data.nuevo, 'ring-primary/40': t.data.nuevo }}
         data-category={t.data.category}
       >
+        {t.data.nuevo && (
+          <span class="absolute top-6 left-6 z-10 bg-primary text-white text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-md">
+            Nuevo
+          </span>
+        )}
         <img
           src={`/${t.data.img}`}
           alt={t.data.title}

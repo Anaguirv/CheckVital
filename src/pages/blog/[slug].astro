@@ -12,17 +12,23 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { data, slug } = post;
-const { title, description, date, img, keywords, author } = data;
+const { title, description, date, img, keywords, author, updated, faq } = data;
 
 const { Content } = await render(post);
 
+// og:image dedicada si existe (jpg/png); si no, Layout usa la tarjeta de marca
+const ogImageMap: Record<string, string> = {
+  'adn-de-salmon-la-serena': '/og-adn-salmon.jpg',
+};
+const ogImage = ogImageMap[slug];
+
 const pageKeywords = keywords?.join(', ') || `${title}, checkvital la serena, tratamientos estéticos la serena`;
 
-const formattedDate = new Date(date).toLocaleDateString('es-CL', {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-});
+const dateOpts = { year: 'numeric', month: 'long', day: 'numeric' } as const;
+const formattedDate = new Date(date).toLocaleDateString('es-CL', dateOpts);
+const formattedUpdated = updated
+  ? new Date(updated).toLocaleDateString('es-CL', dateOpts)
+  : null;
 
 const articleSchema = {
   "@context": "https://schema.org",
@@ -30,6 +36,7 @@ const articleSchema = {
   "headline": title,
   "description": description,
   "datePublished": date,
+  "dateModified": updated ?? date,
   "author": {
     "@type": "Person",
     "name": author ?? "CheckVital"
@@ -40,12 +47,41 @@ const articleSchema = {
     "url": "https://checkvital.cl"
   },
   "image": `https://checkvital.cl/${img}`,
-  "url": `https://checkvital.cl/blog/${slug}`
+  "url": `https://checkvital.cl/blog/${slug}`,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `https://checkvital.cl/blog/${slug}`
+  }
 };
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://checkvital.cl" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://checkvital.cl/blog" },
+    { "@type": "ListItem", "position": 3, "name": title, "item": `https://checkvital.cl/blog/${slug}` }
+  ]
+};
+
+// FAQPage: habilita rich snippets en Google y da respuestas citables a los buscadores con IA
+const faqSchema = faq?.length
+  ? {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faq.map(({ q, a }) => ({
+        "@type": "Question",
+        "name": q,
+        "acceptedAnswer": { "@type": "Answer", "text": a }
+      }))
+    }
+  : null;
 ---
 
-<Layout title={title} description={description} keywords={pageKeywords}>
+<Layout title={title} description={description} keywords={pageKeywords} faqSchema={!faqSchema} image={ogImage} ogType="article">
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
 
   <article class="max-w-3xl mx-auto px-4 py-14">
     <!-- Header del artículo -->
@@ -54,6 +90,7 @@ const articleSchema = {
       <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mt-4 mb-3 leading-tight">{title}</h1>
       <p class="text-gray-400 text-sm">
         {formattedDate}
+        {formattedUpdated && <span class="ml-2">· Actualizado el {formattedUpdated}</span>}
         {author && <span class="ml-2">· {author}</span>}
       </p>
     </div>
@@ -69,6 +106,24 @@ const articleSchema = {
     <div class="prose lg:prose-lg max-w-none">
       <Content />
     </div>
+
+    <!-- Preguntas frecuentes -->
+    {faq && faq.length > 0 && (
+      <section class="mt-14">
+        <h2 class="text-2xl font-bold text-primary mb-6">Preguntas frecuentes</h2>
+        <div class="space-y-3">
+          {faq.map(({ q, a }) => (
+            <details class="group border border-gray-200 rounded-xl bg-white overflow-hidden">
+              <summary class="cursor-pointer list-none px-5 py-4 font-semibold text-gray-900 flex justify-between items-center gap-4 hover:text-primary transition-colors">
+                <span>{q}</span>
+                <span class="text-primary text-xl leading-none transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <p class="px-5 pb-5 text-gray-600 text-[15px] leading-relaxed">{a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+    )}
 
     <!-- CTA final -->
     <div class="mt-14 bg-primary/5 border border-primary/20 rounded-2xl p-8 text-center">

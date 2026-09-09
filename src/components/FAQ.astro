@@ -54,7 +54,7 @@ const faqs = [
   },
   {
     q: "¿Atienden también a hombres?",
-    a: "Sí. Todos nuestros tratamientos están disponibles para hombres. Botox para arrugas de expresión, Peeling Químico para manchas y poros, Limpieza Facial y Mesoterapia son algunos de los más solicitados por pacientes masculinos. La evaluación es gratuita para todos."
+    a: "Sí. Todos nuestros tratamientos están disponibles para hombres. Botox para arrugas de expresión, Peeling Químico para manchas y poros, Limpieza Facial y ADN de Salmón son algunos de los más solicitados por pacientes masculinos. La evaluación es gratuita para todos."
   },
   // Peeling, bioestimulador, general
   {
@@ -85,6 +85,9 @@ const faqs = [
   },
 ];
 
+// Solo una FAQPage por URL: las páginas con su propio FAQ desactivan este schema
+const { emitSchema = true } = Astro.props;
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -101,7 +104,7 @@ const faqSchema = {
 
 <section id="faq" class="bg-gray-50 py-16 px-4">
 
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  {emitSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
 
   <div class="max-w-4xl mx-auto">
     <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-4">

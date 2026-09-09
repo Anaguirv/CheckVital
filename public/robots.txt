@@ -1,4 +1,87 @@
+# CheckVital La Serena — https://checkvital.cl
+
 User-agent: *
 Allow: /
 
+# --- Buscadores tradicionales ---
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# --- Buscadores y asistentes con IA ---
+# Permitidos explícitamente: queremos aparecer citados en respuestas generadas por IA.
+
+# Google — AI Overviews y Gemini
+User-agent: Google-Extended
+Allow: /
+
+# OpenAI — ChatGPT
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic — Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Apple Intelligence / Siri
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Meta AI
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# Amazon, Bytedance, Cohere, You.com, Common Crawl
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# --- Referencias ---
 Sitemap: https://checkvital.cl/sitemap-index.xml
+
+# Resumen estructurado del sitio para asistentes de IA
+# https://checkvital.cl/llms.txt

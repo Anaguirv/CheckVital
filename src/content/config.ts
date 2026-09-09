@@ -10,6 +10,7 @@ const services = defineCollection({
     category: z.string(),
     keywords: z.array(z.string()).optional(),
     sesiones: z.number().optional(),
+    nuevo: z.boolean().optional(),
   }),
 });
 
@@ -21,6 +22,15 @@ const blog = defineCollection({
     img: z.string(),
     keywords: z.array(z.string()).optional(),
     author: z.string().optional(),
+    updated: z.string().optional(),
+    faq: z
+      .array(
+        z.object({
+          q: z.string(),
+          a: z.string(),
+        })
+      )
+      .optional(),
   }),
 });
 

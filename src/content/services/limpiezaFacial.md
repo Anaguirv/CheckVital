@@ -2,9 +2,9 @@
 title: Limpieza Facial Profunda La Serena | CheckVital — Respaldo Clínico Profesional
 img: limpieza-facial.jpeg
 duration: 60
-description: Limpieza facial profunda en La Serena con respaldo clínico profesional en CheckVital. Eliminación de impurezas, extracción de puntos negros, mascarilla y sérum. Paso esencial antes de tratamientos despigmentantes faciales. Resultados inmediatos, apta para todo tipo de piel.
+description: Limpieza facial profunda en La Serena con respaldo clínico profesional en CheckVital. Incluye vaporizador de ozono, eliminación de impurezas, extracción de puntos negros, mascarilla y sérum. Paso esencial antes de tratamientos despigmentantes faciales. Resultados inmediatos, apta para todo tipo de piel.
 category: cuidado-piel
-keywords: [limpieza facial la serena, limpieza facial profunda la serena, donde hacerme una limpieza facial en la serena, limpieza de cutis la serena, facial profesional la serena, limpieza facial precio la serena, limpieza facial verano la serena, puntos negros tratamiento la serena, preparación tratamiento despigmentante facial la serena]
+keywords: [limpieza facial con ozono la serena, vaporizador de ozono la serena, limpieza facial la serena, limpieza facial profunda la serena, donde hacerme una limpieza facial en la serena, limpieza de cutis la serena, facial profesional la serena, limpieza facial precio la serena, limpieza facial verano la serena, puntos negros tratamiento la serena, preparación tratamiento despigmentante facial la serena]
 sesiones: 1
 ---
 
@@ -18,6 +18,9 @@ sesiones: 1
     </p>
     <p>
       En <strong>CheckVital La Serena</strong>, la limpieza facial es realizada por <strong>Evelyn Briceño, enfermera titulada</strong> con 10 años de experiencia clínica — lo que garantiza un procedimiento técnico, higiénico y adaptado a tu tipo de piel específico.
+    </p>
+    <p>
+      Nuestra limpieza facial <strong>incluye vaporizador de ozono</strong> sin costo adicional: un paso profesional que abre el poro, ablanda el sebo y desinfecta la piel antes de la extracción.
     </p>
     <p>
       Indicada para:
@@ -59,6 +62,42 @@ sesiones: 1
 
 ---
 
+## Incluye vaporizador de ozono
+
+<p class="text-base text-gray-800">
+  Toda limpieza facial en CheckVital <strong>incluye vaporización con ozono</strong>, sin costo adicional. El vapor de ozono cumple tres funciones que ninguna limpieza casera puede reemplazar:
+</p>
+
+<ul class="list-disc pl-5 space-y-2 text-base text-gray-800 my-4">
+  <li><strong>Abre el poro con calor húmedo</strong>, permitiendo una extracción de comedones mucho menos traumática para la piel.</li>
+  <li><strong>Ablanda y emulsiona el sebo oxidado</strong> acumulado en profundidad, incluso el que lleva meses dentro del poro.</li>
+  <li><strong>Desinfecta la superficie de la piel</strong> gracias a la acción bactericida del ozono — especialmente útil en pieles grasas y con tendencia al acné.</li>
+</ul>
+
+<p class="text-base text-gray-800">
+  Además, el vapor mejora la microcirculación y la oxigenación del tejido, lo que se traduce en esa sensación de piel descansada y luminosa apenas terminas la sesión.
+</p>
+
+<div class="my-8 flex justify-center">
+  <video
+    class="w-full max-w-md max-h-[560px] object-cover rounded-2xl shadow-lg bg-black"
+    controls
+    muted
+    playsinline
+    preload="metadata"
+    poster="/limpieza-facial-ozono-poster.webp"
+  >
+    <source src="/limpieza-facial-ozono.mp4" type="video/mp4" />
+    Tu navegador no soporta la reproducción de video.
+  </video>
+</div>
+
+<p class="text-center text-sm text-gray-500 -mt-4 mb-8">
+  Nuestro vaporizador de ozono en el box clínico de CheckVital La Serena.
+</p>
+
+---
+
 ## Beneficios de la Limpieza Facial Profunda
 
 <div class="flex flex-col md:flex-row gap-8 items-start my-8">
@@ -70,6 +109,7 @@ sesiones: 1
       <li>Cierre de poros dilatados.</li>
       <li>Piel más luminosa y oxigenada desde la primera sesión.</li>
       <li>Reducción de imperfecciones y acné leve.</li>
+      <li>Acción bactericida del ozono sobre la piel con tendencia al acné.</li>
       <li>Mejor absorción de activos en tratamientos posteriores.</li>
       <li>Sin tiempo de recuperación — regresas a tus actividades de inmediato.</li>
       <li>Apta para todo tipo de piel, incluyendo piel sensible y temporada de verano.</li>
@@ -78,8 +118,9 @@ sesiones: 1
 
   <div class="w-full md:w-1/2">
     <img
-      src="/limpieza-facial.jpeg"
-      alt="Beneficios limpieza facial profunda CheckVital La Serena"
+      src="/limpieza-facial-beneficios.webp"
+      alt="Beneficios de la limpieza facial profunda — procedimiento clínico en CheckVital La Serena"
+      loading="lazy"
       class="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg"
     />
   </div>
@@ -92,7 +133,7 @@ sesiones: 1
 <ol class="list-decimal pl-5 space-y-2 text-base text-gray-800">
   <li>Evaluación del tipo de piel y condición actual.</li>
   <li>Desmaquillaje y limpieza superficial inicial.</li>
-  <li>Vapor o calor suave para abrir poros.</li>
+  <li><strong>Vaporización con ozono</strong> para abrir los poros, ablandar el sebo y desinfectar la piel.</li>
   <li>Exfoliación suave para remover células muertas.</li>
   <li>Extracción manual de comedones con técnica profesional.</li>
   <li>Aplicación de tónico calmante y astringente.</li>

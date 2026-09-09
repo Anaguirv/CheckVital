@@ -18,7 +18,53 @@ const { title, precio, img, duration, description, sesiones, keywords } = data;
 
 const { Content } = await render(service);
 
+// og:image dedicada si existe (jpg/png); si no, Layout usa la tarjeta de marca
+const ogImageMap: Record<string, string> = {
+  'adn-salmon': '/og-adn-salmon.jpg',
+};
+const ogImage = ogImageMap[slug];
+
 const pageKeywords = keywords?.join(', ') || `${title}, tratamiento estético La Serena, clínica estética La Serena, CheckVital`;
+
+// Service schema: entrega a Google y a los buscadores con IA el precio, el proveedor
+// y la zona de cobertura de forma legible por máquina
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": title,
+  "description": description,
+  "url": `https://checkvital.cl/servicios/${slug}`,
+  "image": `https://checkvital.cl/${img}`,
+  "serviceType": data.category,
+  "category": data.category,
+  "provider": {
+    "@type": "BeautySalon",
+    "name": "CheckVital - Salud Estética y Belleza La Serena",
+    "url": "https://checkvital.cl",
+    "telephone": "+56989827644",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Calle Central 95, Parcela 36, Alfalfares",
+      "addressLocality": "La Serena",
+      "addressRegion": "Región de Coquimbo",
+      "addressCountry": "CL"
+    }
+  },
+  "areaServed": [
+    { "@type": "City", "name": "La Serena" },
+    { "@type": "City", "name": "Coquimbo" },
+    { "@type": "AdministrativeArea", "name": "Región de Coquimbo" }
+  ],
+  "offers": {
+    "@type": "Offer",
+    "url": `https://checkvital.cl/servicios/${slug}`,
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "CLP",
+    ...(precio && precio > 0
+      ? { "price": precio }
+      : { "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "CLP", "description": "Valor definido en evaluación gratuita" } })
+  }
+};
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -35,7 +81,9 @@ const breadcrumbSchema = {
   title={title}
   description={description}
   keywords={pageKeywords}
+  image={ogImage}
 >
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <section class="max-w-5xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-10 items-start">
     

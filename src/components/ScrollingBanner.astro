@@ -6,6 +6,7 @@ import aphodite from '../assets/marcas/aphodite.webp';
 import botox from '../assets/marcas/BOTOX.svg';
 import logozena from '../assets/marcas/logozena.webp';
 import revitrane from '../assets/marcas/revitrane.svg';
+import celosome from '../assets/marcas/celosome.png';
 
 type Props = {
   speed?: number;
@@ -54,6 +55,7 @@ const baseLogos = [
   { asset: botox,     alt: 'BOTOX' },
   { asset: logozena,  alt: 'Zena' },
   { asset: revitrane, alt: 'Revitrane' },
+  { asset: celosome,  alt: 'Celosome' },
 ];
 
 const logos = baseLogos.map(({ asset, alt }) => ({ src: toSrc(asset), size: toSize(asset), alt }));

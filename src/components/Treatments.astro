@@ -18,7 +18,11 @@ const categories = [
 ];
 ---
 
-<section id="tratamientos" class="max-w-7xl mx-auto px-4 my-16">
+<section id="tratamientos" class="relative max-w-7xl mx-auto px-4 my-16">
+  <!-- Halos ambientales: profundidad sutil detrás de la grilla -->
+  <div class="amb amb-a" aria-hidden="true"></div>
+  <div class="amb amb-b" aria-hidden="true"></div>
+
   <h2 class="text-4xl font-bold text-center text-primary mb-12">
     Lista de Tratamientos
   </h2>
@@ -51,7 +55,7 @@ const categories = [
     {sortedTreatments.map((t) => (
       <a
         href={`/servicios/${t.slug}`}
-        class="group relative flex flex-col p-4 rounded-2xl bg-white border border-gray-200 shadow hover:shadow-xl transition overflow-hidden hover:-translate-y-1"
+        class="treatment-card group relative flex flex-col p-4 rounded-2xl bg-white border border-gray-200 shadow hover:shadow-xl overflow-hidden"
         class:list={{ 'ring-2': t.data.nuevo, 'ring-primary/40': t.data.nuevo }}
         data-category={t.data.category}
       >
@@ -100,3 +104,68 @@ const categories = [
     });
   }
 </script>
+
+<style>
+  /* Halos ambientales: dos manchas difusas que respiran muy lento.
+     Decorativos y sin interacción — no afectan el layout. */
+  .amb {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(90px);
+    pointer-events: none;
+    z-index: -1;
+  }
+  .amb-a {
+    width: 420px; height: 420px;
+    top: -60px; left: -120px;
+    background: radial-gradient(circle, rgba(27, 191, 175, 0.22), transparent 70%);
+    animation: amb-float 18s ease-in-out infinite;
+  }
+  .amb-b {
+    width: 380px; height: 380px;
+    bottom: 40px; right: -140px;
+    background: radial-gradient(circle, rgba(59, 217, 82, 0.16), transparent 70%);
+    animation: amb-float 22s ease-in-out infinite reverse;
+  }
+  @keyframes amb-float {
+    0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+    50%      { transform: translate3d(24px, -28px, 0) scale(1.08); }
+  }
+
+  /* Tarjeta: elevación suave + barrido de luz al pasar el cursor */
+  .treatment-card {
+    transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1),
+                box-shadow 0.45s cubic-bezier(0.22, 0.61, 0.36, 1),
+                border-color 0.45s ease;
+  }
+  .treatment-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(27, 191, 175, 0.35);
+  }
+  .treatment-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      115deg,
+      transparent 38%,
+      rgba(255, 255, 255, 0.42) 48%,
+      rgba(27, 191, 175, 0.14) 54%,
+      transparent 64%
+    );
+    transform: translateX(-130%);
+    transition: transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
+    pointer-events: none;
+  }
+  .treatment-card:hover::after { transform: translateX(130%); }
+
+  /* Botones de filtro: subrayado que crece desde el centro */
+  [data-category-btn] { position: relative; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .amb-a, .amb-b { animation: none; }
+    .treatment-card,
+    .treatment-card::after { transition: none; }
+    .treatment-card:hover { transform: none; }
+  }
+</style>

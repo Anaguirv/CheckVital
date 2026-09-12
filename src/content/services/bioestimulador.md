@@ -1,6 +1,6 @@
 ---
 title: Skinbooster La Serena | Celosome Aqua — Hidratación Profunda sin Volumen
-img: celosome_aqua.webp
+img: skinbooster_celosome_imagen_principal.webp
 duration: 45
 description: "El Skinbooster con Celosome Aqua en CheckVital La Serena hidrata en profundidad gracias a su Ácido Hialurónico con Manitol, mejorando el brillo, elasticidad y líneas finas sin generar volumen ni inflamación. Ideal para piel luminosa, firme y natural. 2 a 3 sesiones con intervalo de un mes."
 category: rejuvenecimiento
@@ -166,6 +166,16 @@ sesiones: 2
 ---
 
 ## Imágenes del producto
+
+<figure class="my-8">
+  <img
+    src="/celosome_productos_variedad.webp"
+    alt="Línea Celosome — Strong, Implant y Strong sin lidocaína, ácido hialurónico de biotecnología coreana"
+    loading="lazy"
+    class="w-full rounded-2xl shadow-lg"
+  />
+  <figcaption class="text-center text-sm text-gray-500 mt-2">La línea Celosome completa: biorregeneración y armonía con ácido hialurónico de tecnología avanzada de implante.</figcaption>
+</figure>
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
   <img

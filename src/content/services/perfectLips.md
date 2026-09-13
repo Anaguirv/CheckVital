@@ -140,6 +140,22 @@ sesiones: 3
 
 ---
 
+## ¿Y si quiero volumen en los labios?
+
+<p class="text-base text-gray-800">
+  Perfect Lips y el relleno de labios son tratamientos distintos y resuelven cosas distintas. Perfect Lips <strong>mejora la calidad del tejido</strong> —hidratación, color y firmeza— sin cambiar la forma. Si lo que buscas es <strong>volumen, proyección o definir el contorno</strong>, eso se logra con un relleno de ácido hialurónico reticulado.
+</p>
+
+<p class="text-base text-gray-800 mt-4">
+  En CheckVital el relleno de labios se realiza con <strong>Celosome Soft</strong>, el producto de menor densidad de la línea Celosome (ExCoBio, Corea del Sur), formulado con lidocaína para mayor comodidad durante la sesión. Puedes revisarlo en la ficha de <a href="/servicios/acidoHialuronico" class="text-primary hover:underline font-medium">Ácido Hialurónico y rellenos</a>.
+</p>
+
+<p class="text-base text-gray-800 mt-4">
+  Ambos tratamientos son perfectamente combinables: muchas pacientes hacen el relleno para la forma y mantienen la calidad del labio con Perfect Lips. En la evaluación gratuita definimos cuál necesitas — o si conviene el combinado.
+</p>
+
+---
+
 ## Valor del tratamiento
 
 <div class="bg-primary/5 border border-primary/20 rounded-xl p-5 my-6 text-center max-w-xs mx-auto">
